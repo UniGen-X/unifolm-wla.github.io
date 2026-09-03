@@ -1,0 +1,183 @@
+.dal-root {
+  --dal-background: #f1f1ec;
+  --dal-foreground: #17211f;
+  --dal-primary: #147b6d;
+  --dal-eef: #13806f;
+  --dal-hand: #3560bf;
+  --dal-lower: #b7652a;
+  width: 100%;
+  min-height: 720px;
+  display: grid;
+  place-items: center;
+  padding: clamp(20px, 4vw, 56px);
+  color: var(--dal-foreground);
+  background:
+    linear-gradient(rgba(36, 58, 53, .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 58, 53, .045) 1px, transparent 1px),
+    var(--dal-background);
+  background-size: 40px 40px;
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+
+.dal-root, .dal-root * { box-sizing: border-box; }
+
+.dal-card {
+  position: relative;
+  width: min(1240px, 100%);
+  overflow: hidden;
+  border: 1px solid #ced5d2;
+  border-radius: 30px;
+  background: rgba(252, 253, 252, .96);
+  box-shadow: 0 22px 70px rgba(38, 55, 51, .09);
+  animation: dal-card-enter .8s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.dal-card::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -70px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20, 123, 109, .08), transparent 68%);
+  pointer-events: none;
+}
+
+.dal-intro { position: relative; z-index: 1; padding: 48px 52px 28px; }
+.dal-kicker { display: flex; align-items: center; gap: 10px; color: var(--dal-primary); font: 650 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .16em; }
+.dal-kicker span { width: 22px; height: 2px; background: currentColor; }
+.dal-intro h2 { margin: 16px 0 12px; color: var(--dal-foreground); font-size: clamp(32px, 4vw, 54px); line-height: 1.02; letter-spacing: -.045em; }
+.dal-intro > p { max-width: 840px; margin: 0; color: #5b6663; font-size: 15px; line-height: 1.85; }
+
+.dal-pipeline { position: relative; margin: 0 26px; padding: 24px 26px 28px; border: 1px solid #dde3e0; border-radius: 22px; background: #f5f7f6; }
+.dal-live { position: absolute; top: 17px; right: 25px; display: flex; align-items: center; gap: 7px; color: #71807c; font: 650 8px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .11em; }
+.dal-live i { width: 6px; height: 6px; border-radius: 50%; background: var(--dal-primary); box-shadow: 0 0 0 0 rgba(20, 123, 109, .32); animation: dal-live-pulse 2s ease-out infinite; }
+.dal-column-labels { display: grid; grid-template-columns: 200px 1fr 176px 1fr minmax(420px, 2.1fr); margin-bottom: 12px; color: #7a8582; font: 600 9px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .13em; }
+.dal-column-labels span:nth-child(2) { grid-column: 3; }
+.dal-column-labels span:nth-child(3) { grid-column: 5; }
+.dal-tracks { display: grid; gap: 12px; }
+.dal-track { display: grid; grid-template-columns: 200px 1fr 176px 1fr minmax(420px, 2.1fr); align-items: center; min-height: 94px; }
+.dal-source { display: flex; align-items: center; gap: 13px; }
+.dal-source small, .dal-source strong { display: block; }
+.dal-source small { margin-bottom: 4px; color: #7a8582; font-size: 10px; }
+.dal-source strong { color: var(--dal-foreground); font-size: 14px; }
+.dal-motion-glyph { width: 66px; height: 56px; display: grid; place-items: center; border: 1px solid #d8dfdc; border-radius: 15px; background: #fff; transition: transform .3s ease, box-shadow .3s ease; }
+.dal-motion-glyph svg { width: 52px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.dal-motion-glyph svg path { stroke-dasharray: 120; stroke-dashoffset: 120; animation: dal-sketch-in 3.9s cubic-bezier(.65, 0, .35, 1) infinite; }
+.dal-track:nth-child(2) .dal-motion-glyph svg path { animation-delay: .45s; }
+.dal-track:nth-child(3) .dal-motion-glyph svg path { animation-delay: .9s; }
+.dal-track:hover .dal-motion-glyph { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(37, 56, 51, .1); }
+.dal-track-eef { color: var(--dal-eef); }
+.dal-track-hand { color: var(--dal-hand); }
+.dal-track-lower { color: var(--dal-lower); }
+
+.dal-flow-arrow { width: 100%; height: 24px; overflow: visible; padding: 0 10px; }
+.dal-flow-line, .dal-flow-head { fill: none; stroke: #9aa6a2; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.dal-flow-line { stroke-dasharray: .16 .06; animation: dal-dash-flow 1.1s linear infinite; }
+.dal-flow-dot { fill: currentColor; animation: dal-dot-travel 2.7s cubic-bezier(.45, 0, .55, 1) infinite; filter: drop-shadow(0 0 3px currentColor); }
+
+.dal-rvq-card { position: relative; min-height: 80px; overflow: hidden; padding: 16px 16px 14px; border: 1px solid currentColor; border-radius: 15px; background: #fff; }
+.dal-rvq-card > span { font: 700 9px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .06em; }
+.dal-rvq-card strong { display: block; margin-top: 9px; color: var(--dal-foreground); font-size: 12px; font-weight: 520; }
+.dal-codebook { position: absolute; right: 14px; top: 17px; display: flex; gap: 4px; align-items: end; }
+.dal-codebook i { width: 5px; border-radius: 4px; background: currentColor; opacity: .22; transform-origin: bottom; animation: dal-quantize 1.8s ease-in-out infinite; }
+.dal-codebook i:nth-child(1) { height: 15px; }
+.dal-codebook i:nth-child(2) { height: 27px; animation-delay: .18s; }
+.dal-codebook i:nth-child(3) { height: 20px; animation-delay: .36s; }
+
+.dal-token-sequence { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.dal-token-sequence i { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid transparent; border-radius: 9px; color: currentColor; background: color-mix(in srgb, currentColor 10%, white); font: 650 10px/1 ui-monospace, SFMono-Regular, Menlo, monospace; font-style: normal; animation: dal-token-wave 4.2s ease-in-out infinite; }
+.dal-token-sequence i:nth-of-type(2) { animation-delay: .16s; }
+.dal-token-sequence i:nth-of-type(3) { animation-delay: .32s; }
+.dal-token-sequence i:nth-of-type(4) { animation-delay: .48s; }
+.dal-token-sequence i:nth-of-type(5) { animation-delay: .64s; }
+.dal-track:nth-child(2) .dal-token-sequence i { animation-delay: .42s; }
+.dal-track:nth-child(3) .dal-token-sequence i { animation-delay: .84s; }
+.dal-boundary { color: currentColor; opacity: .72; font: 650 9px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: -.02em; animation: dal-boundary-breathe 4.2s ease-in-out infinite; }
+
+.dal-timeline { display: grid; grid-template-columns: 200px 1fr 176px 1fr minmax(420px, 2.1fr); align-items: center; margin-top: 17px; }
+.dal-timeline-rule { grid-column: 5; position: relative; height: 1px; background: #cbd4d0; }
+.dal-timeline-rule::before, .dal-timeline-rule::after { content: ""; position: absolute; top: -3px; width: 1px; height: 7px; background: #889590; }
+.dal-timeline-rule::after { right: 0; }
+.dal-timeline-rule span { position: absolute; top: -3px; left: 0; width: 28%; height: 7px; border-radius: 10px; background: linear-gradient(90deg, transparent, var(--dal-primary), transparent); opacity: .6; animation: dal-timeline-scan 4.2s ease-in-out infinite; }
+.dal-timeline p { grid-column: 5; display: flex; justify-content: space-between; align-items: center; margin: 9px 0 0; }
+.dal-timeline b { color: #34403d; font-size: 11px; }
+.dal-timeline p span { color: #7d8885; font-size: 10px; }
+
+.dal-legend { display: grid; grid-template-columns: repeat(3, 1fr) 1.2fr; margin-top: 32px; padding: 22px 52px 30px; border-top: 1px solid #e1e5e3; }
+.dal-legend > div { display: flex; align-items: center; gap: 11px; min-width: 0; }
+.dal-legend-dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.dal-legend p { margin: 0; }
+.dal-legend b, .dal-legend small { display: block; }
+.dal-legend b { color: #43504c; font: 650 10px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.dal-legend small { margin-top: 3px; color: #87918e; font-size: 10px; }
+.dal-joint-note { justify-content: flex-end; border-left: 1px solid #e0e5e3; }
+.dal-joint-icon { color: var(--dal-primary); font-size: 25px; line-height: 1; }
+
+@keyframes dal-card-enter {
+  from { opacity: 0; transform: translateY(16px) scale(.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes dal-live-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(20, 123, 109, .35); }
+  70%, 100% { box-shadow: 0 0 0 7px rgba(20, 123, 109, 0); }
+}
+@keyframes dal-sketch-in {
+  0%, 12% { stroke-dashoffset: 120; opacity: .28; }
+  35%, 82% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: -120; opacity: .28; }
+}
+@keyframes dal-dash-flow { to { stroke-dashoffset: -.22; } }
+@keyframes dal-dot-travel {
+  0%, 12% { transform: translateX(0); opacity: 0; }
+  22% { opacity: 1; }
+  72% { opacity: 1; }
+  84%, 100% { transform: translateX(78px); opacity: 0; }
+}
+@keyframes dal-quantize {
+  0%, 100% { transform: scaleY(.55); opacity: .18; }
+  48% { transform: scaleY(1); opacity: .52; }
+}
+@keyframes dal-token-wave {
+  0%, 16%, 58%, 100% { transform: translateY(0); border-color: transparent; box-shadow: 0 0 0 transparent; }
+  26%, 38% { transform: translateY(-3px); border-color: color-mix(in srgb, currentColor 24%, transparent); box-shadow: 0 7px 18px color-mix(in srgb, currentColor 13%, transparent); }
+}
+@keyframes dal-boundary-breathe {
+  0%, 18%, 68%, 100% { opacity: .5; }
+  34%, 52% { opacity: 1; }
+}
+@keyframes dal-timeline-scan {
+  0%, 8% { transform: translateX(0); opacity: 0; }
+  18%, 78% { opacity: .6; }
+  90%, 100% { transform: translateX(260%); opacity: 0; }
+}
+
+@media (max-width: 980px) {
+  .dal-root { min-height: 0; }
+  .dal-card { width: min(680px, 100%); }
+  .dal-intro { padding: 38px 30px 24px; }
+  .dal-pipeline { margin: 0 16px; padding: 22px 18px; overflow-x: auto; }
+  .dal-live { right: 22px; }
+  .dal-column-labels, .dal-track, .dal-timeline { min-width: 980px; }
+  .dal-legend { grid-template-columns: repeat(3, 1fr); padding: 22px 30px 28px; gap: 18px; }
+  .dal-joint-note { grid-column: 1 / -1; justify-content: flex-start; padding-top: 16px; border-top: 1px solid #e0e5e3; border-left: 0; }
+}
+
+@media (max-width: 560px) {
+  .dal-root { padding: 10px; place-items: start center; }
+  .dal-card { border-radius: 22px; }
+  .dal-intro { padding: 30px 22px 22px; }
+  .dal-intro h2 { font-size: 34px; }
+  .dal-intro > p { font-size: 13px; line-height: 1.75; }
+  .dal-pipeline { margin: 0 8px; }
+  .dal-legend { grid-template-columns: 1fr 1fr; padding: 20px 22px 24px; }
+  .dal-joint-note { grid-column: 1 / -1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dal-root *, .dal-root *::before, .dal-root *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

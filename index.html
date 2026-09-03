@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080b0d" />
+  <meta name="description" content="One Model. Every Move. — a 5B generalist VLA for humanoid robots." />
+  <title>One Model. Every Move.</title>
+  <link rel="stylesheet" href="discrete-action-learning-component/react/discrete-action-learning.css" />
+  <style>
+    :root {
+      --bg: #080b0d;
+      --panel: #0d1214;
+      --panel-2: #111719;
+      --line: #293236;
+      --line-soft: rgba(255,255,255,.08);
+      --text: #f1f3ee;
+      --muted: #a0aaac;
+      --dim: #6f7a7d;
+      --cyan: #77f4d0;
+      --orange: #ff8b51;
+      --blue: #76b7ff;
+      --violet: #b5a0ff;
+      --lime: #c7f56f;
+      --max: 1280px;
+    }
+    html[data-theme="light"] {
+      --bg: #f4f5f0;
+      --panel: #ffffff;
+      --panel-2: #edf0eb;
+      --line: #cbd2ce;
+      --line-soft: rgba(13,22,18,.12);
+      --text: #101613;
+      --muted: #4f5d58;
+      --dim: #68746f;
+      --cyan: #087e64;
+      --orange: #cf5c26;
+      --blue: #347fc4;
+      --violet: #7056be;
+      --lime: #658b1e;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .1;
+      background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: linear-gradient(to bottom, #000, transparent 92%);
+    }
+    html[data-theme="light"] body::before {
+      opacity: .34;
+      background-image: linear-gradient(#d2d8d3 1px, transparent 1px), linear-gradient(90deg, #d2d8d3 1px, transparent 1px);
+    }
+    ::selection { color: var(--bg); background: var(--cyan); }
+    a { color: inherit; }
+    :focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+    .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; letter-spacing: .04em; }
+    .shell { width: min(calc(100% - 56px), var(--max)); margin-inline: auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 76px;
+      background: rgba(8,11,13,.88);
+      border-bottom: 1px solid var(--line-soft);
+      backdrop-filter: blur(16px);
+    }
+    html[data-theme="light"] .site-header { background: rgba(244,245,240,.9); }
+    nav { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 34px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 800; letter-spacing: -.02em; text-decoration: none; }
+    .mark { width: 31px; height: 31px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; transform: rotate(-7deg); }
+    .mark i { border-radius: 2px; background: var(--cyan); }
+    .mark i:nth-child(2), .mark i:nth-child(5) { background: var(--orange); }
+    .mark i:nth-child(3), .mark i:nth-child(4) { opacity: .28; }
+    .nav-links { display: flex; align-items: center; gap: 28px; margin-left: auto; }
+    .nav-links a { color: #7e898b; font-size: 11px; text-decoration: none; text-transform: uppercase; transition: color .2s ease; }
+    .nav-links a:hover { color: var(--text); }
+    .header-actions { display: flex; align-items: center; gap: 14px; }
+    .theme-toggle { min-height: 34px; display: inline-flex; align-items: center; gap: 8px; padding: 0 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--text); cursor: pointer; font-size: 9px; text-transform: uppercase; letter-spacing: .08em; transition: border-color .2s ease, background .2s ease; }
+    .theme-toggle:hover { border-color: var(--cyan); }
+    .theme-toggle-icon { width: 14px; color: var(--cyan); font-size: 13px; line-height: 1; }
+
+    .hero-wrap { padding: 96px 0 104px; border-bottom: 1px solid var(--line); }
+    .hero { display: block; }
+    .hero > div { max-width: 930px; margin-inline: auto; text-align: center; }
+    .eyebrow { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0 0 26px; color: var(--cyan); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; }
+    .eyebrow::before { content: ""; width: 30px; height: 1px; background: currentColor; }
+    h1 { margin: 0; font-size: clamp(72px, 8.3vw, 128px); line-height: .84; letter-spacing: -.072em; font-weight: 840; }
+    h1 span { display: block; color: transparent; -webkit-text-stroke: 1px #596569; }
+    html[data-theme="light"] h1 span { -webkit-text-stroke-color: #7c8983; }
+    .resource-links { display: flex; justify-content: center; gap: 10px; margin: 30px auto 0; }
+    .resource-links a { min-width: 116px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 10px 18px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--text); font-size: 10px; font-weight: 650; text-decoration: none; text-transform: uppercase; transition: transform .2s ease, border-color .2s ease; }
+    .resource-links a:hover { transform: translateY(-2px); border-color: var(--cyan); }
+    .resource-links i { color: var(--cyan); font-size: 12px; font-style: normal; }
+    .intro { max-width: 860px; margin: 36px auto 0; color: #bec6c6; font-size: 17px; line-height: 1.85; }
+    .resource-links + .intro { margin-top: 26px; }
+    html[data-theme="light"] .intro { color: #4f5d58; }
+    .facts { max-width: 900px; display: grid; grid-template-columns: repeat(4, 1fr); margin: 42px auto 0; border-block: 1px solid var(--line); }
+    .fact { padding: 20px 18px; border-left: 1px solid var(--line); }
+    .fact:first-child { border-left: 0; }
+    .fact strong { display: block; font-size: 30px; line-height: 1; letter-spacing: -.05em; }
+    .fact span { display: block; margin-top: 8px; color: var(--dim); font-size: 9px; text-transform: uppercase; letter-spacing: .12em; }
+
+    .hero-video { width: min(100%, 1120px); margin: 72px auto 0; border: 1px solid var(--line); border-radius: 26px; background: rgba(13,18,20,.92); overflow: hidden; box-shadow: 0 28px 80px rgba(0,0,0,.25); }
+    .card-head { height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; border-bottom: 1px solid var(--line); color: #7b8789; font-size: 10px; text-transform: uppercase; }
+    .card-head strong { color: var(--cyan); font-weight: 650; }
+    .hero-video-stage { position: relative; aspect-ratio: 16 / 9; display: grid; place-items: center; background-color: #0a0f11; background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px); background-size: 34px 34px; }
+    .hero-video-stage::before, .hero-video-stage::after { content: ""; position: absolute; width: 70px; height: 70px; }
+    .hero-video-stage::before { left: 22px; top: 22px; border-left: 1px solid #465356; border-top: 1px solid #465356; }
+    .hero-video-stage::after { right: 22px; bottom: 22px; border-right: 1px solid #465356; border-bottom: 1px solid #465356; }
+    .hero-play { position: relative; z-index: 1; width: 78px; height: 78px; display: grid; place-items: center; border: 1px solid #526164; border-radius: 50%; color: var(--cyan); font-size: 20px; box-shadow: 0 0 0 14px rgba(119,244,208,.035); }
+    .hero-video-label { position: absolute; z-index: 1; left: 24px; bottom: 21px; color: #667275; font-size: 9px; text-transform: uppercase; }
+    .hero-video-meta { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 18px 20px; border-top: 1px solid var(--line); color: #6f7a7d; font-size: 9px; text-transform: uppercase; }
+    .hero-video-meta strong { color: #c5cece; font-size: 10px; font-weight: 600; }
+
+    .section { padding: 118px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 74px; }
+    .section-title { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 52px; align-items: start; margin-bottom: 58px; }
+    .section-index { padding-top: 11px; color: var(--dim); font-size: 10px; text-transform: uppercase; letter-spacing: .14em; }
+    h2 { margin: 0; font-size: clamp(44px, 5.6vw, 76px); line-height: 1; letter-spacing: -.055em; }
+    h2 em { color: var(--cyan); font-style: normal; }
+    .section-lead { max-width: 840px; margin: 24px 0 0; color: var(--muted); font-size: 16px; line-height: 1.85; }
+    .method-label { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 20px; color: var(--orange); font-size: 10px; text-transform: uppercase; letter-spacing: .13em; }
+    .method-label::before { content: ""; width: 7px; height: 7px; background: currentColor; border-radius: 2px; }
+
+    .training-mix { display: grid; grid-template-columns: 150px 1fr; gap: 30px; align-items: start; margin-bottom: 70px; padding: 22px 0; border-block: 1px solid var(--line); }
+    .training-mix > strong { color: var(--cyan); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
+    .training-items { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+    .training-items span { position: relative; color: #aeb8b9; font-size: 11px; white-space: nowrap; }
+    .training-items span:not(:last-child)::after { content: "/"; position: absolute; right: -14px; color: #465154; }
+
+    .content-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 24px; align-items: stretch; margin-top: 24px; }
+    .copy-card { min-height: 420px; padding: 34px; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); }
+    .copy-card h3 { margin: 0 0 22px; font-size: 28px; letter-spacing: -.04em; }
+    .copy-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.85; }
+    .steps { margin: 38px 0 0; padding: 0; list-style: none; }
+    .steps li { display: grid; grid-template-columns: 32px 1fr; gap: 12px; padding: 13px 0; border-top: 1px solid var(--line); color: #bdc6c7; font-size: 12px; }
+    .steps li span { color: var(--cyan); font-size: 9px; }
+
+    .placeholder {
+      position: relative;
+      margin: 0;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed #3b474a;
+      border-radius: 20px;
+      background-color: #0a0f11;
+      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 32px 32px;
+      overflow: hidden;
+    }
+    .placeholder::before, .placeholder::after { content: ""; position: absolute; width: 56px; height: 56px; }
+    .placeholder::before { inset: 18px auto auto 18px; border-top: 1px solid #4d5a5d; border-left: 1px solid #4d5a5d; }
+    .placeholder::after { inset: auto 18px 18px auto; border-right: 1px solid #4d5a5d; border-bottom: 1px solid #4d5a5d; }
+    .placeholder-center { max-width: 280px; padding: 24px; text-align: center; }
+    .placeholder-icon { width: 46px; height: 38px; display: grid; place-items: center; margin: 0 auto 18px; border: 1px solid #445154; border-radius: 8px; color: var(--cyan); font-size: 18px; }
+    .placeholder strong { display: block; font-size: 13px; }
+    .placeholder small { display: block; margin-top: 8px; color: var(--dim); font-size: 9px; text-transform: uppercase; letter-spacing: .12em; }
+    .placeholder-tag { position: absolute; left: 18px; bottom: 16px; color: #5e6a6d; font-size: 9px; text-transform: uppercase; }
+
+    .benchmark { margin-bottom: 76px; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); overflow: hidden; }
+    .benchmark-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 20px; border-bottom: 1px solid var(--line); }
+    .benchmark-head h3 { margin: 0; font-size: 19px; letter-spacing: -.02em; }
+    .benchmark-head span { color: var(--orange); font-size: 9px; text-transform: uppercase; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 660px; }
+    .benchmark table { min-width: 1720px; }
+    th, td { height: 42px; padding: 0 10px; border-bottom: 1px solid var(--line); text-align: center; white-space: nowrap; }
+    th { color: var(--dim); font-size: 8px; font-weight: 550; text-transform: uppercase; letter-spacing: .06em; }
+    .benchmark thead tr:not(.group-head) th { color: #b8c1c2; font-size: 10px; font-weight: 700; }
+    html[data-theme="light"] .benchmark thead tr:not(.group-head) th { color: #35423d; }
+    td { color: #aeb8b9; font-size: 11px; }
+    tr:last-child td { border-bottom: 0; }
+    .benchmark .model-col { position: sticky; left: 0; z-index: 2; min-width: 160px; background: var(--panel); text-align: left; }
+    .benchmark thead .model-col { z-index: 4; }
+    .benchmark .group-head th { height: 34px; color: var(--text); border-bottom: 1px solid var(--line); font-size: 9px; }
+    .benchmark .group-start td { border-top: 2px solid var(--line); }
+    .score-best { color: var(--text); font-weight: 800; background: rgba(119,244,208,.08); }
+    html[data-theme="light"] .score-best { background: rgba(8,126,100,.09); }
+    .tbd { display: inline-flex; padding: 4px 8px; border: 1px solid #374246; border-radius: 999px; color: #657174; font-size: 8px; }
+
+    .token-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 34px; }
+    .token { padding: 18px; border: 1px solid var(--line); border-radius: 12px; }
+    .token b { display: block; color: var(--cyan); font-size: 10px; }
+    .token span { display: block; margin-top: 8px; color: #aeb7b8; font-size: 11px; }
+
+    .homepage-action-demo {
+      min-height: 0;
+      margin-top: 24px;
+      padding: 0;
+      background: transparent;
+    }
+    .homepage-action-demo .dal-card { width: 100%; }
+    html[data-theme="dark"] .homepage-action-demo {
+      --dal-background: var(--bg);
+      --dal-foreground: var(--text);
+      --dal-primary: var(--cyan);
+      --dal-eef: #54d9b8;
+      --dal-hand: #76a7ff;
+      --dal-lower: #ff8b51;
+    }
+    html[data-theme="dark"] .homepage-action-demo .dal-card { border-color: var(--line); background: rgba(13,18,20,.98); box-shadow: 0 22px 70px rgba(0,0,0,.22); }
+    html[data-theme="dark"] .homepage-action-demo .dal-intro > p { color: var(--muted); }
+    html[data-theme="dark"] .homepage-action-demo .dal-pipeline { border-color: var(--line); background: #0a0f11; }
+    html[data-theme="dark"] .homepage-action-demo .dal-live,
+    html[data-theme="dark"] .homepage-action-demo .dal-column-labels,
+    html[data-theme="dark"] .homepage-action-demo .dal-source small,
+    html[data-theme="dark"] .homepage-action-demo .dal-timeline p span,
+    html[data-theme="dark"] .homepage-action-demo .dal-legend small { color: var(--dim); }
+    html[data-theme="dark"] .homepage-action-demo .dal-motion-glyph,
+    html[data-theme="dark"] .homepage-action-demo .dal-rvq-card { border-color: currentColor; background: var(--panel-2); }
+    html[data-theme="dark"] .homepage-action-demo .dal-motion-glyph { border-color: var(--line); }
+    html[data-theme="dark"] .homepage-action-demo .dal-flow-line,
+    html[data-theme="dark"] .homepage-action-demo .dal-flow-head { stroke: #697579; }
+    html[data-theme="dark"] .homepage-action-demo .dal-timeline-rule { background: var(--line); }
+    html[data-theme="dark"] .homepage-action-demo .dal-timeline b,
+    html[data-theme="dark"] .homepage-action-demo .dal-legend b { color: #c4cdce; }
+    html[data-theme="dark"] .homepage-action-demo .dal-legend,
+    html[data-theme="dark"] .homepage-action-demo .dal-joint-note { border-color: var(--line); }
+
+    .vla-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 24px; }
+    .vla-facts { display: grid; gap: 10px; margin-top: 34px; }
+    .vla-fact { padding: 17px 18px; border: 1px solid var(--line); border-radius: 11px; }
+    .vla-fact b { display: block; color: var(--cyan); font-size: 18px; letter-spacing: -.03em; }
+    .vla-fact span { color: var(--dim); font-size: 9px; text-transform: uppercase; }
+
+    .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .video-slot { position: relative; aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; border: 1px dashed #3b474a; border-radius: 18px; background: var(--panel); overflow: hidden; }
+    .video-slot::before { content: ""; position: absolute; inset: 0; opacity: .75; background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px); background-size: 32px 32px; }
+    .play { position: relative; z-index: 1; width: 50px; height: 50px; display: grid; place-items: center; border: 1px solid #4a585b; border-radius: 50%; color: var(--cyan); font-size: 14px; }
+    .video-info { position: absolute; z-index: 2; inset: auto 18px 16px; display: flex; justify-content: space-between; gap: 14px; color: #8e999b; font-size: 9px; text-transform: uppercase; }
+    .video-info strong { color: #c6cece; font-size: 10px; }
+
+    footer { padding: 50px 0; }
+    .footer-row { display: flex; justify-content: space-between; gap: 30px; color: var(--dim); font-size: 10px; text-transform: uppercase; }
+    .footer-row strong { color: #bbc4c5; }
+
+    html[data-theme="light"] .nav-links a,
+    html[data-theme="light"] .card-head,
+    html[data-theme="light"] .hero-video-label,
+    html[data-theme="light"] .hero-video-meta,
+    html[data-theme="light"] .placeholder-tag,
+    html[data-theme="light"] .video-info { color: #66736e; }
+    html[data-theme="light"] .hero-video,
+    html[data-theme="light"] .copy-card,
+    html[data-theme="light"] .benchmark,
+    html[data-theme="light"] .task,
+    html[data-theme="light"] .video-slot { box-shadow: 0 18px 54px rgba(23,35,29,.07); }
+    html[data-theme="light"] .hero-video { background: rgba(255,255,255,.94); }
+    html[data-theme="light"] .hero-video-stage,
+    html[data-theme="light"] .placeholder { background-color: #edf0eb; background-image: linear-gradient(rgba(12,25,19,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(12,25,19,.045) 1px, transparent 1px); }
+    html[data-theme="light"] .video-slot::before { background-image: linear-gradient(rgba(12,25,19,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(12,25,19,.045) 1px, transparent 1px); }
+    html[data-theme="light"] .hero-video-stage::before { border-color: #9da9a3; }
+    html[data-theme="light"] .hero-video-stage::after { border-color: #9da9a3; }
+    html[data-theme="light"] .hero-play,
+    html[data-theme="light"] .play,
+    html[data-theme="light"] .placeholder-icon { border-color: #9ba8a2; }
+    html[data-theme="light"] .placeholder,
+    html[data-theme="light"] .video-slot { border-color: #9ba8a2; }
+    html[data-theme="light"] .hero-video-meta strong,
+    html[data-theme="light"] .training-items span,
+    html[data-theme="light"] .steps li,
+    html[data-theme="light"] td,
+    html[data-theme="light"] .token span,
+    html[data-theme="light"] .video-info strong,
+    html[data-theme="light"] .footer-row strong { color: #2f3c37; }
+    html[data-theme="light"] .tbd { border-color: #aeb8b3; color: #596660; }
+
+    @media (max-width: 980px) {
+      .nav-links { display: none; }
+      .hero-video { max-width: 100%; }
+      .section-title { grid-template-columns: 1fr; gap: 18px; }
+      .content-grid, .vla-layout { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .shell { width: min(calc(100% - 28px), var(--max)); }
+      .site-header { height: 66px; }
+      .hero-wrap { padding: 60px 0 70px; }
+      h1 { font-size: clamp(62px, 21vw, 90px); }
+      .resource-links { width: 100%; gap: 6px; margin-top: 24px; }
+      .resource-links a { min-width: 0; flex: 1; padding-inline: 10px; }
+      .intro { margin-top: 28px; font-size: 15px; line-height: 1.78; }
+      .facts { grid-template-columns: repeat(2, 1fr); }
+      .fact { padding: 18px 12px; }
+      .fact:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+      .fact:nth-child(4) { border-top: 1px solid var(--line); }
+      .hero-video { margin-top: 52px; border-radius: 19px; }
+      .hero-video-meta { align-items: flex-start; flex-direction: column; gap: 6px; }
+      .section { padding: 82px 0; }
+      h2 { font-size: 45px; }
+      .section-lead { font-size: 14px; }
+      .training-mix { grid-template-columns: 1fr; gap: 12px; }
+      .training-items { gap: 8px 18px; }
+      .training-items span:not(:last-child)::after { right: -11px; }
+      .copy-card { min-height: 0; padding: 26px 22px; }
+      .placeholder { min-height: 330px; }
+      .token-grid { grid-template-columns: 1fr; }
+      .benchmark-head { align-items: flex-start; flex-direction: column; }
+      th, td { padding-inline: 9px; }
+      .video-grid { grid-template-columns: 1fr; }
+      .footer-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="shell" aria-label="主导航">
+      <a class="brand" href="#intro"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><span>OM·EM</span></a>
+      <div class="nav-links mono">
+        <a href="#er">ER Model</a>
+        <a href="#vla">VLA Model</a>
+        <a href="#robot">Robot Tests</a>
+      </div>
+      <div class="header-actions">
+        <button class="theme-toggle mono" id="themeToggle" type="button" aria-label="切换到亮色模式" aria-pressed="false">
+          <span class="theme-toggle-icon" id="themeIcon" aria-hidden="true">☼</span>
+          <span id="themeText">Light</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-wrap" id="intro">
+      <div class="shell hero">
+        <div>
+          <div class="eyebrow mono">Generalist humanoid foundation model</div>
+          <h1>One Model.<span>Every Move.</span></h1>
+          <div class="resource-links mono" id="resources" aria-label="项目资源">
+            <a href="#resources">Code <i aria-hidden="true">↗</i></a>
+            <a href="#resources">Models <i aria-hidden="true">↗</i></a>
+            <a href="#resources">Datasets <i aria-hidden="true">↗</i></a>
+          </div>
+          <p class="intro">One Model. Every Move. 是一个面向通用人形机器人研发的 5B VLA，使用约 2,500 小时高质量真机数据和大规模通用 VLM 数据联合训练。模型以交互为中心进行世界建模，单模型能力覆盖桌面操作、移动操作、蹲起与行走，并支持二指夹爪和不同类型的五指灵巧手。</p>
+          <div class="facts" aria-label="项目核心数据">
+            <div class="fact"><strong>5B</strong><span class="mono">VLA parameters</span></div>
+            <div class="fact"><strong>3M+</strong><span class="mono">ER samples</span></div>
+            <div class="fact"><strong>2,500h</strong><span class="mono">Robot data</span></div>
+            <div class="fact"><strong>1×</strong><span class="mono">Shared model</span></div>
+          </div>
+        </div>
+
+        <aside class="hero-video" aria-label="项目快剪合集视频占位">
+          <div class="card-head mono"><span>Project highlight reel</span><strong>Video placeholder</strong></div>
+          <div class="hero-video-stage">
+            <div class="hero-play" aria-hidden="true">▶</div>
+            <span class="hero-video-label mono">Replace with highlight video · 16:9</span>
+          </div>
+          <div class="hero-video-meta mono"><strong>Desktop · Mobile · Whole-body</strong><span>Hero film / 01</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="er">
+      <div class="shell">
+        <div class="section-title">
+          <div class="section-index mono">01 / Method</div>
+          <div>
+            <div class="method-label mono">ER Model · Embodied Reasoner</div>
+            <h2>理解交互，<br /><em>预测变化。</em></h2>
+            <p class="section-lead">ER 模型基于 Qwen3-VL-4B 构建。超过 300 万条训练数据覆盖图像点预测、目标检测、多图推理、2D 轨迹预测、3D 目标检测和多图空间问答，并与通用图文数据混合训练。模型在保持通用视觉语言能力的同时，提升了具身场景中的空间理解与推理能力。</p>
+          </div>
+        </div>
+
+        <div class="training-mix" aria-label="ER 模型训练数据构成">
+          <strong class="mono">Training mix</strong>
+          <div class="training-items mono">
+            <span>Point Prediction</span><span>Object Detection</span><span>Multi-image Reasoning</span><span>2D Trajectory</span><span>3D Detection</span><span>Spatial QA</span><span>General VLM Data</span>
+          </div>
+        </div>
+
+        <div class="benchmark" aria-label="具身推理 benchmark 结果表格">
+          <div class="benchmark-head"><h3>Embodied reasoning benchmarks</h3><span class="mono">16 models · 16 benchmarks</span></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr class="group-head">
+                  <th class="model-col" rowspan="2">Model</th>
+                  <th colspan="13">Spatial Understanding</th>
+                  <th colspan="3">Multimodal Understanding</th>
+                </tr>
+                <tr>
+                  <th>RoboVQA</th><th>Ego-Plan2</th><th>RefSpatial</th><th>Where2Place</th><th>Pixmo-Point</th><th>BLINK</th><th>CV-Bench</th><th>EmbSpatial</th><th>RoboSpatial</th><th>SAT</th><th>VSI-Bench</th><th>VSR</th><th>ERQA</th><th>RealWorldQA</th><th>MME</th><th>MMMU_VAL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="model-col"><strong>UnifoLM-ER-1</strong></td>
+                  <td class="score-best">61.37</td><td class="score-best">56.01</td><td class="score-best">57.40</td><td>66</td><td class="score-best">74.79</td><td>77.70</td><td class="score-best">89.61</td><td class="score-best">86.48</td><td class="score-best">70.2</td><td>78.00</td><td>56.61</td><td class="score-best">86.74</td><td class="score-best">51.50</td><td class="score-best">71.37</td><td>2303.70</td><td>54.66</td>
+                </tr>
+                <tr>
+                  <td class="model-col">RoboBrain2.0-7B</td>
+                  <td>30</td><td>28.84</td><td>42.22</td><td>64.51</td><td>45.27</td><td>83.9</td><td>85.7</td><td>76.13</td><td>49.37</td><td>74.67</td><td>48.32</td><td>84</td><td>/</td><td>69.41</td><td>2057.4</td><td>44.44</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Robix-7B</td>
+                  <td>/</td><td>/</td><td>/</td><td>41.9</td><td>29.5</td><td class="score-best">87.6</td><td>86.5</td><td>77.4</td><td>/</td><td>71.1</td><td>/</td><td>83.3</td><td>/</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Pelican-7B</td>
+                  <td>31.83</td><td>33.71</td><td>25.12</td><td>59.95</td><td>20.37</td><td>82.4</td><td>79.35</td><td>73.08</td><td>57.83</td><td>52</td><td>53.24</td><td>82.18</td><td>/</td><td>69.28</td><td>2141.9</td><td>51.11</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Cosmos-R1-7B</td>
+                  <td>38.84</td><td>26.04</td><td>5.61</td><td>2.92</td><td>8.22</td><td>71.54</td><td>76.67</td><td>68.93</td><td>42.38</td><td class="score-best">82.67</td><td>25.37</td><td>82.41</td><td>/</td><td>67.58</td><td>2157.4</td><td>37.44</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Qwen3-VL-4B</td>
+                  <td>47.73</td><td>40.65</td><td>46.6</td><td>63.04</td><td>48.25</td><td>65.8</td><td>85.09</td><td>79.6</td><td>61.7</td><td>68.67</td><td>58.4</td><td>81.55</td><td>39.5</td><td>70.98</td><td>2325.2</td><td>57.78</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Qwen3-VL-8B</td>
+                  <td>43.28</td><td>49.73</td><td>54.2</td><td>61.91</td><td>51.01</td><td>69.1</td><td>86.16</td><td>78.5</td><td>66.9</td><td>67.33</td><td>59.4</td><td>83.18</td><td>41.5</td><td>70.59</td><td class="score-best">2412.5</td><td class="score-best">62.33</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Embodied-R1</td>
+                  <td>51.8</td><td>26.5</td><td>39.7</td><td>69.5</td><td>49.4</td><td>76.6</td><td>82.7</td><td>67.4</td><td>47.43</td><td>76.3</td><td>26.56</td><td>/</td><td>35.24</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Embodied-R1.5</td>
+                  <td>60.98</td><td>53.82</td><td>54.15</td><td class="score-best">74</td><td>64.84</td><td>87.1</td><td>86.9</td><td>78.1</td><td>69.7</td><td>74.7</td><td>56.1</td><td>/</td><td>46</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+                <tr class="group-start">
+                  <td class="model-col">Gemini-ER 1.5</td>
+                  <td>/</td><td>/</td><td>41.8</td><td>48.0</td><td>/</td><td>65.2</td><td>83.6</td><td>73.4</td><td>57.7</td><td>62.0</td><td>39.9</td><td>/</td><td>47.0</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Gemini 2.5 Pro</td>
+                  <td>/</td><td>/</td><td>33.6</td><td>37.0</td><td>/</td><td>69.2</td><td>85.9</td><td>78.0</td><td>71.3</td><td>74.7</td><td>51.1</td><td>/</td><td>56.0</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+                <tr>
+                  <td class="model-col">GPT-5.4</td>
+                  <td>31.8</td><td>44.1</td><td>15.7</td><td>34.7</td><td>27.5</td><td>87.9</td><td>76.7</td><td>73.2</td><td>53.1</td><td>74.7</td><td>52.6</td><td>/</td><td>50.5</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+                <tr class="group-start">
+                  <td class="model-col">GPT-5</td>
+                  <td>/</td><td>/</td><td>23.5</td><td>37.0</td><td>/</td><td>71.3</td><td>86.1</td><td>81.5</td><td>69.3</td><td>86.7</td><td>52.9</td><td>/</td><td>59.0</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Gemini 2.5 Flash</td>
+                  <td>/</td><td>/</td><td>41.2</td><td>48.0</td><td>/</td><td>46.1</td><td>85.5</td><td>76.2</td><td>73.4</td><td>73.3</td><td>45.3</td><td>/</td><td>47.5</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+                <tr>
+                  <td class="model-col">GPT-5-mini</td>
+                  <td>/</td><td>/</td><td>23.0</td><td>33.5</td><td>/</td><td>66.4</td><td>85.9</td><td>78.8</td><td>70.7</td><td>81.3</td><td>46.2</td><td>/</td><td>57.3</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Gemini-ER 1.5 (T)</td>
+                  <td>/</td><td>/</td><td>48.5</td><td>59.0</td><td>/</td><td>57.8</td><td>84.3</td><td>78.4</td><td>79.3</td><td>76.7</td><td>45.8</td><td>/</td><td>54.8</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="content-grid">
+          <article class="copy-card">
+            <h3>Dynamic region prediction</h3>
+            <p>我们利用光流定位未来会发生变化的区域，并将动态区域转换为二值 mask。VQ-VAE 将 mask 离散化为固定数量的 token，VLM 根据当前图像与文本，或图像与动作，预测未来动态区域对应的 mask token。</p>
+            <ol class="steps mono">
+              <li><span>01</span>Optical-flow annotation</li>
+              <li><span>02</span>Binary dynamic-region mask</li>
+              <li><span>03</span>VQ-VAE tokenization</li>
+              <li><span>04</span>Future mask-token prediction</li>
+            </ol>
+          </article>
+          <figure class="placeholder" aria-label="光流标注动态区域 mask 图片占位">
+            <div class="placeholder-center"><div class="placeholder-icon mono">▧</div><strong>光流标注动态区域 Mask</strong><small class="mono">Figure placeholder · 16:9</small></div>
+            <figcaption class="placeholder-tag mono">FIG 01 / OPTICAL-FLOW SUPERVISION</figcaption>
+          </figure>
+        </div>
+
+        <section class="dal-root homepage-action-demo" aria-label="离散动作学习动态示意图">
+          <article class="dal-card">
+            <header class="dal-intro">
+              <div class="dal-kicker"><span></span>ACTION TOKENIZER</div>
+              <h2>Discrete action learning</h2>
+              <p>统一动作空间按 EEF 运动、末端执行器和 Lower Body 划分为三个部分，并分别训练 RVQ 模型完成动作离散化。离散动作 token 与视觉、语言表征在同一 VLM 中对齐和联合训练。</p>
+            </header>
+
+            <section class="dal-pipeline" aria-label="离散动作学习流程图">
+              <div class="dal-live" aria-label="动画正在循环播放"><i></i>LIVE ENCODING</div>
+              <div class="dal-column-labels" aria-hidden="true">
+                <span>CONTINUOUS MOTION</span><span>VECTOR QUANTIZATION</span><span>DISCRETE TOKENS</span>
+              </div>
+
+              <div class="dal-tracks">
+                <div class="dal-track dal-track-eef">
+                  <div class="dal-source">
+                    <div class="dal-motion-glyph"><svg viewBox="0 0 78 54" aria-hidden="true"><path d="M9 36c11-2 19-9 25-20 5 9 14 16 28 20"></path><circle cx="34" cy="16" r="4"></circle></svg></div>
+                    <div><small>末端运动</small><strong>EEF Motion</strong></div>
+                  </div>
+                  <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3"></circle></svg>
+                  <div class="dal-rvq-card"><span>RVQ&nbsp; / &nbsp;01</span><strong>EEF Motion</strong><div class="dal-codebook" aria-hidden="true"><i></i><i></i><i></i></div></div>
+                  <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1" style="animation-delay:.25s"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3" style="animation-delay:.25s"></circle></svg>
+                  <div class="dal-token-sequence"><span class="dal-boundary">&lt;EEF_START&gt;</span><i>18</i><i>42</i><i>07</i><i>31</i><i>56</i><span class="dal-boundary">&lt;EEF_END&gt;</span></div>
+                </div>
+
+                <div class="dal-track dal-track-hand">
+                  <div class="dal-source">
+                    <div class="dal-motion-glyph"><svg viewBox="0 0 78 54" aria-hidden="true"><path d="M8 34c13 0 23-5 31-15 8 10 18 15 31 15"></path><path d="M24 38h30"></path></svg></div>
+                    <div><small>手部姿态</small><strong>End Effector</strong></div>
+                  </div>
+                  <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1" style="animation-delay:.45s"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3" style="animation-delay:.45s"></circle></svg>
+                  <div class="dal-rvq-card"><span>RVQ&nbsp; / &nbsp;02</span><strong>End Effector</strong><div class="dal-codebook" aria-hidden="true"><i></i><i></i><i></i></div></div>
+                  <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1" style="animation-delay:.7s"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3" style="animation-delay:.7s"></circle></svg>
+                  <div class="dal-token-sequence"><span class="dal-boundary">&lt;HAND_START&gt;</span><i>04</i><i>29</i><i>51</i><i>16</i><i>38</i><span class="dal-boundary">&lt;HAND_END&gt;</span></div>
+                </div>
+
+                <div class="dal-track dal-track-lower">
+                  <div class="dal-source">
+                    <div class="dal-motion-glyph"><svg viewBox="0 0 78 54" aria-hidden="true"><path d="M19 16h40l-5 24H24z"></path><path d="M28 40v7m22-7v7"></path></svg></div>
+                    <div><small>下肢动作</small><strong>Lower Body</strong></div>
+                  </div>
+                  <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1" style="animation-delay:.9s"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3" style="animation-delay:.9s"></circle></svg>
+                  <div class="dal-rvq-card"><span>RVQ&nbsp; / &nbsp;03</span><strong>Lower Body</strong><div class="dal-codebook" aria-hidden="true"><i></i><i></i><i></i></div></div>
+                  <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1" style="animation-delay:1.15s"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3" style="animation-delay:1.15s"></circle></svg>
+                  <div class="dal-token-sequence"><span class="dal-boundary">&lt;LOWER_START&gt;</span><i>27</i><i>11</i><i>44</i><i>03</i><i>22</i><span class="dal-boundary">&lt;LOWER_END&gt;</span></div>
+                </div>
+              </div>
+
+              <div class="dal-timeline">
+                <div class="dal-timeline-rule"><span></span></div>
+                <p><b>时间维度对齐</b><span>共享时间步 · 同步注入 VLM</span></p>
+              </div>
+            </section>
+
+            <footer class="dal-legend">
+              <div><span class="dal-legend-dot dal-track-eef"></span><p><b>RVQ / 01</b><small>EEF Motion</small></p></div>
+              <div><span class="dal-legend-dot dal-track-hand"></span><p><b>RVQ / 02</b><small>End Effector</small></p></div>
+              <div><span class="dal-legend-dot dal-track-lower"></span><p><b>RVQ / 03</b><small>Lower Body</small></p></div>
+              <div class="dal-joint-note"><span class="dal-joint-icon">⊕</span><p><b>Joint training</b><small>Vision + Language + Action</small></p></div>
+            </footer>
+          </article>
+        </section>
+      </div>
+    </section>
+
+    <section class="section" id="vla">
+      <div class="shell">
+        <div class="section-title">
+          <div class="section-index mono">02 / Method</div>
+          <div>
+            <div class="method-label mono" style="color:var(--blue)">VLA Model · Shared Policy</div>
+            <h2>多本体数据，<br /><em style="color:var(--blue)">同一个模型。</em></h2>
+            <p class="section-lead">VLA 使用约 2,500 小时、覆盖多种机器人本体与场景的真机数据。数据处理统一了末端坐标系与动作空间，模型结构基于 Unifolm-VLM-Flow 和 MMDiT 动作专家。VLA 预训练阶段同步混合通用 VLM 数据，持续保持视觉语言模型的通用能力。</p>
+          </div>
+        </div>
+
+        <div class="vla-layout">
+          <article class="copy-card">
+            <h3>Training setup</h3>
+            <p>真机数据、具身推理数据与通用 VLM 数据共同构成训练配方。所有机器人、任务和末端执行器共享同一套模型参数。</p>
+            <div class="vla-facts">
+              <div class="vla-fact"><b>≈ 2,500h</b><span class="mono">Multi-embodiment robot data</span></div>
+              <div class="vla-fact"><b>Co-training</b><span class="mono">Robot + general VLM data</span></div>
+              <div class="vla-fact"><b>Fully shared</b><span class="mono">One set of model weights</span></div>
+            </div>
+          </article>
+          <figure class="placeholder" aria-label="VLA模型结构图占位">
+            <div class="placeholder-center"><div class="placeholder-icon mono">◇</div><strong>VLA 模型结构</strong><small class="mono">Figure placeholder · architecture</small></div>
+            <figcaption class="placeholder-tag mono">FIG 03 / MODEL ARCHITECTURE</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="robot">
+      <div class="shell">
+        <div class="section-title">
+          <div class="section-index mono">03 / Evaluation</div>
+          <div>
+            <div class="method-label mono" style="color:var(--violet)">Real-robot tests · Unitree G1</div>
+            <h2>预训练模型，<br /><em style="color:var(--violet)">直接上真机。</em></h2>
+            <p class="section-lead">预训练模型直接部署在宇树 G1 机器人上，没有针对特定任务进行后训练。模型可以完成多种桌面操作、移动操作与全身任务，下面的视频区域将展示部分真机结果。</p>
+          </div>
+        </div>
+
+        <div class="video-grid" aria-label="真机测试视频占位">
+          <div class="video-slot"><div class="play">▶</div><div class="video-info mono"><strong>Desktop manipulation</strong><span>Video 01</span></div></div>
+          <div class="video-slot"><div class="play">▶</div><div class="video-info mono"><strong>Mobile manipulation</strong><span>Video 02</span></div></div>
+          <div class="video-slot"><div class="play">▶</div><div class="video-info mono"><strong>Squat &amp; whole-body</strong><span>Video 03</span></div></div>
+          <div class="video-slot"><div class="play">▶</div><div class="video-info mono"><strong>Walking</strong><span>Video 04</span></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-row mono"><span><strong>One Model. Every Move.</strong></span><span>Generalist VLA for humanoid robots</span></div>
+  </footer>
+  <script>
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+    function applyTheme(theme) {
+      const isLight = theme === 'light';
+      root.dataset.theme = theme;
+      toggle.setAttribute('aria-pressed', String(isLight));
+      toggle.setAttribute('aria-label', isLight ? '切换到暗色模式' : '切换到亮色模式');
+      themeIcon.textContent = isLight ? '☾' : '☼';
+      themeText.textContent = isLight ? 'Dark' : 'Light';
+      themeMeta.setAttribute('content', isLight ? '#f4f5f0' : '#080b0d');
+    }
+
+    let savedTheme = 'dark';
+    try { savedTheme = localStorage.getItem('omem-theme') || 'dark'; } catch (_) {}
+    applyTheme(savedTheme);
+
+    toggle.addEventListener('click', () => {
+      const nextTheme = root.dataset.theme === 'light' ? 'dark' : 'light';
+      applyTheme(nextTheme);
+      try { localStorage.setItem('omem-theme', nextTheme); } catch (_) {}
+    });
+  </script>
+</body>
+</html>
