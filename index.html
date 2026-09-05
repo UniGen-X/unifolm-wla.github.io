@@ -7,6 +7,7 @@
   <meta name="description" content="One Model. Every Move. — a 5B generalist VLA for humanoid robots." />
   <title>One Model. Every Move.</title>
   <link rel="stylesheet" href="discrete-action-learning-component/react/discrete-action-learning.css" />
+  <link rel="stylesheet" href="dynamic-region-prediction-component/dynamic-region-prediction.css" />
   <style>
     :root {
       --bg: #080b0d;
@@ -470,22 +471,70 @@
           </div>
         </div>
 
-        <div class="content-grid">
-          <article class="copy-card">
-            <h3>Dynamic region prediction</h3>
-            <p>我们利用光流定位未来会发生变化的区域，并将动态区域转换为二值 mask。VQ-VAE 将 mask 离散化为固定数量的 token，VLM 根据当前图像与文本，或图像与动作，预测未来动态区域对应的 mask token。</p>
-            <ol class="steps mono">
-              <li><span>01</span>Optical-flow annotation</li>
-              <li><span>02</span>Binary dynamic-region mask</li>
-              <li><span>03</span>VQ-VAE tokenization</li>
-              <li><span>04</span>Future mask-token prediction</li>
-            </ol>
+        <section class="drp-root" aria-label="动态区域预测动态示意图">
+          <article class="drp-card">
+            <div class="drp-intro">
+              <div class="drp-kicker"><span></span>DYNAMIC WORLD MODELING</div>
+              <h3>Dynamic region prediction</h3>
+              <p>我们利用光流定位未来会发生变化的区域，将动态区域转换为二值 mask，并通过 VQ-VAE 离散为固定数量的 token。VLM 根据当前图像与任务描述或动作，直接预测未来动态区域对应的 mask token。</p>
+            </div>
+
+            <div class="drp-board">
+              <div class="drp-status" aria-label="动画正在循环播放"><i></i>LIVE PIPELINE</div>
+              <div class="drp-row-label">01 / OPTICAL-FLOW SUPERVISION</div>
+
+              <div class="drp-supervision" aria-label="从连续图像生成动态区域 mask token 的流程">
+                <div class="drp-pair">
+                  <div class="drp-frame"><img src="assets/dynamic_region_prediction/head_left_t0.png" alt="机器人视角图像 t0" /><span>IMAGE_T0</span></div>
+                  <div class="drp-frame"><img src="assets/dynamic_region_prediction/head_left_t1.png" alt="机器人视角图像 t1" /><span>IMAGE_T1</span></div>
+                </div>
+                <div class="drp-connector" aria-hidden="true"><span></span></div>
+                <div class="drp-node"><div><span>ESTIMATE</span><strong>Optical<br />Flow</strong></div></div>
+                <div class="drp-connector" aria-hidden="true"><span style="animation-delay:.35s"></span></div>
+                <figure class="drp-visual drp-flow-visual">
+                  <img src="assets/dynamic_region_prediction/optical_flow_t0_t1.png" alt="t0 到 t1 的光流结果" />
+                  <figcaption>OPTICAL FLOW</figcaption>
+                </figure>
+                <div class="drp-connector" aria-hidden="true"><span style="animation-delay:.7s"></span></div>
+                <figure class="drp-visual drp-mask-visual">
+                  <img class="drp-mask-base" src="assets/dynamic_region_prediction/head_left_t1.png" alt="图像 t1" />
+                  <img class="drp-mask-overlay" src="assets/dynamic_region_prediction/mask_overlay_head_left_t1.png" alt="动态区域 mask 叠加结果" />
+                  <figcaption>DYNAMIC MASK</figcaption>
+                </figure>
+                <div class="drp-connector" aria-hidden="true"><span style="animation-delay:1.05s"></span></div>
+                <div class="drp-node"><div><span>DISCRETIZE</span><strong>VQ-VAE</strong></div></div>
+                <div class="drp-connector" aria-hidden="true"><span style="animation-delay:1.4s"></span></div>
+                <div class="drp-token-bank" aria-label="离散 mask tokens">
+                  <span>08</span><span>21</span><span>37</span><span>04</span>
+                  <span>19</span><span>42</span><span>11</span><span>26</span>
+                  <small class="drp-token-caption">MASK TOKENS</small>
+                </div>
+              </div>
+
+              <div class="drp-divider"></div>
+              <div class="drp-row-label">02 / FUTURE CHANGE PREDICTION</div>
+
+              <div class="drp-prediction" aria-label="VLM 预测未来 mask tokens 的流程">
+                <div class="drp-context">
+                  <img src="assets/dynamic_region_prediction/head_left_t0.png" alt="当前机器人视角图像" />
+                  <div class="drp-context-options"><span>Task</span><em>OR</em><span>Action</span></div>
+                </div>
+                <div class="drp-connector" aria-hidden="true"><span></span></div>
+                <div class="drp-vlm"><span>IMAGE + CONDITION</span><strong>VLM</strong></div>
+                <div class="drp-connector" aria-hidden="true"><span style="animation-delay:.55s"></span></div>
+                <div class="drp-output" aria-label="预测得到的未来 mask tokens">
+                  <span>08</span><span>21</span><span>37</span><span>04</span><span>19</span><span>42</span>
+                  <small>FUTURE MASK TOKENS</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="drp-legend">
+              <span><strong>Supervision</strong> · optical flow → binary mask → VQ-VAE</span>
+              <span><strong>Prediction</strong> · image + task/action → future mask tokens</span>
+            </div>
           </article>
-          <figure class="placeholder" aria-label="光流标注动态区域 mask 图片占位">
-            <div class="placeholder-center"><div class="placeholder-icon mono">▧</div><strong>光流标注动态区域 Mask</strong><small class="mono">Figure placeholder · 16:9</small></div>
-            <figcaption class="placeholder-tag mono">FIG 01 / OPTICAL-FLOW SUPERVISION</figcaption>
-          </figure>
-        </div>
+        </section>
 
         <section class="dal-root homepage-action-demo" aria-label="离散动作学习动态示意图">
           <article class="dal-card">
@@ -516,7 +565,7 @@
                 <div class="dal-track dal-track-hand">
                   <div class="dal-source">
                     <div class="dal-motion-glyph"><svg viewBox="0 0 78 54" aria-hidden="true"><path d="M8 34c13 0 23-5 31-15 8 10 18 15 31 15"></path><path d="M24 38h30"></path></svg></div>
-                    <div><small>手部姿态</small><strong>End Effector</strong></div>
+                    <div><small>末端执行器</small><strong>End Effector</strong></div>
                   </div>
                   <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1" style="animation-delay:.45s"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3" style="animation-delay:.45s"></circle></svg>
                   <div class="dal-rvq-card"><span>RVQ&nbsp; / &nbsp;02</span><strong>End Effector</strong><div class="dal-codebook" aria-hidden="true"><i></i><i></i><i></i></div></div>

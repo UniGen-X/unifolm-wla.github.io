@@ -12,7 +12,7 @@ const tracks = [
   {
     id: '02',
     label: 'End Effector',
-    eyebrow: '手部姿态',
+    eyebrow: '末端执行器',
     token: 'HAND',
     values: ['04', '29', '51', '16', '38'],
     className: 'dal-track-hand',
