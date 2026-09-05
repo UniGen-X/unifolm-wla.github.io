@@ -499,10 +499,11 @@
                 <figure class="drp-visual drp-mask-visual">
                   <img class="drp-mask-base" src="assets/dynamic_region_prediction/head_left_t1.png" alt="图像 t1" />
                   <img class="drp-mask-overlay" src="assets/dynamic_region_prediction/mask_overlay_head_left_t1.png" alt="动态区域 mask 叠加结果" />
+                  <img class="drp-mask-only" src="assets/dynamic_region_prediction/dynamic_mask_only.png" alt="从 RGB 图像中分离出的动态区域 mask" />
                   <figcaption>DYNAMIC MASK</figcaption>
                 </figure>
                 <div class="drp-connector" aria-hidden="true"><span style="animation-delay:1.05s"></span></div>
-                <div class="drp-node"><div><span>DISCRETIZE</span><strong>VQ-VAE</strong></div></div>
+                <div class="drp-node drp-vq-node"><div><span>DISCRETIZE</span><strong>VQ-VAE</strong></div></div>
                 <div class="drp-connector" aria-hidden="true"><span style="animation-delay:1.4s"></span></div>
                 <div class="drp-token-bank" aria-label="离散 mask tokens">
                   <span>08</span><span>21</span><span>37</span><span>04</span>

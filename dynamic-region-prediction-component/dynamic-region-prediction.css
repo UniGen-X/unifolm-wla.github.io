@@ -148,9 +148,20 @@
   animation: drp-scan 5.6s cubic-bezier(.65, 0, .35, 1) infinite;
 }
 
+.drp-mask-visual { z-index: 2; overflow: visible; }
 .drp-mask-visual .drp-mask-base,
-.drp-mask-visual .drp-mask-overlay { position: absolute; inset: 0; }
+.drp-mask-visual .drp-mask-overlay,
+.drp-mask-visual .drp-mask-only { position: absolute; inset: 0; border-radius: 12px; }
+.drp-mask-visual .drp-mask-base { animation: drp-mask-background 5.6s ease-in-out infinite; }
 .drp-mask-visual .drp-mask-overlay { animation: drp-mask-pulse 5.6s ease-in-out infinite; }
+.drp-mask-visual .drp-mask-only {
+  z-index: 2;
+  opacity: 0;
+  filter: drop-shadow(0 8px 12px color-mix(in srgb, var(--drp-accent) 28%, transparent));
+  transform-origin: center;
+  animation: drp-mask-to-vq 5.6s cubic-bezier(.55, 0, .32, 1) infinite;
+}
+.drp-mask-visual figcaption { z-index: 3; }
 
 .drp-node {
   min-height: 86px;
@@ -166,6 +177,7 @@
 
 .drp-node span { display: block; color: var(--drp-secondary); font: 700 8px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .1em; }
 .drp-node strong { display: block; margin-top: 7px; font-size: 13px; line-height: 1.15; }
+.drp-vq-node { position: relative; z-index: 3; animation: drp-vq-receive 5.6s ease-in-out infinite; }
 
 .drp-connector { position: relative; height: 22px; }
 .drp-connector::before {
@@ -345,8 +357,26 @@
 }
 
 @keyframes drp-mask-pulse {
-  0%, 40%, 100% { opacity: 0; }
-  53%, 86% { opacity: 1; }
+  0%, 39%, 67%, 100% { opacity: 0; }
+  51%, 59% { opacity: 1; }
+}
+
+@keyframes drp-mask-background {
+  0%, 58% { opacity: 1; }
+  67%, 92% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes drp-mask-to-vq {
+  0%, 57% { opacity: 0; transform: translateX(0) scale(1); }
+  66%, 72% { opacity: 1; transform: translateX(0) scale(1); }
+  84% { opacity: 1; transform: translateX(181px) scale(.36); }
+  89%, 100% { opacity: 0; transform: translateX(181px) scale(.24); }
+}
+
+@keyframes drp-vq-receive {
+  0%, 80%, 94%, 100% { transform: scale(1); box-shadow: none; }
+  86% { transform: scale(1.06); box-shadow: 0 0 0 7px color-mix(in srgb, var(--drp-secondary) 10%, transparent); }
 }
 
 @keyframes drp-dot {
