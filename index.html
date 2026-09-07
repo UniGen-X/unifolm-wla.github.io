@@ -8,6 +8,7 @@
   <title>One Model. Every Move.</title>
   <link rel="stylesheet" href="discrete-action-learning-component/react/discrete-action-learning.css" />
   <link rel="stylesheet" href="dynamic-region-prediction-component/dynamic-region-prediction.css" />
+  <link rel="stylesheet" href="vla-architecture-component/vla-architecture.css" />
   <style>
     :root {
       --bg: #080b0d;
@@ -236,7 +237,8 @@
     html[data-theme="dark"] .homepage-action-demo .dal-legend,
     html[data-theme="dark"] .homepage-action-demo .dal-joint-note { border-color: var(--line); }
 
-    .vla-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 18px; }
+    .vla-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; align-items: start; }
+    .vla-training-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 18px; }
     .vla-facts { display: grid; gap: 8px; margin-top: 24px; }
     .vla-fact { padding: 17px 18px; border: 1px solid var(--line); border-radius: 11px; }
     .vla-fact b { display: block; color: var(--cyan); font-size: 18px; letter-spacing: -.03em; }
@@ -615,19 +617,331 @@
         </div>
 
         <div class="vla-layout">
-          <article class="copy-card">
-            <h3>Training setup</h3>
-            <p>真机数据、具身推理数据与通用 VLM 数据共同构成训练配方。所有机器人、任务和末端执行器共享同一套模型参数。</p>
-            <div class="vla-facts">
-              <div class="vla-fact"><b>≈ 2,500h</b><span class="mono">Multi-embodiment robot data</span></div>
-              <div class="vla-fact"><b>Co-training</b><span class="mono">Robot + general VLM data</span></div>
-              <div class="vla-fact"><b>Fully shared</b><span class="mono">One set of model weights</span></div>
-            </div>
-          </article>
-          <figure class="placeholder" aria-label="VLA模型结构图占位">
-            <div class="placeholder-center"><div class="placeholder-icon mono">◇</div><strong>VLA 模型结构</strong><small class="mono">Figure placeholder · architecture</small></div>
-            <figcaption class="placeholder-tag mono">FIG 03 / MODEL ARCHITECTURE</figcaption>
-          </figure>
+          <section class="dal-root vla-architecture-demo" aria-label="VLA 模型结构动画">
+            <article class="dal-card vla-arch-card">
+              <header class="dal-intro">
+                <div class="dal-kicker"><span></span>VLA ARCHITECTURE</div>
+                <h2>Training setup</h2>
+                <p>真机数据、具身推理数据与通用 VLM 数据共同构成训练配方。所有机器人、任务和末端执行器共享同一套模型参数。</p>
+                <div class="vla-training-strip" aria-label="VLA 训练设置">
+                  <div class="vla-fact"><b>≈ 2,500h</b><span class="mono">Multi-embodiment robot data</span></div>
+                  <div class="vla-fact"><b>Co-training</b><span class="mono">Robot + general VLM data</span></div>
+                  <div class="vla-fact"><b>Fully shared</b><span class="mono">One set of model weights</span></div>
+                </div>
+              </header>
+
+              <section class="vla-arch-pipeline" aria-label="VLA 模型结构流程图">
+                <div class="dal-live" aria-label="动画正在循环播放"><i></i>LIVE GRAPH</div>
+                <div class="vla-arch-canvas">
+                  <svg class="vla-dashed-callouts" viewBox="0 0 1280 720" aria-hidden="true">
+                    <path d="M840 18 L806 260"></path>
+                    <path d="M802 477 L832 657"></path>
+                  </svg>
+                  <div class="vla-arch-top">
+                    <div class="vla-objectives">
+                      <div class="vla-objective-card language">
+                        <b>Language prediction</b>
+                        <div class="vla-token-row" aria-hidden="true"><i>pick</i><i>up</i><i>the</i><i>sleeve</i></div>
+                        <div class="vla-objective-arrows" aria-hidden="true"><span class="up"></span><span class="down"></span></div>
+                      </div>
+                      <div class="vla-objective-card">
+                        <b>Discrete actions</b>
+                        <div class="vla-token-row" aria-hidden="true"><i>8</i><i>29</i><i>63</i><i>118</i></div>
+                        <div class="vla-objective-arrows" aria-hidden="true"><span class="up"></span><span class="down"></span></div>
+                      </div>
+                    </div>
+                    <div class="vla-continuous-card">
+                      <b>Continuous actions</b>
+                      <div class="vla-action-row" aria-hidden="true"><i>-1.7</i><i>1.25</i><i>3.14</i><i>1.42</i></div>
+                      <div class="vla-continuous-arrows" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                  </div>
+
+                  <div class="vla-main-row">
+                    <div class="vla-backbone">
+                      <div class="vla-backbone-strip" aria-hidden="true">
+                        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                      </div>
+                      <div class="vla-backbone-label">Unifolm-VLM-ER</div>
+                      <div class="vla-backbone-strip" aria-hidden="true">
+                        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                      </div>
+                    </div>
+
+                    <div class="vla-gradient-link" aria-label="阻断 action expert 梯度回传">
+                      <svg class="dal-flow-arrow vla-flow-arrow" viewBox="0 0 88 116" aria-hidden="true">
+                        <path class="dal-flow-line" d="M8 -10 H46 V72 H80" pathLength="1"></path>
+                        <path class="dal-flow-head" d="m72 64 10 8-10 8"></path>
+                        <circle class="vla-route-dot" r="3">
+                          <animateMotion
+                            dur="2.8s"
+                            repeatCount="indefinite"
+                            calcMode="linear"
+                            keyTimes="0; .1; .42; .64; .86; 1"
+                            keyPoints="0; 0; .295; .726; 1; 1"
+                            path="M8 -10 H46 V72 H80">
+                          </animateMotion>
+                        </circle>
+                      </svg>
+                      <div class="vla-stop-gate" aria-hidden="true">
+                        <span>Stop Gradient</span>
+                      </div>
+                    </div>
+
+                    <div class="vla-expert" aria-label="MMDiT action expert">
+                      <div class="vla-expert-field">
+                        <div class="vla-expert-row top" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+                        <svg class="vla-expert-loops" viewBox="0 0 198 158" aria-hidden="true">
+                          <path d="M28 0 C28 -28 44 -28 44 0 L44 50"></path>
+                          <path d="M70 0 C70 -28 86 -28 86 0 L86 50"></path>
+                          <path d="M112 0 C112 -28 128 -28 128 0 L128 50"></path>
+                          <path d="M154 0 C154 -28 170 -28 170 0 L170 50"></path>
+                          <path d="M44 108 L44 158 C44 186 28 186 28 158"></path>
+                          <path d="M86 108 L86 158 C86 186 70 186 70 158"></path>
+                          <path d="M128 108 L128 158 C128 186 112 186 112 158"></path>
+                          <path d="M170 108 L170 158 C170 186 154 186 154 158"></path>
+                          <polygon points="24,165 28,158 32,165"></polygon>
+                          <polygon points="66,165 70,158 74,165"></polygon>
+                          <polygon points="108,165 112,158 116,165"></polygon>
+                          <polygon points="150,165 154,158 158,165"></polygon>
+                        </svg>
+                        <div class="vla-expert-band"><b>Action Expert</b><small>MMDiT flow decoder</small></div>
+                        <div class="vla-expert-row bottom" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+                      </div>
+                    </div>
+
+                    <div class="vla-expert-detail" aria-label="Action expert 内部结构示意">
+                      <svg viewBox="0 0 360 616" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+                        <rect class="vla-detail-left-bg" x="14" y="-28" width="158" height="204" rx="8"></rect>
+                        <rect class="vla-detail-right-bg" x="188" y="-28" width="158" height="204" rx="8"></rect>
+                        <rect class="vla-detail-left-bg" x="14" y="254" width="158" height="222" rx="8"></rect>
+                        <rect class="vla-detail-right-bg" x="188" y="254" width="158" height="222" rx="8"></rect>
+
+                        <path d="M120 564 H28 V14" fill="none" stroke="#9aa0a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M28 14 H58 M28 70 H58 M28 158 H58 M28 403 H58" fill="none" stroke="#9aa0a6" stroke-width="1.5" stroke-linecap="round"></path>
+                        <polygon points="58,14 52,10 52,18" fill="#9aa0a6"></polygon>
+                        <polygon points="58,70 52,66 52,74" fill="#9aa0a6"></polygon>
+                        <polygon points="58,158 52,154 52,162" fill="#9aa0a6"></polygon>
+                        <polygon points="58,403 52,399 52,407" fill="#9aa0a6"></polygon>
+                        <path d="M240 564 H332 V14" fill="none" stroke="#9aa0a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M332 14 H302 M332 70 H302 M332 158 H302 M332 403 H302" fill="none" stroke="#9aa0a6" stroke-width="1.5" stroke-linecap="round"></path>
+                        <polygon points="302,14 308,10 308,18" fill="#9aa0a6"></polygon>
+                        <polygon points="302,70 308,66 308,74" fill="#9aa0a6"></polygon>
+                        <polygon points="302,158 308,154 308,162" fill="#9aa0a6"></polygon>
+                        <polygon points="302,403 308,399 308,407" fill="#9aa0a6"></polygon>
+
+                        <path d="M67 464.5 H40 V127 H102" fill="none" stroke="#2f9e9b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <polygon points="102,127 96,123 96,131" fill="#2f9e9b"></polygon>
+                        <path d="M102 121 H40 V-18 H102" fill="none" stroke="#2f9e9b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <polygon points="102,-18 96,-22 96,-14" fill="#2f9e9b"></polygon>
+                        <path d="M296 464.5 H320 V127 H258" fill="none" stroke="#7aa05c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <polygon points="258,127 264,123 264,131" fill="#7aa05c"></polygon>
+                        <path d="M258 121 H320 V-18 H258" fill="none" stroke="#7aa05c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <polygon points="258,-18 264,-22 264,-14" fill="#7aa05c"></polygon>
+
+                        <g transform="translate(0 -20)">
+                        <g transform="translate(16 0)">
+                        <g transform="translate(0 -4)">
+                        <circle cx="93" cy="6" r="7" fill="none" stroke="#2f9e9b" stroke-width="1"></circle>
+                        <path d="M93 0 V12 M87 6 H99" fill="none" stroke="#2f9e9b" stroke-width="1" stroke-linecap="round"></path>
+                        <path d="M93 26 V20" fill="none" stroke="#2f9e9b" stroke-width="1.5" stroke-linecap="round"></path>
+                        <polygon points="90,20 93,15 96,20" fill="#2f9e9b"></polygon>
+                        <rect class="vla-detail-block" x="45" y="28" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="93" y="38">Gate</text>
+                        <rect class="vla-detail-block" x="45" y="50" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="93" y="60">MLP</text>
+                        <path d="M93 82 V76" fill="none" stroke="#2f9e9b" stroke-width="1.5" stroke-linecap="round"></path>
+                        <polygon points="89,76 93,71 97,76" fill="#2f9e9b"></polygon>
+                        <rect class="vla-detail-block" x="45" y="84" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="93" y="94">Scale &amp; Shift</text>
+                        <rect class="vla-detail-block" x="45" y="106" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="93" y="116">Norm</text>
+                        </g>
+                        <path d="M93 136 V130" fill="none" stroke="#2f9e9b" stroke-width="1.5" stroke-linecap="round"></path>
+                        <polygon points="90,130 93,123 96,130" fill="#2f9e9b"></polygon>
+                        <circle cx="93" cy="144" r="7" fill="none" stroke="#2f9e9b" stroke-width="1"></circle>
+                        <path d="M93 138 V150 M87 144 H99" fill="none" stroke="#2f9e9b" stroke-width="1" stroke-linecap="round"></path>
+                        <path d="M93 165 V158" fill="none" stroke="#2f9e9b" stroke-width="1.5" stroke-linecap="round"></path>
+                        <polygon points="90,158 93,151 96,158" fill="#2f9e9b"></polygon>
+                        <rect class="vla-detail-block" x="45" y="168" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="93" y="178">Gate</text>
+                        </g>
+
+                        <g transform="translate(-16 0)">
+                        <g transform="translate(0 -4)">
+                        <circle cx="267" cy="6" r="7" fill="none" stroke="#7aa05c" stroke-width="1"></circle>
+                        <path d="M267 0 V12 M261 6 H273" fill="none" stroke="#7aa05c" stroke-width="1" stroke-linecap="round"></path>
+                        <path d="M267 26 V20" fill="none" stroke="#7aa05c" stroke-width="1.5" stroke-linecap="round"></path>
+                        <polygon points="264,20 267,15 270,20" fill="#7aa05c"></polygon>
+                        <rect class="vla-detail-block" x="219" y="28" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="267" y="38">Gate</text>
+                        <rect class="vla-detail-block" x="219" y="50" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="267" y="60">MLP</text>
+                        <path d="M267 82 V76" fill="none" stroke="#7aa05c" stroke-width="1.5" stroke-linecap="round"></path>
+                        <polygon points="263,76 267,71 271,76" fill="#7aa05c"></polygon>
+                        <rect class="vla-detail-block" x="219" y="84" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="267" y="94">Scale &amp; Shift</text>
+                        <rect class="vla-detail-block" x="219" y="106" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="267" y="116">Norm</text>
+                        </g>
+                        <path d="M267 136 V130" fill="none" stroke="#7aa05c" stroke-width="1.5" stroke-linecap="round"></path>
+                        <polygon points="264,130 267,123 270,130" fill="#7aa05c"></polygon>
+                        <circle cx="267" cy="144" r="7" fill="none" stroke="#7aa05c" stroke-width="1"></circle>
+                        <path d="M267 138 V150 M261 144 H273" fill="none" stroke="#7aa05c" stroke-width="1" stroke-linecap="round"></path>
+                        <path d="M267 165 V158" fill="none" stroke="#7aa05c" stroke-width="1.5" stroke-linecap="round"></path>
+                        <polygon points="264,158 267,151 270,158" fill="#7aa05c"></polygon>
+                        <rect class="vla-detail-block" x="219" y="168" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="267" y="178">Gate</text>
+                        </g>
+                        </g>
+
+                        <g transform="translate(0 -2)">
+                        <path d="M109 186 V179" fill="none" stroke="#2f9e9b" stroke-width="2" stroke-linecap="round"></path>
+                        <polygon points="105,179 109,172 113,179" fill="#2f9e9b"></polygon>
+                        <path d="M251 186 V179" fill="none" stroke="#7aa05c" stroke-width="2" stroke-linecap="round"></path>
+                        <polygon points="247,179 251,172 255,179" fill="#7aa05c"></polygon>
+                        <rect class="vla-detail-block" x="45" y="188" width="270" height="24" rx="3"></rect>
+                        <text class="vla-detail-label" x="180" y="200">Self-Attention</text>
+
+                        <rect class="vla-detail-chip-blue" x="55" y="217.5" width="18" height="18" rx="3"></rect>
+                        <rect class="vla-detail-chip-violet" x="83" y="217.5" width="18" height="18" rx="3"></rect>
+                        <rect class="vla-detail-chip-blue" x="153.5" y="217.5" width="18" height="18" rx="3"></rect>
+                        <rect class="vla-detail-chip-violet" x="181.5" y="217.5" width="18" height="18" rx="3"></rect>
+                        <rect class="vla-detail-chip-blue" x="243" y="217.5" width="18" height="18" rx="3"></rect>
+                        <rect class="vla-detail-chip-violet" x="271" y="217.5" width="18" height="18" rx="3"></rect>
+                        <text class="vla-detail-label small" x="63" y="226.5">q</text>
+                        <text class="vla-detail-label small" x="91" y="226.5">q</text>
+                        <text class="vla-detail-label small" x="162.5" y="226.5">k</text>
+                        <text class="vla-detail-label small" x="190.5" y="226.5">k</text>
+                        <text class="vla-detail-label small" x="252" y="226.5">v</text>
+                        <text class="vla-detail-label small" x="280" y="226.5">v</text>
+                        </g>
+
+                        <g transform="translate(0 4)">
+                        <path d="M93 256 V248 H63 V239" fill="none" stroke="#2f9e9b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <polygon points="59,239 63,232 67,239" fill="#2f9e9b"></polygon>
+                        <path d="M93 256 V248 H162.5 V239" fill="none" stroke="#2f9e9b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <polygon points="158.5,239 162.5,232 166.5,239" fill="#2f9e9b"></polygon>
+                        <path d="M138 312 V251 H252 V239" fill="none" stroke="#2f9e9b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <polygon points="248,239 252,232 256,239" fill="#2f9e9b"></polygon>
+                        <g transform="translate(16 0)">
+                        <rect class="vla-detail-block" x="45" y="258" width="64" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="77" y="268">RoPE</text>
+                        <rect class="vla-detail-block" x="45" y="280" width="64" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="77" y="290">QK-Norm</text>
+                        <path d="M64 312 V309" fill="none" stroke="#2f9e9b" stroke-width="2" stroke-linecap="round"></path>
+                        <polygon points="60,309 64,302 68,309" fill="#2f9e9b"></polygon>
+                        <path d="M93 312 V309" fill="none" stroke="#2f9e9b" stroke-width="2" stroke-linecap="round"></path>
+                        <polygon points="89,309 93,302 97,309" fill="#2f9e9b"></polygon>
+                        <rect class="vla-detail-chip-blue" x="55" y="315" width="18" height="18" rx="3"></rect>
+                        <rect class="vla-detail-chip-blue" x="84" y="315" width="18" height="18" rx="3"></rect>
+                        <rect class="vla-detail-chip-blue" x="113" y="315" width="18" height="18" rx="3"></rect>
+                        <text class="vla-detail-label small" x="63" y="324">q</text>
+                        <text class="vla-detail-label small" x="93" y="324">k</text>
+                        <text class="vla-detail-label small" x="122" y="324">v</text>
+                        <path d="M93 349 V342" fill="none" stroke="#2f9e9b" stroke-width="2" stroke-linecap="round"></path>
+                        <polygon points="89,342 93,335 97,342" fill="#2f9e9b"></polygon>
+                        <rect class="vla-detail-block" x="45" y="350" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="93" y="360">Linear</text>
+                        <path d="M93 387 V378" fill="none" stroke="#2f9e9b" stroke-width="2" stroke-linecap="round"></path>
+                        <polygon points="89,379 93,372 97,379" fill="#2f9e9b"></polygon>
+                        <rect class="vla-detail-block" x="45" y="389" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="93" y="399">Scale &amp; Shift</text>
+                        <rect class="vla-detail-block" x="45" y="411" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="93" y="421">Norm</text>
+                        </g>
+
+                        <path d="M235 256 V245 H91 V238" fill="none" stroke="#7aa05c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <polygon points="87,238 91,231 95,238" fill="#7aa05c"></polygon>
+                        <path d="M235 256 V245 H190.5 V238" fill="none" stroke="#7aa05c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <polygon points="186.5,238 190.5,231 194.5,238" fill="#7aa05c"></polygon>
+                        <path d="M280 312 V245 H280 V239" fill="none" stroke="#7aa05c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <polygon points="276,239 280,232 284,239" fill="#7aa05c"></polygon>
+                        <g transform="translate(-16 0)">
+                        <rect class="vla-detail-block" x="219" y="258" width="64" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="251" y="268">RoPE</text>
+                        <rect class="vla-detail-block" x="219" y="280" width="64" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="251" y="290">QK-Norm</text>
+                        <path d="M238 312 V309" fill="none" stroke="#7aa05c" stroke-width="2" stroke-linecap="round"></path>
+                        <polygon points="234,309 238,302 242,309" fill="#7aa05c"></polygon>
+                        <path d="M267 312 V309" fill="none" stroke="#7aa05c" stroke-width="2" stroke-linecap="round"></path>
+                        <polygon points="263,309 267,302 271,309" fill="#7aa05c"></polygon>
+                        <rect class="vla-detail-chip-violet" x="229" y="315" width="18" height="18" rx="3"></rect>
+                        <rect class="vla-detail-chip-violet" x="258" y="315" width="18" height="18" rx="3"></rect>
+                        <rect class="vla-detail-chip-violet" x="287" y="315" width="18" height="18" rx="3"></rect>
+                        <text class="vla-detail-label small" x="237" y="324">q</text>
+                        <text class="vla-detail-label small" x="267" y="324">k</text>
+                        <text class="vla-detail-label small" x="296" y="324">v</text>
+                        <path d="M267 349 V342" fill="none" stroke="#7aa05c" stroke-width="2" stroke-linecap="round"></path>
+                        <polygon points="263,342 267,335 271,342" fill="#7aa05c"></polygon>
+                        <rect class="vla-detail-block" x="219" y="350" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="267" y="360">Linear</text>
+                        <path d="M267 387 V378" fill="none" stroke="#7aa05c" stroke-width="2" stroke-linecap="round"></path>
+                        <polygon points="263,379 267,372 271,379" fill="#7aa05c"></polygon>
+                        <rect class="vla-detail-block" x="219" y="389" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="267" y="399">Scale &amp; Shift</text>
+                        <rect class="vla-detail-block" x="219" y="411" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="267" y="421">Norm</text>
+                        </g>
+
+                        <path d="M109 449 V440" fill="none" stroke="#2f9e9b" stroke-width="2" stroke-linecap="round"></path>
+                        <polygon points="105,441 109,434 113,441" fill="#2f9e9b"></polygon>
+                        <rect class="vla-detail-chip-blue" x="67" y="453" width="15" height="15" rx="1"></rect>
+                        <rect class="vla-detail-chip-blue" x="91" y="453" width="15" height="15" rx="1"></rect>
+                        <rect class="vla-detail-chip-blue" x="115" y="453" width="15" height="15" rx="1"></rect>
+                        <rect class="vla-detail-chip-blue" x="139" y="453" width="15" height="15" rx="1"></rect>
+                        <path d="M253 449 V440" fill="none" stroke="#7aa05c" stroke-width="2" stroke-linecap="round"></path>
+                        <polygon points="249,441 253,434 257,441" fill="#7aa05c"></polygon>
+                        <rect class="vla-detail-chip-violet" x="209" y="453" width="15" height="15" rx="1"></rect>
+                        <rect class="vla-detail-chip-violet" x="233" y="453" width="15" height="15" rx="1"></rect>
+                        <rect class="vla-detail-chip-violet" x="257" y="453" width="15" height="15" rx="1"></rect>
+                        <rect class="vla-detail-chip-violet" x="281" y="453" width="15" height="15" rx="1"></rect>
+                        <path d="M109 489 V476" fill="none" stroke="#2f9e9b" stroke-width="1.5" stroke-linecap="round"></path>
+                        <polygon points="105,476 109,469 113,476" fill="#2f9e9b"></polygon>
+                        <path d="M253 489 V476" fill="none" stroke="#7aa05c" stroke-width="1.5" stroke-linecap="round"></path>
+                        <polygon points="249,476 253,469 257,476" fill="#7aa05c"></polygon>
+                        <rect class="vla-detail-block" x="61" y="489" width="96" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="109" y="499">Linear</text>
+                        <rect class="vla-detail-block" x="189" y="489" width="128" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="253" y="499">Embodiment Embed</text>
+                        <path d="M109 527 V517" fill="none" stroke="#2f9e9b" stroke-width="1.5" stroke-linecap="round"></path>
+                        <polygon points="105,517 109,510 113,517" fill="#2f9e9b"></polygon>
+                        <text class="vla-detail-label" x="109" y="539">VLM Hidden State</text>
+                        <path d="M253 527 V517" fill="none" stroke="#7aa05c" stroke-width="1.5" stroke-linecap="round"></path>
+                        <polygon points="249,517 253,510 257,517" fill="#7aa05c"></polygon>
+                        <text class="vla-detail-label" x="253" y="539">Noise Actions</text>
+                        <g transform="translate(0 72)">
+                        <rect class="vla-detail-block" x="120" y="478" width="120" height="20" rx="3"></rect>
+                        <text class="vla-detail-label" x="180" y="488">MLP</text>
+                        <path d="M180 516 V507" fill="none" stroke="#a8aaa6" stroke-width="2" stroke-linecap="round"></path>
+                        <polygon points="176,508 180,501 184,508" fill="#a8aaa6"></polygon>
+                        <rect fill="#d8d8d8" stroke="#c7c7c7" x="169" y="518" width="22" height="16" rx="4"></rect>
+                        <text class="vla-detail-label small" x="180" y="526">t</text>
+                        </g>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="vla-bottom-row">
+                    <div class="vla-inputs" aria-label="模型输入">
+                      <div class="vla-input-card image-encoder">
+                        <b>Image encoder</b>
+                        <div class="vla-input-previews" aria-hidden="true">
+                          <img src="assets/dynamic_region_prediction/head_left_t0.png" alt="">
+                          <img src="assets/dynamic_region_prediction/head_left_t0.png" alt="">
+                          <img src="assets/dynamic_region_prediction/head_left_t0.png" alt="">
+                        </div>
+                      </div>
+                      <div class="vla-input-card shift-right"><b>Prompt</b></div>
+                      <div class="vla-input-card shift-right"><b>State</b></div>
+                    </div>
+                    <div class="vla-noise">Noise Actions</div>
+                  </div>
+                </div>
+              </section>
+            </article>
+          </section>
         </div>
       </div>
     </section>
