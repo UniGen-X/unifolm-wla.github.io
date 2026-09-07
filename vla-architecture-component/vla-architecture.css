@@ -182,10 +182,8 @@
       border-color: #6c9eba;
       border-radius: 5px;
     }
-    .vla-objective-card:first-child .vla-token-row i:nth-child(1) { min-width: 42px; }
-    .vla-objective-card:first-child .vla-token-row i:nth-child(2) { min-width: 38px; }
-    .vla-objective-card:first-child .vla-token-row i:nth-child(3) { min-width: 42px; }
-    .vla-objective-card:first-child .vla-token-row i:nth-child(4) { min-width: 58px; }
+    .vla-objective-card.language .vla-token-row { gap: 4px; }
+    .vla-objective-card.language .vla-token-row i { min-width: 0; padding-inline: 5px; font-size: 9px; }
     .vla-objective-card:nth-child(2) .vla-token-row i:nth-child(-n+3) { min-width: 38px; }
     .vla-objective-card:nth-child(2) .vla-token-row i:nth-child(4) { min-width: 42px; }
     .vla-objective-card:nth-child(2) .vla-token-row i {
