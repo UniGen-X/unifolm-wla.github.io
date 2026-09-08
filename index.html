@@ -116,7 +116,7 @@
     .resource-links a { min-width: 116px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 10px 18px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--text); font-size: 10px; font-weight: 650; text-decoration: none; text-transform: uppercase; transition: transform .2s ease, border-color .2s ease; }
     .resource-links a:hover { transform: translateY(-2px); border-color: var(--cyan); }
     .resource-links i { color: var(--cyan); font-size: 12px; font-style: normal; }
-    .intro { max-width: 900px; margin: 28px auto 0; color: #bec6c6; font-size: 18px; font-weight: 400; line-height: 1.62; }
+    .intro { max-width: 900px; margin: 28px auto 0; color: #bec6c6; font-size: 18px; font-weight: 400; line-height: 1.62; text-align: left; }
     .resource-links + .intro { margin-top: 20px; }
     html[data-theme="light"] .intro { color: #4f5d58; }
     .facts { max-width: 900px; display: grid; grid-template-columns: repeat(4, 1fr); margin: 30px auto 0; border-block: 1px solid var(--line); }
@@ -138,24 +138,22 @@
     .hero-video-meta strong { color: #c5cece; font-size: 10px; font-weight: 600; }
 
     .section { padding: 82px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 74px; }
-    .section-title { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 38px; align-items: start; margin-bottom: 38px; }
-    .section-index { padding-top: 11px; color: var(--dim); font-size: 10px; text-transform: uppercase; letter-spacing: .14em; }
+    .section-title { margin-bottom: 38px; }
     h2 { margin: 0; font-family: var(--font-display); font-size: clamp(42px, 4.5vw, 58px); font-weight: 600; line-height: 1.07; letter-spacing: -.025em; }
     h2 em { color: var(--cyan); font-style: normal; }
     .section-lead { max-width: 900px; margin: 18px 0 0; color: var(--muted); font-size: 18px; font-weight: 400; line-height: 1.62; }
     .method-label { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 20px; color: var(--orange); font-size: 10px; text-transform: uppercase; letter-spacing: .13em; }
     .method-label::before { content: ""; width: 7px; height: 7px; background: currentColor; border-radius: 2px; }
 
-    .method-module-title { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 38px; align-items: start; margin-bottom: 24px; }
-    .method-module-index { padding-top: 7px; color: var(--dim); font-size: 10px; text-transform: uppercase; letter-spacing: .14em; }
-    .method-module-copy h3 { margin: 0; font-family: var(--font-display); font-size: 36px; font-weight: 600; line-height: 1.1; letter-spacing: -.02em; }
-    .method-module-copy p { max-width: 900px; margin: 12px 0 0; color: var(--muted); font-size: 17px; line-height: 1.62; }
-
     .training-mix { display: grid; grid-template-columns: 150px 1fr; gap: 24px; align-items: start; margin-bottom: 46px; padding: 16px 0; border-block: 1px solid var(--line); }
     .training-mix > strong { color: var(--cyan); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
     .training-items { display: flex; flex-wrap: wrap; gap: 6px 18px; }
     .training-items span { position: relative; color: #aeb8b9; font-size: 11px; white-space: nowrap; }
     .training-items span:not(:last-child)::after { content: "/"; position: absolute; right: -14px; color: #465154; }
+    .er-reasoning-module { margin-bottom: 18px; }
+    .er-reasoning-content { margin: 0 20px 20px; }
+    .er-reasoning-module .training-mix { margin-bottom: 24px; padding-inline: 6px; }
+    .er-reasoning-module .benchmark { margin-bottom: 0; }
 
     .content-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 18px; align-items: stretch; margin-top: 18px; }
     .copy-card { min-height: 420px; padding: 34px; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); }
@@ -300,7 +298,6 @@
     @media (max-width: 980px) {
       .nav-links { display: none; }
       .hero-video { max-width: 100%; }
-      .section-title, .method-module-title { grid-template-columns: 1fr; gap: 18px; }
       .content-grid, .vla-layout { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
@@ -320,8 +317,6 @@
       .section { padding: 58px 0; }
       h2 { font-size: 38px; line-height: 1.1; }
       .section-lead { font-size: 16px; line-height: 1.62; }
-      .method-module-copy h3 { font-size: 30px; }
-      .method-module-copy p { font-size: 16px; }
       .training-mix { grid-template-columns: 1fr; gap: 12px; }
       .training-items { gap: 8px 18px; }
       .training-items span:not(:last-child)::after { right: -11px; }
@@ -332,6 +327,7 @@
       th, td { padding-inline: 9px; }
       .video-grid { grid-template-columns: 1fr; }
       .footer-row { flex-direction: column; }
+      .er-reasoning-content { margin: 0 8px 12px; }
     }
   </style>
 </head>
@@ -364,10 +360,10 @@
             <a href="#resources">Models <i aria-hidden="true">↗</i></a>
             <a href="#resources">Datasets <i aria-hidden="true">↗</i></a>
           </div>
-          <p class="intro">One Model. Every Move. 是一个面向通用人形机器人研发的 5B VLA，使用约 2,500 小时高质量真机数据和大规模通用 VLM 数据联合训练。模型以交互为中心进行世界建模，单模型能力覆盖桌面操作、移动操作、蹲起与行走，并支持二指夹爪和不同类型的五指灵巧手。</p>
+          <p class="intro">UnifoLM-VLA-1 是一个面向通用人形机器人研发的 5B VLA，使用约 2,500 小时高质量真机数据和大规模通用 VLM 数据联合训练。模型以交互为中心进行世界建模，单模型能力覆盖桌面操作、移动操作、蹲起与行走，并支持二指夹爪和不同类型的五指灵巧手。</p>
           <div class="facts" aria-label="项目核心数据">
             <div class="fact"><strong>5B</strong><span class="mono">VLA parameters</span></div>
-            <div class="fact"><strong>3M+</strong><span class="mono">ER samples</span></div>
+            <div class="fact"><strong>5M+</strong><span class="mono">ER samples</span></div>
             <div class="fact"><strong>2,500h</strong><span class="mono">Robot data</span></div>
             <div class="fact"><strong>1×</strong><span class="mono">Shared model</span></div>
           </div>
@@ -387,7 +383,6 @@
     <section class="section" id="er">
       <div class="shell">
         <div class="section-title">
-          <div class="section-index mono">01 / Method</div>
           <div>
             <div class="method-label mono">ER Model · Embodied Reasoner</div>
             <h2>理解世界，<br /><em>连接行动。</em></h2>
@@ -395,23 +390,25 @@
           </div>
         </div>
 
-        <div class="method-module-title">
-          <div class="method-module-index mono">01A / Embodied reasoning</div>
-          <div class="method-module-copy">
-            <h3>Embodied reasoning</h3>
-            <p>ER 模型基于 Qwen3-VL-4B 构建。超过 300 万条训练数据覆盖图像点预测、目标检测、多图推理、2D 轨迹预测、3D 目标检测和多图空间问答，并与通用图文数据混合训练。模型在保持通用视觉语言能力的同时，提升了具身场景中的空间理解与推理能力。</p>
-          </div>
-        </div>
+        <section class="drp-root er-reasoning-module" aria-label="具身推理模块">
+          <article class="drp-card">
+            <div class="drp-intro">
+              <div class="drp-kicker"><span></span>EMBODIED REASONING</div>
+            <h3>Embodied Reasoning</h3>
+            <p>UnifoLM-ER-1 模型基于 Qwen3-VL-4B 构建。超过 500 万条训练数据覆盖图像点预测、目标检测、多图推理、2D 轨迹预测、3D 目标检测和多图空间问答，并与通用图文数据混合训练。模型在保持通用视觉语言能力的同时，提升了具身场景中的空间理解与推理能力。</p>
+            </div>
 
-        <div class="training-mix" aria-label="ER 模型训练数据构成">
-          <strong class="mono">Training mix</strong>
-          <div class="training-items mono">
-            <span>Point Prediction</span><span>Object Detection</span><span>Multi-image Reasoning</span><span>2D Trajectory</span><span>3D Detection</span><span>Spatial QA</span><span>General VLM Data</span>
-          </div>
-        </div>
+            <div class="er-reasoning-content">
 
-        <div class="benchmark" aria-label="具身推理 benchmark 结果表格">
-          <div class="benchmark-head"><h3>Benchmark results</h3><span class="mono">16 models · 16 benchmarks</span></div>
+              <div class="training-mix" aria-label="ER 模型训练数据构成">
+                <strong class="mono">Training mix</strong>
+                <div class="training-items mono">
+                  <span>Point Prediction</span><span>Object Detection</span><span>Multi-image Reasoning</span><span>2D Trajectory</span><span>3D Detection</span><span>Spatial QA</span><span>General VLM Data</span>
+                </div>
+              </div>
+
+              <div class="benchmark" aria-label="具身推理 benchmark 结果表格">
+          <div class="benchmark-head"><h3>Benchmark results</h3></div>
           <div class="table-wrap">
             <table>
               <thead>
@@ -492,13 +489,16 @@
               </tbody>
             </table>
           </div>
-        </div>
+              </div>
+            </div>
+          </article>
+        </section>
 
         <section class="drp-root" aria-label="动态区域预测动态示意图">
           <article class="drp-card">
             <div class="drp-intro">
               <div class="drp-kicker"><span></span>DYNAMIC WORLD MODELING</div>
-              <h3>Dynamic region prediction</h3>
+              <h3>Dynamic Region Prediction</h3>
               <p>我们利用光流定位未来会发生变化的区域，将动态区域转换为二值 mask，并通过 VQ-VAE 离散为固定数量的 token。VLM 根据当前图像与任务描述或动作，直接预测未来动态区域对应的 mask token。</p>
             </div>
 
@@ -564,8 +564,8 @@
           <article class="dal-card">
             <header class="dal-intro">
               <div class="dal-kicker"><span></span>ACTION TOKENIZER</div>
-              <h2>Discrete action learning</h2>
-              <p>统一动作空间按 EEF 运动、末端执行器和 Lower Body 划分为三个部分，并分别训练 RVQ 模型完成动作离散化。离散动作 token 与视觉、语言表征在同一 VLM 中对齐和联合训练。</p>
+              <h2>Discrete Action Learning</h2>
+              <p>统一动作空间按 EEF 运动、末端执行器和 Lower Body 划分为三个部分，并分别训练 RVQ 模型完成动作离散化。基于 UnifoLM-ER-1 加入离散动作 token，未来变化区域的 mask token，视觉、语言表征在同一 VLM 中对齐和联合训练得到 UnifoLM-ER-Flow 模型。</p>
             </header>
 
             <section class="dal-pipeline" aria-label="离散动作学习流程图">
@@ -629,11 +629,10 @@
     <section class="section" id="vla">
       <div class="shell">
         <div class="section-title">
-          <div class="section-index mono">02 / Method</div>
           <div>
             <div class="method-label mono" style="color:var(--blue)">VLA Model · Shared Policy</div>
             <h2>多本体数据，<br /><em style="color:var(--blue)">同一个模型。</em></h2>
-            <p class="section-lead">VLA 使用约 2,500 小时、覆盖多种机器人本体与场景的真机数据。数据处理统一了末端坐标系与动作空间，模型结构基于 Unifolm-VLM-Flow 和 MMDiT 动作专家。VLA 预训练阶段同步混合通用 VLM 数据，持续保持视觉语言模型的通用能力。</p>
+            <p class="section-lead">VLA 使用约 2,500 小时、覆盖多种机器人本体与场景的真机数据。数据处理统一了末端坐标系与动作空间，模型结构基于 UnifoLM-ER-Flow 和 MMDiT 动作专家。VLA 预训练阶段同步混合通用 VLM 数据，持续保持视觉语言模型的通用能力。</p>
           </div>
         </div>
 
@@ -642,7 +641,7 @@
             <article class="dal-card vla-arch-card">
               <header class="dal-intro">
                 <div class="dal-kicker"><span></span>VLA ARCHITECTURE</div>
-                <h2>Training setup</h2>
+                <h2>Training Setup</h2>
                 <p>真机数据、具身推理数据与通用 VLM 数据共同构成训练配方。所有机器人、任务和末端执行器共享同一套模型参数。</p>
                 <div class="vla-training-strip" aria-label="VLA 训练设置">
                   <div class="vla-fact"><b>≈ 2,500h</b><span class="mono">Multi-embodiment robot data</span></div>
@@ -970,7 +969,6 @@
     <section class="section" id="robot">
       <div class="shell">
         <div class="section-title">
-          <div class="section-index mono">03 / Evaluation</div>
           <div>
             <div class="method-label mono" style="color:var(--violet)">Real-robot tests · Unitree G1</div>
             <h2>预训练模型，<br /><em style="color:var(--violet)">直接上真机。</em></h2>
