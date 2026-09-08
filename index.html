@@ -123,7 +123,7 @@
     .fact { padding: 16px 18px; border-left: 1px solid var(--line); }
     .fact:first-child { border-left: 0; }
     .fact strong { display: block; font-family: var(--font-display); font-size: 32px; font-weight: 600; line-height: 1; letter-spacing: -.025em; }
-    .fact span { display: block; margin-top: 8px; color: var(--dim); font-size: 9px; text-transform: uppercase; letter-spacing: .12em; }
+    .fact span { display: block; margin-top: 8px; color: var(--dim); font-size: 11px; text-transform: uppercase; letter-spacing: .12em; }
 
     .hero-video { width: min(100%, 1120px); margin: 44px auto 0; border: 1px solid var(--line); border-radius: 26px; background: rgba(13,18,20,.92); overflow: hidden; box-shadow: 0 28px 80px rgba(0,0,0,.25); }
     .card-head { height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; border-bottom: 1px solid var(--line); color: #7b8789; font-size: 10px; text-transform: uppercase; }
@@ -253,12 +253,23 @@
     .vla-fact b { display: block; color: var(--cyan); font-size: 18px; letter-spacing: -.03em; }
     .vla-fact span { color: var(--dim); font-size: 9px; text-transform: uppercase; }
 
-    .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .video-slot { position: relative; aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; border: 1px dashed #3b474a; border-radius: 18px; background: var(--panel); overflow: hidden; }
-    .video-slot::before { content: ""; position: absolute; inset: 0; opacity: .75; background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px); background-size: 32px 32px; }
-    .play { position: relative; z-index: 1; width: 50px; height: 50px; display: grid; place-items: center; border: 1px solid #4a585b; border-radius: 50%; color: var(--cyan); font-size: 14px; }
-    .video-info { position: absolute; z-index: 2; inset: auto 18px 16px; display: flex; justify-content: space-between; gap: 14px; color: #8e999b; font-size: 9px; text-transform: uppercase; }
-    .video-info strong { color: #c6cece; font-size: 10px; }
+    .fullbody-gallery { overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: var(--panel); box-shadow: 0 22px 70px rgba(0,0,0,.12); }
+    .fullbody-gallery-head { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 22px; border-bottom: 1px solid var(--line); }
+    .fullbody-gallery-title { display: flex; align-items: baseline; gap: 14px; }
+    .fullbody-gallery-title strong { font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -.02em; }
+    .fullbody-gallery-title span { color: var(--violet); font-size: 9px; text-transform: uppercase; }
+    .fullbody-gallery-actions { display: flex; align-items: center; gap: 8px; }
+    .fullbody-gallery-actions span { margin-right: 6px; color: var(--dim); font-size: 9px; text-transform: uppercase; }
+    .gallery-arrow { width: 36px; height: 36px; display: grid; place-items: center; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--panel-2); color: var(--text); cursor: pointer; font-size: 17px; transition: border-color .2s ease, color .2s ease, opacity .2s ease; }
+    .gallery-arrow:hover:not(:disabled) { border-color: var(--violet); color: var(--violet); }
+    .gallery-arrow:disabled { opacity: .28; cursor: default; }
+    .fullbody-viewport { overflow-x: auto; padding: 14px 14px 10px; scroll-behavior: smooth; scroll-snap-type: x mandatory; scrollbar-color: var(--violet) var(--panel-2); scrollbar-width: thin; }
+    .fullbody-track { min-width: 100%; display: grid; grid-template-rows: repeat(2, auto); grid-auto-flow: column; grid-auto-columns: calc((100% - 12px) / 2); gap: 12px; }
+    .fullbody-video { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--panel-2); scroll-snap-align: start; }
+    .fullbody-video video { width: 100%; aspect-ratio: 16 / 9; display: block; background: #050708; object-fit: cover; }
+    .fullbody-video-meta { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 11px 13px 12px; }
+    .fullbody-video-meta strong { overflow: hidden; color: var(--text); font-size: 12px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+    .fullbody-video-meta span { flex: none; color: var(--dim); font-size: 9px; text-transform: uppercase; }
 
     footer { padding: 34px 0; }
     .footer-row { display: flex; justify-content: space-between; gap: 30px; color: var(--dim); font-size: 10px; text-transform: uppercase; }
@@ -268,30 +279,25 @@
     html[data-theme="light"] .card-head,
     html[data-theme="light"] .hero-video-label,
     html[data-theme="light"] .hero-video-meta,
-    html[data-theme="light"] .placeholder-tag,
-    html[data-theme="light"] .video-info { color: #66736e; }
+    html[data-theme="light"] .placeholder-tag { color: #66736e; }
     html[data-theme="light"] .hero-video,
     html[data-theme="light"] .copy-card,
     html[data-theme="light"] .benchmark,
     html[data-theme="light"] .task,
-    html[data-theme="light"] .video-slot { box-shadow: 0 18px 54px rgba(23,35,29,.07); }
+    html[data-theme="light"] .fullbody-gallery { box-shadow: 0 18px 54px rgba(23,35,29,.07); }
     html[data-theme="light"] .hero-video { background: rgba(255,255,255,.94); }
     html[data-theme="light"] .hero-video-stage,
     html[data-theme="light"] .placeholder { background-color: #edf0eb; background-image: linear-gradient(rgba(12,25,19,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(12,25,19,.045) 1px, transparent 1px); }
-    html[data-theme="light"] .video-slot::before { background-image: linear-gradient(rgba(12,25,19,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(12,25,19,.045) 1px, transparent 1px); }
     html[data-theme="light"] .hero-video-stage::before { border-color: #9da9a3; }
     html[data-theme="light"] .hero-video-stage::after { border-color: #9da9a3; }
     html[data-theme="light"] .hero-play,
-    html[data-theme="light"] .play,
     html[data-theme="light"] .placeholder-icon { border-color: #9ba8a2; }
-    html[data-theme="light"] .placeholder,
-    html[data-theme="light"] .video-slot { border-color: #9ba8a2; }
+    html[data-theme="light"] .placeholder { border-color: #9ba8a2; }
     html[data-theme="light"] .hero-video-meta strong,
     html[data-theme="light"] .training-items span,
     html[data-theme="light"] .steps li,
     html[data-theme="light"] td,
     html[data-theme="light"] .token span,
-    html[data-theme="light"] .video-info strong,
     html[data-theme="light"] .footer-row strong { color: #2f3c37; }
     html[data-theme="light"] .tbd { border-color: #aeb8b3; color: #596660; }
 
@@ -325,7 +331,8 @@
       .token-grid { grid-template-columns: 1fr; }
       .benchmark-head { align-items: flex-start; flex-direction: column; }
       th, td { padding-inline: 9px; }
-      .video-grid { grid-template-columns: 1fr; }
+      .fullbody-gallery-head { align-items: flex-start; flex-direction: column; gap: 14px; }
+      .fullbody-gallery-actions { width: 100%; justify-content: flex-end; }
       .footer-row { flex-direction: column; }
       .er-reasoning-content { margin: 0 8px 12px; }
     }
@@ -395,7 +402,7 @@
             <div class="drp-intro">
               <div class="drp-kicker"><span></span>EMBODIED REASONING</div>
             <h3>Embodied Reasoning</h3>
-            <p>UnifoLM-ER-1 模型基于 Qwen3-VL-4B 构建。超过 500 万条训练数据覆盖图像点预测、目标检测、多图推理、2D 轨迹预测、3D 目标检测和多图空间问答，并与通用图文数据混合训练。模型在保持通用视觉语言能力的同时，提升了具身场景中的空间理解与推理能力。</p>
+            <p>UnifoLM-ER-1 模型基于 Qwen3-VL-4B，构建超过 500 万条训练数据覆盖图像点预测、目标检测、多图推理、2D 轨迹预测、3D 目标检测和多图空间问答，并与通用图文数据混合训练。模型在保持通用视觉语言能力的同时，提升了具身场景中的空间理解与推理能力。</p>
             </div>
 
             <div class="er-reasoning-content">
@@ -976,12 +983,64 @@
           </div>
         </div>
 
-        <div class="video-grid" aria-label="真机测试视频占位">
-          <div class="video-slot"><div class="play">▶</div><div class="video-info mono"><strong>Desktop manipulation</strong><span>Video 01</span></div></div>
-          <div class="video-slot"><div class="play">▶</div><div class="video-info mono"><strong>Mobile manipulation</strong><span>Video 02</span></div></div>
-          <div class="video-slot"><div class="play">▶</div><div class="video-info mono"><strong>Squat &amp; whole-body</strong><span>Video 03</span></div></div>
-          <div class="video-slot"><div class="play">▶</div><div class="video-info mono"><strong>Walking</strong><span>Video 04</span></div></div>
-        </div>
+        <section class="fullbody-gallery" aria-label="全身操作视频合集">
+          <header class="fullbody-gallery-head">
+            <div class="fullbody-gallery-title">
+              <strong>Full-body operations</strong>
+              <span class="mono">10 tasks</span>
+            </div>
+            <div class="fullbody-gallery-actions">
+              <span class="mono">Scroll to explore</span>
+              <button class="gallery-arrow" id="fullbodyPrev" type="button" aria-label="查看上一组视频">←</button>
+              <button class="gallery-arrow" id="fullbodyNext" type="button" aria-label="查看下一组视频">→</button>
+            </div>
+          </header>
+
+          <div class="fullbody-viewport" id="fullbodyViewport" tabindex="0">
+            <div class="fullbody-track">
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/full_body/bathroom.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Bathroom</strong><span class="mono">01</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/full_body/bed_room.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Bedroom</strong><span class="mono">02</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/full_body/get_the_vegetables.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Get the vegetables</strong><span class="mono">03</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/full_body/kitchen.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Kitchen</strong><span class="mono">04</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/full_body/organize_shoes.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Organize shoes</strong><span class="mono">05</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/full_body/put_the_folder_into_cabinet.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Put the folder into cabinet</strong><span class="mono">06</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/full_body/storehouse.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Storehouse</strong><span class="mono">07</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/full_body/take_out_the_trash.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Take out the trash</strong><span class="mono">08</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/full_body/tidy_up_the_sofa.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Tidy up the sofa</strong><span class="mono">09</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/full_body/washing_machine.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Washing machine</strong><span class="mono">10</span></div>
+              </article>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   </main>
@@ -1015,6 +1074,60 @@
       applyTheme(nextTheme);
       try { localStorage.setItem('omem-theme', nextTheme); } catch (_) {}
     });
+
+    const fullbodyViewport = document.getElementById('fullbodyViewport');
+    const fullbodyPrev = document.getElementById('fullbodyPrev');
+    const fullbodyNext = document.getElementById('fullbodyNext');
+
+    function updateFullbodyControls() {
+      const maxScroll = fullbodyViewport.scrollWidth - fullbodyViewport.clientWidth;
+      fullbodyPrev.disabled = fullbodyViewport.scrollLeft <= 2;
+      fullbodyNext.disabled = fullbodyViewport.scrollLeft >= maxScroll - 2;
+    }
+
+    function scrollFullbody(direction) {
+      const videos = fullbodyViewport.querySelectorAll('.fullbody-video');
+      const firstVideo = videos[0];
+      const track = fullbodyViewport.querySelector('.fullbody-track');
+      const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 0;
+      const columnStep = firstVideo.getBoundingClientRect().width + gap;
+      const totalColumns = Math.ceil(videos.length / 2);
+      const visibleColumns = 2;
+      const maxStartColumn = Math.max(0, totalColumns - visibleColumns);
+      const stops = [0];
+
+      for (let column = 2; column < maxStartColumn; column += 2) stops.push(column);
+      if (stops.at(-1) !== maxStartColumn) stops.push(maxStartColumn);
+
+      const currentColumn = fullbodyViewport.scrollLeft / columnStep;
+      const targetColumn = direction > 0
+        ? stops.find((column) => column > currentColumn + 0.1) ?? maxStartColumn
+        : stops.findLast((column) => column < currentColumn - 0.1) ?? 0;
+      const maxScroll = fullbodyViewport.scrollWidth - fullbodyViewport.clientWidth;
+      const targetLeft = targetColumn === maxStartColumn ? maxScroll : targetColumn * columnStep;
+
+      fullbodyViewport.scrollTo({ left: targetLeft, behavior: 'smooth' });
+    }
+
+    fullbodyPrev.addEventListener('click', () => scrollFullbody(-1));
+    fullbodyNext.addEventListener('click', () => scrollFullbody(1));
+    fullbodyViewport.addEventListener('scroll', updateFullbodyControls, { passive: true });
+    window.addEventListener('resize', updateFullbodyControls);
+    requestAnimationFrame(updateFullbodyControls);
+
+    const fullbodyVideos = fullbodyViewport.querySelectorAll('video');
+    if ('IntersectionObserver' in window) {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.play().catch(() => {});
+          } else {
+            entry.target.pause();
+          }
+        });
+      }, { root: fullbodyViewport, threshold: 0.35 });
+      fullbodyVideos.forEach((video) => videoObserver.observe(video));
+    }
   </script>
 </body>
 </html>
