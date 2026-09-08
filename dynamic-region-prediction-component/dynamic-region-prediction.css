@@ -4,7 +4,7 @@
   --drp-accent: var(--orange, #cf5c26);
   width: 100%;
   color: var(--text, #17211f);
-  font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-family: var(--font-text, "SF Pro SC", "SF Pro Text", "PingFang SC", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif);
 }
 
 .drp-root,
@@ -48,8 +48,8 @@
 }
 
 .drp-kicker span { width: 22px; height: 2px; background: currentColor; }
-.drp-intro h3 { margin: 16px 0 12px; color: var(--text, #17211f); font-size: clamp(32px, 4vw, 54px); line-height: 1.02; letter-spacing: -.045em; }
-.drp-intro p { max-width: 880px; margin: 0; color: var(--muted, #5b6663); font-size: 15px; line-height: 1.85; }
+.drp-intro h3 { margin: 16px 0 12px; color: var(--text, #17211f); font-family: var(--font-display, "SF Pro SC", "SF Pro Display", "PingFang SC", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif); font-size: clamp(32px, 3.6vw, 48px); font-weight: 600; line-height: 1.08; letter-spacing: -.025em; }
+.drp-intro p { max-width: 900px; margin: 0; color: var(--muted, #5b6663); font-size: 17px; font-weight: 400; line-height: 1.62; }
 
 .drp-board {
   position: relative;
@@ -410,8 +410,8 @@
 @media (max-width: 560px) {
   .drp-card { border-radius: 22px; }
   .drp-intro { padding: 30px 22px 22px; }
-  .drp-intro h3 { font-size: 34px; }
-  .drp-intro p { font-size: 13px; line-height: 1.75; }
+  .drp-intro h3 { font-size: 32px; }
+  .drp-intro p { font-size: 15px; line-height: 1.6; }
   .drp-board { margin: 0 8px 12px; }
   .drp-legend { align-items: flex-start; flex-direction: column; padding: 18px 22px 22px; }
 }

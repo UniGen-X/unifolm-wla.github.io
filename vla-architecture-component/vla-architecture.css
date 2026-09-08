@@ -36,11 +36,16 @@
     }
     .vla-architecture-demo .dal-intro h2 {
       color: var(--dal-foreground);
-      font-size: clamp(30px, 4vw, 46px);
+      font-size: clamp(32px, 3.6vw, 48px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -.025em;
     }
     .vla-architecture-demo .dal-intro > p {
-      max-width: 720px;
+      max-width: 900px;
       color: #5b6663;
+      font-size: 17px;
+      line-height: 1.62;
     }
     .vla-arch-pipeline {
       position: relative;

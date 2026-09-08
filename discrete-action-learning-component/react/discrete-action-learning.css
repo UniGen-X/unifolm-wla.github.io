@@ -16,7 +16,7 @@
     linear-gradient(90deg, rgba(36, 58, 53, .045) 1px, transparent 1px),
     var(--dal-background);
   background-size: 40px 40px;
-  font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-family: var(--font-text, "SF Pro SC", "SF Pro Text", "PingFang SC", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif);
 }
 
 .dal-root, .dal-root * { box-sizing: border-box; }
@@ -47,8 +47,8 @@
 .dal-intro { position: relative; z-index: 1; padding: 36px 42px 22px; }
 .dal-kicker { display: flex; align-items: center; gap: 10px; color: var(--dal-primary); font: 650 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .16em; }
 .dal-kicker span { width: 22px; height: 2px; background: currentColor; }
-.dal-intro h2 { margin: 16px 0 12px; color: var(--dal-foreground); font-size: clamp(32px, 4vw, 54px); line-height: 1.02; letter-spacing: -.045em; }
-.dal-intro > p { max-width: 840px; margin: 0; color: #5b6663; font-size: 15px; line-height: 1.85; }
+.dal-intro h2 { margin: 16px 0 12px; color: var(--dal-foreground); font-family: var(--font-display, "SF Pro SC", "SF Pro Display", "PingFang SC", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif); font-size: clamp(32px, 3.6vw, 48px); font-weight: 600; line-height: 1.08; letter-spacing: -.025em; }
+.dal-intro > p { max-width: 900px; margin: 0; color: #5b6663; font-size: 17px; font-weight: 400; line-height: 1.62; }
 
 .dal-pipeline { position: relative; margin: 0 20px; padding: 20px 22px 22px; border: 1px solid #dde3e0; border-radius: 22px; background: #f5f7f6; }
 .dal-live { position: absolute; top: 17px; right: 25px; display: flex; align-items: center; gap: 7px; color: #71807c; font: 650 8px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .11em; }
@@ -168,8 +168,8 @@
   .dal-root { padding: 10px; place-items: start center; }
   .dal-card { border-radius: 22px; }
   .dal-intro { padding: 30px 22px 22px; }
-  .dal-intro h2 { font-size: 34px; }
-  .dal-intro > p { font-size: 13px; line-height: 1.75; }
+  .dal-intro h2 { font-size: 32px; }
+  .dal-intro > p { font-size: 15px; line-height: 1.6; }
   .dal-pipeline { margin: 0 8px; }
   .dal-legend { grid-template-columns: 1fr 1fr; padding: 20px 22px 24px; }
   .dal-joint-note { grid-column: 1 / -1; }
