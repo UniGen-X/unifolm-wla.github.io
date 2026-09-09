@@ -3,7 +3,6 @@ import './discrete-action-learning.css';
 const tracks = [
   {
     id: '01',
-    label: 'EEF Motion',
     eyebrow: '末端运动',
     token: 'EEF',
     values: ['18', '42', '07', '31', '56'],
@@ -11,7 +10,6 @@ const tracks = [
   },
   {
     id: '02',
-    label: 'End Effector',
     eyebrow: '末端执行器',
     token: 'HAND',
     values: ['04', '29', '51', '16', '38'],
@@ -19,7 +17,6 @@ const tracks = [
   },
   {
     id: '03',
-    label: 'Lower Body',
     eyebrow: '下肢动作',
     token: 'LOWER',
     values: ['27', '11', '44', '03', '22'],
@@ -113,14 +110,13 @@ export function DiscreteActionLearning({
               <div className={`dal-track ${track.className}`} key={track.id}>
                 <div className="dal-source">
                   <div className="dal-motion-glyph"><MotionGlyph index={index} /></div>
-                  <div><small>{track.eyebrow}</small><strong>{track.label}</strong></div>
+                  <div><small>{track.eyebrow}</small></div>
                 </div>
 
                 <FlowArrow delay={index * 0.45} />
 
                 <div className="dal-rvq-card">
-                  <span>RVQ&nbsp; / &nbsp;{track.id}</span>
-                  <strong>{track.label}</strong>
+                  <span>RVQ</span>
                   <div className="dal-codebook" aria-hidden="true"><i /><i /><i /></div>
                 </div>
 
@@ -141,18 +137,6 @@ export function DiscreteActionLearning({
           </div>
         </section>
 
-        <footer className="dal-legend">
-          {tracks.map((track) => (
-            <div key={track.id}>
-              <span className={`dal-legend-dot ${track.className}`} />
-              <p><b>RVQ / {track.id}</b><small>{track.label}</small></p>
-            </div>
-          ))}
-          <div className="dal-joint-note">
-            <span className="dal-joint-icon">⊕</span>
-            <p><b>Joint training</b><small>Vision + Language + Action</small></p>
-          </div>
-        </footer>
       </article>
     </section>
   );

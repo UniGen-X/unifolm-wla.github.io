@@ -233,18 +233,14 @@
     html[data-theme="dark"] .homepage-action-demo .dal-live,
     html[data-theme="dark"] .homepage-action-demo .dal-column-labels,
     html[data-theme="dark"] .homepage-action-demo .dal-source small,
-    html[data-theme="dark"] .homepage-action-demo .dal-timeline p span,
-    html[data-theme="dark"] .homepage-action-demo .dal-legend small { color: var(--dim); }
+    html[data-theme="dark"] .homepage-action-demo .dal-timeline p span { color: var(--dim); }
     html[data-theme="dark"] .homepage-action-demo .dal-motion-glyph,
     html[data-theme="dark"] .homepage-action-demo .dal-rvq-card { border-color: currentColor; background: var(--panel-2); }
     html[data-theme="dark"] .homepage-action-demo .dal-motion-glyph { border-color: var(--line); }
     html[data-theme="dark"] .homepage-action-demo .dal-flow-line,
     html[data-theme="dark"] .homepage-action-demo .dal-flow-head { stroke: #697579; }
     html[data-theme="dark"] .homepage-action-demo .dal-timeline-rule { background: var(--line); }
-    html[data-theme="dark"] .homepage-action-demo .dal-timeline b,
-    html[data-theme="dark"] .homepage-action-demo .dal-legend b { color: #c4cdce; }
-    html[data-theme="dark"] .homepage-action-demo .dal-legend,
-    html[data-theme="dark"] .homepage-action-demo .dal-joint-note { border-color: var(--line); }
+    html[data-theme="dark"] .homepage-action-demo .dal-timeline b { color: #c4cdce; }
 
     .vla-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; align-items: start; }
     .vla-training-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 18px; }
@@ -612,10 +608,10 @@
                 <div class="dal-track dal-track-eef">
                   <div class="dal-source">
                     <div class="dal-motion-glyph"><svg viewBox="0 0 78 54" aria-hidden="true"><path d="M9 36c11-2 19-9 25-20 5 9 14 16 28 20"></path><circle cx="34" cy="16" r="4"></circle></svg></div>
-                    <div><small>末端运动</small><strong>EEF Motion</strong></div>
+                    <div><small>末端轨迹</small></div>
                   </div>
                   <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3"></circle></svg>
-                  <div class="dal-rvq-card"><span>RVQ&nbsp; / &nbsp;01</span><strong>EEF Motion</strong><div class="dal-codebook" aria-hidden="true"><i></i><i></i><i></i></div></div>
+                  <div class="dal-rvq-card"><span>RVQ</span><div class="dal-codebook" aria-hidden="true"><i></i><i></i><i></i></div></div>
                   <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1" style="animation-delay:.25s"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3" style="animation-delay:.25s"></circle></svg>
                   <div class="dal-token-sequence"><span class="dal-boundary">&lt;EEF_START&gt;</span><i>18</i><i>42</i><i>07</i><i>31</i><i>56</i><span class="dal-boundary">&lt;EEF_END&gt;</span></div>
                 </div>
@@ -623,10 +619,10 @@
                 <div class="dal-track dal-track-hand">
                   <div class="dal-source">
                     <div class="dal-motion-glyph"><svg viewBox="0 0 78 54" aria-hidden="true"><path d="M8 34c13 0 23-5 31-15 8 10 18 15 31 15"></path><path d="M24 38h30"></path></svg></div>
-                    <div><small>末端执行器</small><strong>End Effector</strong></div>
+                    <div><small>夹爪/灵巧手</small></div>
                   </div>
                   <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1" style="animation-delay:.45s"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3" style="animation-delay:.45s"></circle></svg>
-                  <div class="dal-rvq-card"><span>RVQ&nbsp; / &nbsp;02</span><strong>End Effector</strong><div class="dal-codebook" aria-hidden="true"><i></i><i></i><i></i></div></div>
+                  <div class="dal-rvq-card"><span>RVQ</span><div class="dal-codebook" aria-hidden="true"><i></i><i></i><i></i></div></div>
                   <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1" style="animation-delay:.7s"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3" style="animation-delay:.7s"></circle></svg>
                   <div class="dal-token-sequence"><span class="dal-boundary">&lt;HAND_START&gt;</span><i>04</i><i>29</i><i>51</i><i>16</i><i>38</i><span class="dal-boundary">&lt;HAND_END&gt;</span></div>
                 </div>
@@ -634,10 +630,10 @@
                 <div class="dal-track dal-track-lower">
                   <div class="dal-source">
                     <div class="dal-motion-glyph"><svg viewBox="0 0 78 54" aria-hidden="true"><path d="M19 16h40l-5 24H24z"></path><path d="M28 40v7m22-7v7"></path></svg></div>
-                    <div><small>下肢动作</small><strong>Lower Body</strong></div>
+                    <div><small>下肢动作</small></div>
                   </div>
                   <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1" style="animation-delay:.9s"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3" style="animation-delay:.9s"></circle></svg>
-                  <div class="dal-rvq-card"><span>RVQ&nbsp; / &nbsp;03</span><strong>Lower Body</strong><div class="dal-codebook" aria-hidden="true"><i></i><i></i><i></i></div></div>
+                  <div class="dal-rvq-card"><span>RVQ</span><div class="dal-codebook" aria-hidden="true"><i></i><i></i><i></i></div></div>
                   <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1" style="animation-delay:1.15s"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3" style="animation-delay:1.15s"></circle></svg>
                   <div class="dal-token-sequence"><span class="dal-boundary">&lt;LOWER_START&gt;</span><i>27</i><i>11</i><i>44</i><i>03</i><i>22</i><span class="dal-boundary">&lt;LOWER_END&gt;</span></div>
                 </div>
@@ -649,12 +645,6 @@
               </div>
             </section>
 
-            <footer class="dal-legend">
-              <div><span class="dal-legend-dot dal-track-eef"></span><p><b>RVQ / 01</b><small>EEF Motion</small></p></div>
-              <div><span class="dal-legend-dot dal-track-hand"></span><p><b>RVQ / 02</b><small>End Effector</small></p></div>
-              <div><span class="dal-legend-dot dal-track-lower"></span><p><b>RVQ / 03</b><small>Lower Body</small></p></div>
-              <div class="dal-joint-note"><span class="dal-joint-icon">⊕</span><p><b>Joint training</b><small>Vision + Language + Action</small></p></div>
-            </footer>
           </article>
         </section>
       </div>
