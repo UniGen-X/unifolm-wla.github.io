@@ -148,6 +148,15 @@
     h2 { margin: 0; font-family: var(--font-display); font-size: clamp(42px, 4.5vw, 58px); font-weight: 600; line-height: 1.07; letter-spacing: -.025em; }
     h2 em { color: var(--cyan); font-style: normal; }
     .section-lead { max-width: 900px; margin: 18px 0 0; color: var(--muted); font-size: 18px; font-weight: 400; line-height: 1.62; }
+    html[lang="en"] :is(.intro, .section-lead, .drp-intro p, .dal-intro > p, .copy-card p) {
+      white-space: normal;
+      word-break: normal;
+      overflow-wrap: normal;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+      hyphenate-limit-chars: 7 3 3;
+      text-wrap: pretty;
+    }
     .method-label { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 20px; color: var(--orange); font-size: 17px; text-transform: uppercase; letter-spacing: .13em; }
     .method-label::before { content: ""; width: 7px; height: 7px; background: currentColor; border-radius: 2px; }
 
@@ -386,7 +395,7 @@
       <div class="shell hero">
         <div>
           <div class="eyebrow mono" data-i18n-source="General-Purpose Humanoid Robot Foundation Model" data-i18n-zh="通用人形机器人基础模型">General-Purpose Humanoid Robot Foundation Model</div>
-          <h1><strong><b class="hero-prefix" data-i18n-source="Fully Open Source" data-i18n-zh="全开源">Fully Open Source</b>UnifoLM-WLA-1.0</strong><span data-i18n-source="One Model Drives All, Whole-Body Coordination" data-i18n-zh="一模驱动，全身协同">One Model Drives All, Whole-Body Coordination</span></h1>
+          <h1><strong><b class="hero-prefix" data-i18n-source="" data-i18n-zh="全开源"></b>UnifoLM-WLA-1.0</strong><span data-i18n-source="One Model Driven, Whole-Body Coordination" data-i18n-zh="一模驱动，全身协同">One Model Drives All, Whole-Body Coordination</span></h1>
           <div class="resource-links mono" id="resources" aria-label="Project resources" data-i18n-aria-source="Project resources" data-i18n-aria-zh="项目资源">
             <a href="#resources">
               <span class="resource-logo resource-logo-github" aria-hidden="true"><img class="github-mark-black" src="assets/brand/github-mark-black.svg" alt="" /><img class="github-mark-white" src="assets/brand/github-mark-white.svg" alt="" /></span>
@@ -401,7 +410,7 @@
               <span class="resource-link-copy"><strong data-i18n-source="Datasets" data-i18n-zh="数据集">Datasets</strong><small data-i18n-source="Coming soon" data-i18n-zh="即将开放">Coming soon</small></span>
             </a>
           </div>
-          <p class="intro" data-i18n-source="UnifoLM-WLA-1.0 is Unitree Robotics' comprehensively upgraded, next-generation general-purpose humanoid robot foundation model with 6B parameters. Built on large-scale general multimodal perception and understanding data and interaction-centric world modeling, it substantially advances spatial perception and understanding, achieving industry-leading results across multiple embodied reasoning benchmarks. Trained on approximately 2,500 hours of high-quality real-robot data, a single model coordinates 64 tasks spanning desktop manipulation and whole-body mobile manipulation. It supports two-finger grippers and multiple five-finger dexterous hands, with strong generalization across tasks and end effectors." data-i18n-zh="UnifoLM-WLA-1.0 是宇树科技全面升级的新一代通用人形机器人基础模型，拥有 6B 参数。模型依托大规模通用多模态感知与理解数据，融合以交互为中心的世界建模，全面提升空间感知与理解能力，在多项具身推理评测中达到业界领先。通过约 2,500 小时高质量真机数据训练，单模型统筹64个任务，覆盖桌面操作与全身移动操作，适配二指夹爪及多种五指灵巧手，具备跨任务、跨末端执行器的泛化能力。">UnifoLM-WLA-1.0 is Unitree Robotics' comprehensively upgraded, next-generation general-purpose humanoid robot foundation model with 6B parameters. Built on large-scale general multimodal perception and understanding data and interaction-centric world modeling, it substantially advances spatial perception and understanding, achieving industry-leading results across multiple embodied reasoning benchmarks. Trained on approximately 2,500 hours of high-quality real-robot data, a single model coordinates 64 tasks spanning desktop manipulation and whole-body mobile manipulation. It supports two-finger grippers and multiple five-finger dexterous hands, with strong generalization across tasks and end effectors.</p>
+          <p class="intro" data-i18n-source="UnifoLM-WLA-1.0 is Unitree Robotics' comprehensively upgraded, next-generation general-purpose humanoid robot foundation model with 6B parameters. Built on large-scale general multimodal perception and understanding data and interaction-centric world modeling, it substantially advances spatial perception and understanding, achieving industry-leading results across multiple embodied reasoning benchmarks. Trained on approximately 2,500 hours of high-quality real-robot data. A single model accomplishes 64 tasks spanning tabletop manipulation and whole-body mobile manipulation. It supports parallel grippers and two types of dexterous hands, demonstrating strong generalization across tasks and end-effector configurations." data-i18n-zh="UnifoLM-WLA-1.0 是宇树科技全面升级的新一代通用人形机器人基础模型，拥有 6B 参数。模型依托大规模通用多模态感知与理解数据，融合以交互为中心的世界建模，全面提升空间感知与理解能力，在多项具身推理评测中达到业界领先。通过约 2,500 小时高质量真机数据训练，单模型统筹64个任务，覆盖桌面操作与全身移动操作，适配二指夹爪及多种五指灵巧手，具备跨任务、跨末端执行器的泛化能力。">UnifoLM-WLA-1.0 is Unitree Robotics' comprehensively upgraded, next-generation general-purpose humanoid robot foundation model with 6B parameters. Built on large-scale general multimodal perception and understanding data and interaction-centric world modeling, it substantially advances spatial perception and understanding, achieving industry-leading results across multiple embodied reasoning benchmarks. Trained on approximately 2,500 hours of high-quality real-robot data, a single model coordinates 64 tasks spanning desktop manipulation and whole-body mobile manipulation. It supports two-finger grippers and multiple five-finger dexterous hands, with strong generalization across tasks and end effectors.</p>
           <div class="facts" aria-label="Key project figures" data-i18n-aria-source="Key project figures" data-i18n-aria-zh="项目核心数据">
             <div class="fact"><strong>6B</strong><span class="mono" data-i18n-source="model parameters" data-i18n-zh="模型参数量">VLA parameters</span></div>
             <div class="fact"><strong>5M+</strong><span class="mono" data-i18n-source="ER samples" data-i18n-zh="ER 训练样本">ER samples</span></div>
@@ -744,9 +753,9 @@
       <div class="shell">
         <div class="section-title">
           <div>
-            <div class="method-label mono" style="color:var(--blue)" data-i18n-source="WLA Model · Shared Policy" data-i18n-zh="WLA 模型">WLA Model · Shared Policy</div>
+            <div class="method-label mono" style="color:var(--blue)" data-i18n-source="WLA Model" data-i18n-zh="WLA 模型">WLA Model</div>
             <h2><span data-i18n-source="Multi-Source Data," data-i18n-zh="多源数据，">Multi-Source Data,</span><br /><em style="color:var(--blue)" data-i18n-source="One Model." data-i18n-zh="同一模型。">One Model.</em></h2>
-            <p class="section-lead"><span data-i18n-source="UnifoLM-WLA-1.0 builds on the UnifoLM-ER-Flow multimodal backbone and incorporates an MMDiT action expert. It is trained on approximately 2,500 hours of high-quality real-robot data—including the " data-i18n-zh="UnifoLM-WLA-1.0，基于 UnifoLM-ER-Flow 多模态主干，结合 MMDiT 动作专家，利用约 2,500 小时高质量真机数据（如：">UnifoLM-WLA-1.0 builds on the UnifoLM-ER-Flow multimodal backbone and incorporates an MMDiT action expert. It is trained on approximately 2,500 hours of high-quality real-robot data—including the </span><a href="https://huggingface.co/unitreerobotics/datasets" target="_blank" rel="noopener noreferrer" data-i18n-source="Unitree Open Datasets" data-i18n-zh="宇树开源数据">Unitree Open Datasets</a><span data-i18n-source=" and " data-i18n-zh="、"> and </span><a href="https://bitrobot-foundation.github.io/humanoids-in-the-wild-500-hours/" target="_blank" rel="noopener noreferrer">BitRobot-HIW-500</a><span data-i18n-source="—covering diverse robot embodiments and operational scenarios. Through a unified action space, it enables cross-embodiment prior transfer and jointly models perception and understanding, interaction prediction, and action generation, balancing embodied manipulation capabilities with general multimodal perception and reasoning." data-i18n-zh=" 等）训练，覆盖多种机器人本体与作业场景。通过统一动作空间，构建跨本体先验迁移，实现感知理解、交互预测与动作生成协同建模，兼顾具身操作能力与通用多模态感知-推理能力。">—covering diverse robot embodiments and operational scenarios. Through a unified action space, it enables cross-embodiment prior transfer and jointly models perception and understanding, interaction prediction, and action generation, balancing embodied manipulation capabilities with general multimodal perception and reasoning.</span></p>
+            <p class="section-lead"><span data-i18n-source="UnifoLM-WLA-1.0 builds on the UnifoLM-ER-Flow multimodal backbone and incorporates an MMDiT action expert. It is trained on approximately 2,500 hours of high-quality real-robot data—including the " data-i18n-zh="UnifoLM-WLA-1.0，基于 UnifoLM-ER-Flow 多模态主干，结合 MMDiT 动作专家，利用约 2,500 小时高质量真机数据（如：">UnifoLM-WLA-1.0 builds on the UnifoLM-ER-Flow multimodal backbone and incorporates an MMDiT action expert. It is trained on approximately 2,500 hours of high-quality real-robot data—including the </span><a href="https://huggingface.co/unitreerobotics/datasets" target="_blank" rel="noopener noreferrer" data-i18n-source="Unitree Open Datasets" data-i18n-zh="宇树开源数据">Unitree Open Datasets</a><span data-i18n-source=" and " data-i18n-zh="、">, </span><a href="https://bitrobot-foundation.github.io/humanoids-in-the-wild-500-hours/" target="_blank" rel="noopener noreferrer">BitRobot-HIW-500</a><span data-i18n-source=", etc.—covering diverse robot embodiments and scenarios. Through a unified action space, it enables cross-embodiment prior transfer and jointly models perception and understanding, interaction prediction, and action generation, balancing embodied manipulation capabilities with general multimodal perception and reasoning." data-i18n-zh=" 等）训练，覆盖多种机器人本体与作业场景。通过统一动作空间，构建跨本体先验迁移，实现感知理解、交互预测与动作生成协同建模，兼顾具身操作能力与通用多模态感知-推理能力。">—covering diverse robot embodiments and operational scenarios. Through a unified action space, it enables cross-embodiment prior transfer and jointly models perception and understanding, interaction prediction, and action generation, balancing embodied manipulation capabilities with general multimodal perception and reasoning.</span></p>
           </div>
         </div>
 
@@ -1084,15 +1093,15 @@
         <div class="section-title">
           <div>
             <div class="method-label mono" style="color:var(--violet)" data-i18n-source="Real-robot tests · Unitree G1" data-i18n-zh="真机测试 · 宇树 G1">Real-robot tests · Unitree G1</div>
-            <h2><span data-i18n-source="Multiple Tasks, Multiple End Effectors," data-i18n-zh="多任务，多末端执行器，">Multiple Tasks, Multiple End Effectors,</span><br /><em style="color:var(--violet)" data-i18n-source="One Model, Real-Robot Experiments." data-i18n-zh="单模型，真机实验。">One Model, Real-Robot Experiments.</em></h2>
-            <p class="section-lead" data-i18n-source="A single UnifoLM-WLA-1.0 model supports desktop manipulation, mobile manipulation, and whole-body coordination tasks. Across a diverse range of real-robot evaluations, it demonstrates robust task-execution capabilities. The videos below show selected real-robot evaluation results." data-i18n-zh="UnifoLM-WLA-1.0 统筹桌面操作、移动操作与全身协同任务，在多类任务的真机评测中展现出良好的任务执行能力。以下视频展示部分真机评测结果。">A single UnifoLM-WLA-1.0 model supports desktop manipulation, mobile manipulation, and whole-body coordination tasks. Across a diverse range of real-robot evaluations, it demonstrates robust task-execution capabilities. The videos below show selected real-robot evaluation results.</p>
+            <h2><span data-i18n-source="One Model Driven," data-i18n-zh="单模型驱动，">One Model Driven,</span><br /><em style="color:var(--violet)" data-i18n-source="Multiple Tasks, Multiple End-effectors." data-i18n-zh="多任务、多末端执行器泛化。">Multiple Tasks, Multiple End-effectors.</em></h2>
+            <p class="section-lead" data-i18n-source="A single UnifoLM-WLA-1.0 model supports both tabletop and whole-body manipulation, demonstrating smooth task execution across diverse real-robot evaluations. The videos below showcase real-robot evaluation results." data-i18n-zh="UnifoLM-WLA-1.0 统筹桌面与全身移动操作任务，在多类任务的真机评测中展现出良好的任务执行能力。以下视频为真机实验结果展示。">A single UnifoLM-WLA-1.0 model supports both tabletop and whole-body manipulation, demonstrating smooth task execution across diverse real-robot evaluations. The videos below showcase real-robot evaluation results.</p>
           </div>
         </div>
 
         <section class="fullbody-gallery" data-video-gallery aria-label="Whole-body manipulation video gallery" data-i18n-aria-source="Whole-body manipulation video gallery" data-i18n-aria-zh="全身操作视频合集">
           <header class="fullbody-gallery-head">
             <div class="fullbody-gallery-title">
-              <strong data-i18n-source="10 Whole-Body Loco-Manipulation Tasks" data-i18n-zh="10项全身移动操作">10 Whole-Body Loco-Manipulation Tasks</strong>
+              <strong data-i18n-source="10 Whole-Body Manipulation Tasks" data-i18n-zh="10项全身移动操作">10 Whole-Body Manipulation Tasks</strong>
               <!-- <span class="mono" data-i18n-source="10 tasks" data-i18n-zh="10 项任务">10 tasks</span> -->
             </div>
             <div class="fullbody-gallery-actions">
@@ -1110,7 +1119,7 @@
         <section class="fullbody-gallery" data-video-gallery aria-label="Desktop manipulation video gallery" data-i18n-aria-source="Desktop manipulation video gallery" data-i18n-aria-zh="桌面操作视频合集">
           <header class="fullbody-gallery-head">
             <div class="fullbody-gallery-title">
-              <strong data-i18n-source="54 Desktop Manipulation Tasks" data-i18n-zh="54 项桌面操作">54 Desktop Manipulation Tasks</strong>
+              <strong data-i18n-source="54 Table-top Manipulation Tasks" data-i18n-zh="54 项桌面操作">54 Table-top Manipulation Tasks</strong>
               <!-- <span class="mono" data-i18n-source="55 tasks" data-i18n-zh="54 项任务">54 tasks</span> -->
             </div>
             <div class="fullbody-gallery-actions">
