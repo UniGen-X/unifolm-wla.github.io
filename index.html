@@ -254,6 +254,7 @@
     .vla-fact span { color: var(--dim); font-size: 9px; text-transform: uppercase; }
 
     .fullbody-gallery { overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: var(--panel); box-shadow: 0 22px 70px rgba(0,0,0,.12); }
+    .fullbody-gallery + .fullbody-gallery { margin-top: 18px; }
     .fullbody-gallery-head { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 22px; border-bottom: 1px solid var(--line); }
     .fullbody-gallery-title { display: flex; align-items: baseline; gap: 14px; }
     .fullbody-gallery-title strong { font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -.02em; }
@@ -983,20 +984,20 @@
           </div>
         </div>
 
-        <section class="fullbody-gallery" aria-label="全身操作视频合集">
+        <section class="fullbody-gallery" data-video-gallery aria-label="全身操作视频合集">
           <header class="fullbody-gallery-head">
             <div class="fullbody-gallery-title">
-              <strong>Full-body operations</strong>
+              <strong>Whole-Body Loco-Manipulation</strong>
               <span class="mono">10 tasks</span>
             </div>
             <div class="fullbody-gallery-actions">
               <span class="mono">Scroll to explore</span>
-              <button class="gallery-arrow" id="fullbodyPrev" type="button" aria-label="查看上一组视频">←</button>
-              <button class="gallery-arrow" id="fullbodyNext" type="button" aria-label="查看下一组视频">→</button>
+              <button class="gallery-arrow" data-gallery-prev type="button" aria-label="查看上一组视频">←</button>
+              <button class="gallery-arrow" data-gallery-next type="button" aria-label="查看下一组视频">→</button>
             </div>
           </header>
 
-          <div class="fullbody-viewport" id="fullbodyViewport" tabindex="0">
+          <div class="fullbody-viewport" data-gallery-viewport tabindex="0">
             <div class="fullbody-track">
               <article class="fullbody-video">
                 <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/full_body/bathroom.mp4" type="video/mp4"></video>
@@ -1041,6 +1042,245 @@
             </div>
           </div>
         </section>
+
+        <section class="fullbody-gallery" data-video-gallery aria-label="桌面操作视频合集">
+          <header class="fullbody-gallery-head">
+            <div class="fullbody-gallery-title">
+              <strong>Desktop Manipulation</strong>
+              <span class="mono">55 tasks</span>
+            </div>
+            <div class="fullbody-gallery-actions">
+              <span class="mono">Scroll to explore</span>
+              <button class="gallery-arrow" data-gallery-prev type="button" aria-label="查看上一组桌面操作视频">←</button>
+              <button class="gallery-arrow" data-gallery-next type="button" aria-label="查看下一组桌面操作视频">→</button>
+            </div>
+          </header>
+
+          <div class="fullbody-viewport" data-gallery-viewport tabindex="0">
+            <div class="fullbody-track">
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Install batteries"><source src="assets/videos/manipulation/Install_batteries.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Install batteries</strong><span class="mono">01</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Catching snacks from the conveyor belt"><source src="assets/videos/manipulation/catching_snacks_from_the_conveyor_belt.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Catching snacks from the conveyor belt</strong><span class="mono">02</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Collect paper cups"><source src="assets/videos/manipulation/collect_paper_cups.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Collect paper cups</strong><span class="mono">03</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Dismantle windmill"><source src="assets/videos/manipulation/dismantle_windmill.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Dismantle windmill</strong><span class="mono">04</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Draw triangle"><source src="assets/videos/manipulation/draw_triangle.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Draw triangle</strong><span class="mono">05</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Erase whiteboard"><source src="assets/videos/manipulation/erase_whiteboard.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Erase whiteboard</strong><span class="mono">06</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Find green block"><source src="assets/videos/manipulation/find_green_block.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Find green block</strong><span class="mono">07</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Flower arranging"><source src="assets/videos/manipulation/flower_arranging.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Flower arranging</strong><span class="mono">08</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Fold cloth"><source src="assets/videos/manipulation/fold_cloth.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Fold cloth</strong><span class="mono">09</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Fold pants"><source src="assets/videos/manipulation/fold_pants.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Fold pants</strong><span class="mono">10</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Fold tower"><source src="assets/videos/manipulation/fold_tower.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Fold tower</strong><span class="mono">11</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Grab mango"><source src="assets/videos/manipulation/grab_mango.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Grab mango</strong><span class="mono">12</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Hang up cup"><source src="assets/videos/manipulation/hang_up_cup.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Hang up cup</strong><span class="mono">13</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Hang up hat"><source src="assets/videos/manipulation/hang_up_hat.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Hang up hat</strong><span class="mono">14</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Organize chopstick rest"><source src="assets/videos/manipulation/organize_chopstick_rest.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Organize chopstick rest</strong><span class="mono">15</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Organize cola"><source src="assets/videos/manipulation/organize_cola.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Organize cola</strong><span class="mono">16</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Organize pencil case"><source src="assets/videos/manipulation/organize_pencil_case.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Organize pencil case</strong><span class="mono">17</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Organize pencil case B"><source src="assets/videos/manipulation/organize_pencil_case_B.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Organize pencil case B</strong><span class="mono">18</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Organize ping pong paddles"><source src="assets/videos/manipulation/organize_ping_pong_paddles.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Organize ping pong paddles</strong><span class="mono">19</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Organize seasonings"><source src="assets/videos/manipulation/organize_seasonings.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Organize seasonings</strong><span class="mono">20</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Organize tool wall"><source src="assets/videos/manipulation/organize_tool_wall.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Organize tool wall</strong><span class="mono">21</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Organize toolbox"><source src="assets/videos/manipulation/organize_toolbox.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Organize toolbox</strong><span class="mono">22</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Organizing shoes"><source src="assets/videos/manipulation/organizing_shoes.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Organizing shoes</strong><span class="mono">23</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Package phone"><source src="assets/videos/manipulation/package_phone.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Package phone</strong><span class="mono">24</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Picking batteries"><source src="assets/videos/manipulation/picking_batteries.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Picking batteries</strong><span class="mono">25</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Place eggs"><source src="assets/videos/manipulation/place_eggs.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Place eggs</strong><span class="mono">26</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Place fruits with color"><source src="assets/videos/manipulation/place_fruits_with_color.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Place fruits with color</strong><span class="mono">27</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Play football"><source src="assets/videos/manipulation/play_football.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Play football</strong><span class="mono">28</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Plug in plug"><source src="assets/videos/manipulation/plug_in_plug.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Plug in plug</strong><span class="mono">29</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Pour out medicine"><source src="assets/videos/manipulation/pour_out_medicine.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Pour out medicine</strong><span class="mono">30</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Put book on bookshelf"><source src="assets/videos/manipulation/put_book_on_bookshelf.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Put book on bookshelf</strong><span class="mono">31</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Put food in microwave"><source src="assets/videos/manipulation/put_food_in_microwave.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Put food in microwave</strong><span class="mono">32</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Put items in cabinet"><source src="assets/videos/manipulation/put_items_in_cabinet.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Put items in cabinet</strong><span class="mono">33</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Put the fruit in the basket"><source src="assets/videos/manipulation/put_the_fruit_in_the_basket.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Put the fruit in the basket</strong><span class="mono">34</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Remove lollipop"><source src="assets/videos/manipulation/remove_lollipop.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Remove lollipop</strong><span class="mono">35</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Sort building blocks"><source src="assets/videos/manipulation/sort_building_blocks.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Sort building blocks</strong><span class="mono">36</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Sort building blocks from conveyor belt"><source src="assets/videos/manipulation/sort_building_blocks_from_conveyor_belt.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Sort building blocks from conveyor belt</strong><span class="mono">37</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Spell robot"><source src="assets/videos/manipulation/spell_robot.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Spell robot</strong><span class="mono">38</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Stack blocks RGB"><source src="assets/videos/manipulation/stack_blocks_rgb.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Stack blocks RGB</strong><span class="mono">39</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Stack cups"><source src="assets/videos/manipulation/stack_cups.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Stack cups</strong><span class="mono">40</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Stack orange"><source src="assets/videos/manipulation/stack_orange.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Stack orange</strong><span class="mono">41</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Stacking bowls"><source src="assets/videos/manipulation/stacking_bowls.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Stacking bowls</strong><span class="mono">42</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Storage glasses"><source src="assets/videos/manipulation/storage_glasses.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Storage glasses</strong><span class="mono">43</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Storage RealSense"><source src="assets/videos/manipulation/storage_realsense.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Storage RealSense</strong><span class="mono">44</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Storage shoes from conveyor belt"><source src="assets/videos/manipulation/storage_shoes_from_conveyor_belt.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Storage shoes from conveyor belt</strong><span class="mono">45</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Store parts"><source src="assets/videos/manipulation/store_parts.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Store parts</strong><span class="mono">46</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Store plates"><source src="assets/videos/manipulation/store_plates.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Store plates</strong><span class="mono">47</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Take out food from microwave"><source src="assets/videos/manipulation/take_out_food_from_microwave.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Take out food from microwave</strong><span class="mono">48</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Take out hamburger"><source src="assets/videos/manipulation/take_out_hamburger.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Take out hamburger</strong><span class="mono">49</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Tidy up desktop"><source src="assets/videos/manipulation/tidy_up_desktop.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Tidy up desktop</strong><span class="mono">50</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Turn on the desk lamp"><source src="assets/videos/manipulation/turn_on_the_desk_lamp.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Turn on the desk lamp</strong><span class="mono">51</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Unlock"><source src="assets/videos/manipulation/unlock.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Unlock</strong><span class="mono">52</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Unplug network cable"><source src="assets/videos/manipulation/unplug_network_cable.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Unplug network cable</strong><span class="mono">53</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Unwrap gift"><source src="assets/videos/manipulation/unwrap_gift.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Unwrap gift</strong><span class="mono">54</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata" aria-label="Zip up bag"><source src="assets/videos/manipulation/zip_up_bag.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Zip up bag</strong><span class="mono">55</span></div>
+              </article>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   </main>
@@ -1075,59 +1315,90 @@
       try { localStorage.setItem('omem-theme', nextTheme); } catch (_) {}
     });
 
-    const fullbodyViewport = document.getElementById('fullbodyViewport');
-    const fullbodyPrev = document.getElementById('fullbodyPrev');
-    const fullbodyNext = document.getElementById('fullbodyNext');
+    const architecturePipeline = document.querySelector('.vla-arch-pipeline');
+    const architectureCanvas = architecturePipeline?.querySelector('.vla-arch-canvas');
 
-    function updateFullbodyControls() {
-      const maxScroll = fullbodyViewport.scrollWidth - fullbodyViewport.clientWidth;
-      fullbodyPrev.disabled = fullbodyViewport.scrollLeft <= 2;
-      fullbodyNext.disabled = fullbodyViewport.scrollLeft >= maxScroll - 2;
+    function fitArchitectureCanvas() {
+      if (!architecturePipeline || !architectureCanvas) return;
+      const pipelineStyle = getComputedStyle(architecturePipeline);
+      const horizontalPadding = Number.parseFloat(pipelineStyle.paddingLeft) + Number.parseFloat(pipelineStyle.paddingRight);
+      const availableWidth = architecturePipeline.clientWidth - horizontalPadding;
+      const scale = Math.min(1, availableWidth / 1280);
+      const canvasHeight = architectureCanvas.offsetHeight;
+
+      architectureCanvas.style.transform = `scale(${scale})`;
+      architectureCanvas.style.marginBottom = `${-canvasHeight * (1 - scale)}px`;
     }
 
-    function scrollFullbody(direction) {
-      const videos = fullbodyViewport.querySelectorAll('.fullbody-video');
-      const firstVideo = videos[0];
-      const track = fullbodyViewport.querySelector('.fullbody-track');
-      const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 0;
-      const columnStep = firstVideo.getBoundingClientRect().width + gap;
-      const totalColumns = Math.ceil(videos.length / 2);
-      const visibleColumns = 2;
-      const maxStartColumn = Math.max(0, totalColumns - visibleColumns);
-      const stops = [0];
-
-      for (let column = 2; column < maxStartColumn; column += 2) stops.push(column);
-      if (stops.at(-1) !== maxStartColumn) stops.push(maxStartColumn);
-
-      const currentColumn = fullbodyViewport.scrollLeft / columnStep;
-      const targetColumn = direction > 0
-        ? stops.find((column) => column > currentColumn + 0.1) ?? maxStartColumn
-        : stops.findLast((column) => column < currentColumn - 0.1) ?? 0;
-      const maxScroll = fullbodyViewport.scrollWidth - fullbodyViewport.clientWidth;
-      const targetLeft = targetColumn === maxStartColumn ? maxScroll : targetColumn * columnStep;
-
-      fullbodyViewport.scrollTo({ left: targetLeft, behavior: 'smooth' });
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(fitArchitectureCanvas).observe(architecturePipeline);
+    } else {
+      window.addEventListener('resize', fitArchitectureCanvas);
     }
+    requestAnimationFrame(fitArchitectureCanvas);
 
-    fullbodyPrev.addEventListener('click', () => scrollFullbody(-1));
-    fullbodyNext.addEventListener('click', () => scrollFullbody(1));
-    fullbodyViewport.addEventListener('scroll', updateFullbodyControls, { passive: true });
-    window.addEventListener('resize', updateFullbodyControls);
-    requestAnimationFrame(updateFullbodyControls);
+    document.querySelectorAll('[data-video-gallery]').forEach((gallery) => {
+      const viewport = gallery.querySelector('[data-gallery-viewport]');
+      const prev = gallery.querySelector('[data-gallery-prev]');
+      const next = gallery.querySelector('[data-gallery-next]');
+      const cards = viewport.querySelectorAll('.fullbody-video');
+      const track = viewport.querySelector('.fullbody-track');
 
-    const fullbodyVideos = fullbodyViewport.querySelectorAll('video');
-    if ('IntersectionObserver' in window) {
-      const videoObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.play().catch(() => {});
-          } else {
-            entry.target.pause();
-          }
-        });
-      }, { root: fullbodyViewport, threshold: 0.35 });
-      fullbodyVideos.forEach((video) => videoObserver.observe(video));
-    }
+      function updateControls() {
+        const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+        prev.disabled = viewport.scrollLeft <= 2;
+        next.disabled = viewport.scrollLeft >= maxScroll - 2;
+      }
+
+      function getStops() {
+        const totalColumns = Math.ceil(cards.length / 2);
+        const maxStartColumn = Math.max(0, totalColumns - 2);
+        const stops = [0];
+        let currentColumn = 0;
+
+        while (currentColumn < maxStartColumn) {
+          const remainingVideos = cards.length - (currentColumn + 2) * 2;
+          const advance = remainingVideos >= 4 ? 2 : 1;
+          currentColumn = Math.min(maxStartColumn, currentColumn + advance);
+          if (stops.at(-1) !== currentColumn) stops.push(currentColumn);
+        }
+
+        return { stops, maxStartColumn };
+      }
+
+      function scrollGallery(direction) {
+        const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 0;
+        const columnStep = cards[0].getBoundingClientRect().width + gap;
+        const { stops, maxStartColumn } = getStops();
+        const currentColumn = viewport.scrollLeft / columnStep;
+        const targetColumn = direction > 0
+          ? stops.find((column) => column > currentColumn + 0.1) ?? maxStartColumn
+          : stops.findLast((column) => column < currentColumn - 0.1) ?? 0;
+        const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+        const targetLeft = targetColumn === maxStartColumn ? maxScroll : targetColumn * columnStep;
+
+        viewport.scrollTo({ left: targetLeft, behavior: 'smooth' });
+      }
+
+      prev.addEventListener('click', () => scrollGallery(-1));
+      next.addEventListener('click', () => scrollGallery(1));
+      viewport.addEventListener('scroll', updateControls, { passive: true });
+      window.addEventListener('resize', updateControls);
+      requestAnimationFrame(updateControls);
+
+      if ('IntersectionObserver' in window) {
+        const videoObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.play().catch(() => {});
+            } else {
+              entry.target.pause();
+            }
+          });
+        }, { root: viewport, threshold: 0.35 });
+        viewport.querySelectorAll('video').forEach((video) => videoObserver.observe(video));
+      }
+    });
   </script>
 </body>
 </html>
