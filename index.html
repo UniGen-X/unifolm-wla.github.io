@@ -1094,7 +1094,7 @@
           <div>
             <div class="method-label mono" style="color:var(--violet)" data-i18n-source="Real-robot tests · Unitree G1" data-i18n-zh="真机测试 · 宇树 G1">Real-robot tests · Unitree G1</div>
             <h2><span data-i18n-source="One Model Driven," data-i18n-zh="单模型驱动，">One Model Driven,</span><br /><em style="color:var(--violet)" data-i18n-source="Multiple Tasks, Multiple End-effectors." data-i18n-zh="多任务、多末端执行器泛化。">Multiple Tasks, Multiple End-effectors.</em></h2>
-            <p class="section-lead" data-i18n-source="A single UnifoLM-WLA-1.0 model supports both tabletop and whole-body manipulation, demonstrating smooth task execution across diverse real-robot evaluations. The videos below showcase real-robot evaluation results." data-i18n-zh="UnifoLM-WLA-1.0 统筹桌面与全身移动操作任务，在多类任务的真机评测中展现出良好的任务执行能力。以下视频为真机实验结果展示。">A single UnifoLM-WLA-1.0 model supports both tabletop and whole-body manipulation, demonstrating smooth task execution across diverse real-robot evaluations. The videos below showcase real-robot evaluation results.</p>
+            <p class="section-lead" data-i18n-source="A single UnifoLM-WLA-1.0 model supports both tabletop and whole-body manipulation, demonstrating smooth task execution across diverse real-robot evaluations. The videos below showcase real-robot evaluation results." data-i18n-zh="UnifoLM-WLA-1.0 统筹桌面与全身移动操作任务，在64项任务真机评测中展现出良好的泛化能力，以下视频为真机实验结果展示。">A single UnifoLM-WLA-1.0 model supports both tabletop and whole-body manipulation, demonstrating smooth task execution across diverse real-robot evaluations. The videos below showcase real-robot evaluation results.</p>
           </div>
         </div>
 
@@ -1301,14 +1301,15 @@
       languageToggle.setAttribute('aria-pressed', String(isChinese));
       languageToggle.setAttribute('aria-label', isChinese ? '切换到当前版本' : '切换到中文模式');
       languageIcon.textContent = isChinese ? 'A' : '文';
-      languageText.textContent = isChinese ? '原版' : '中文';
+      languageText.textContent = isChinese ? 'EN' : '中文';
       applyTheme(root.dataset.theme || 'dark');
     }
 
     let savedTheme = 'dark';
     try { savedTheme = localStorage.getItem('omem-theme') || 'dark'; } catch (_) {}
+    const languageStorageKey = 'unifolm-language';
     let savedLanguage = 'source';
-    try { savedLanguage = localStorage.getItem('uniform-language') || 'source'; } catch (_) {}
+    try { savedLanguage = localStorage.getItem(languageStorageKey) || 'source'; } catch (_) {}
     applyLanguage(savedLanguage);
     applyTheme(savedTheme);
 
@@ -1321,7 +1322,7 @@
     languageToggle.addEventListener('click', () => {
       const nextLanguage = root.dataset.language === 'zh' ? 'source' : 'zh';
       applyLanguage(nextLanguage);
-      try { localStorage.setItem('uniform-language', nextLanguage); } catch (_) {}
+      try { localStorage.setItem(languageStorageKey, nextLanguage); } catch (_) {}
     });
 
     const architecturePipeline = document.querySelector('.vla-arch-pipeline');
