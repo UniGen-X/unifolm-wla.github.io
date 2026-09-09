@@ -195,7 +195,7 @@
     .benchmark-head span { color: var(--orange); font-size: 9px; text-transform: uppercase; }
     .table-wrap { overflow-x: auto; }
     table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 660px; }
-    .benchmark table { min-width: 1720px; }
+    .benchmark table { min-width: 1780px; }
     th, td { height: 42px; padding: 0 10px; border-bottom: 1px solid var(--line); text-align: center; white-space: nowrap; }
     th { color: var(--dim); font-size: 10px; font-weight: 550; text-transform: uppercase; letter-spacing: .06em; }
     .benchmark thead tr:not(.group-head) th { color: #b8c1c2; font-size: 12px; font-weight: 700; }
@@ -203,11 +203,19 @@
     td { color: #aeb8b9; font-size: 13px; }
     tr:last-child td { border-bottom: 0; }
     .benchmark .model-col { position: sticky; left: 0; z-index: 2; min-width: 160px; background: var(--panel); text-align: left; }
+    .benchmark tbody .model-col { font-weight: 700; }
     .benchmark thead .model-col { z-index: 4; }
     .benchmark .group-head th { height: 34px; color: var(--text); border-bottom: 1px solid var(--line); font-size: 12px; }
     .benchmark .group-start td { border-top: 2px solid var(--line); }
-    .score-best { color: var(--text); font-weight: 800; background: rgba(119,244,208,.08); }
-    html[data-theme="light"] .score-best { background: rgba(8,126,100,.09); }
+    .benchmark .featured-row td { color: #17100f; background: #f96765; }
+    .benchmark .featured-row .model-col { background: #f96765; }
+    .score-best { color: #fff9e8; font-weight: 800; background: linear-gradient(135deg, #d84e50 0%, #e1774d 52%, #d8a83d 100%); box-shadow: inset 0 0 0 1px rgba(255,220,132,.7); }
+    html[data-theme="light"] .score-best { color: #24150d; background: linear-gradient(135deg, #f96765 0%, #f28b55 52%, #e8b84f 100%); }
+    .benchmark .featured-row .score-best { color: #17100f; background: linear-gradient(135deg, #b83d45 0%, #d86648 48%, #c9962e 100%); }
+    .score-new { color: #f96765; font-weight: 700; }
+    .benchmark sup { margin-left: 2px; font-size: .7em; vertical-align: super; }
+    .benchmark-notes { display: grid; gap: 4px; padding: 12px 16px 14px; border-top: 1px solid var(--line); color: var(--dim); font-size: 11px; line-height: 1.45; }
+    .benchmark-notes p { margin: 0; }
     .tbd { display: inline-flex; padding: 4px 8px; border: 1px solid #374246; border-radius: 999px; color: #657174; font-size: 8px; }
 
     .token-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 34px; }
@@ -439,80 +447,141 @@
               <thead>
                 <tr class="group-head">
                   <th class="model-col" rowspan="2" data-i18n-source="Model" data-i18n-zh="模型">Model</th>
+                  <th rowspan="2" data-i18n-source="Open" data-i18n-zh="开源">Open</th>
                   <th colspan="13" data-i18n-source="Spatial Understanding" data-i18n-zh="空间理解">Spatial Understanding</th>
                   <th colspan="3" data-i18n-source="Multimodal Understanding" data-i18n-zh="多模态理解">Multimodal Understanding</th>
                 </tr>
                 <tr>
-                  <th>RoboVQA</th><th>Ego-Plan2</th><th>RefSpatial</th><th>Where2Place</th><th>Pixmo-Point</th><th>BLINK</th><th>CV-Bench</th><th>EmbSpatial</th><th>RoboSpatial</th><th>SAT</th><th>VSI-Bench</th><th>VSR</th><th>ERQA</th><th>RealWorldQA</th><th>MME</th><th>MMMU_VAL</th>
+                  <th>RoboVQA</th><th>Ego-Plan2</th><th>RefSpatial-Bench</th><th>Where2Place</th><th>Pixmo-Point</th><th>BLINK</th><th>CV-Bench</th><th>EmbSpatial</th><th>RoboSpatial</th><th>SAT</th><th>VSI-Bench</th><th>VSR</th><th>ERQA</th><th>RealWorldQA</th><th>MME</th><th>MMMU_VAL</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr class="featured-row">
                   <td class="model-col"><strong>UnifoLM-ER-1</strong></td>
-                  <td class="score-best">61.37</td><td class="score-best">56.01</td><td class="score-best">57.40</td><td>66</td><td class="score-best">74.79</td><td>77.70</td><td class="score-best">89.61</td><td class="score-best">86.48</td><td class="score-best">70.2</td><td>78.00</td><td>56.61</td><td class="score-best">86.74</td><td class="score-best">51.50</td><td class="score-best">71.37</td><td>2303.70</td><td>54.66</td>
+                  <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
+                  <td>62.4</td><td>55.1</td><td class="score-best">61.7</td><td class="score-best">82.0</td><td class="score-best">73.8</td><td class="score-best">93.4<sup>†</sup></td><td class="score-best">88.6</td><td class="score-best">88.9</td><td class="score-best">73.1</td><td>76.0</td><td>54.2</td><td class="score-best">88.1</td><td>50.0</td><td>69.8</td><td>2223.3</td><td>54.7</td>
                 </tr>
                 <tr>
                   <td class="model-col">RoboBrain2.0-7B</td>
-                  <td>30</td><td>28.84</td><td>42.22</td><td>64.51</td><td>45.27</td><td>83.9</td><td>85.7</td><td>76.13</td><td>49.37</td><td>74.67</td><td>48.32</td><td>84</td><td>/</td><td>69.41</td><td>2057.4</td><td>44.44</td>
+                  <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
+                  <td>30.0</td><td>28.8</td><td>42.2</td><td>63.6</td><td>45.3</td><td>83.9<sup>†</sup></td><td>85.7</td><td>76.3</td><td>54.2</td><td>75.3</td><td>36.1</td><td>84.0</td><td>/</td><td>69.4</td><td>2057.4</td><td>44.4</td>
                 </tr>
                 <tr>
                   <td class="model-col">Robix-7B</td>
-                  <td>/</td><td>/</td><td>/</td><td>41.9</td><td>29.5</td><td class="score-best">87.6</td><td>86.5</td><td>77.4</td><td>/</td><td>71.1</td><td>/</td><td>83.3</td><td>/</td><td>/</td><td>/</td><td>/</td>
+                  <td data-i18n-source="No" data-i18n-zh="否">No</td>
+                  <td>/</td><td>/</td><td>/</td><td>41.9</td><td>29.5</td><td>87.6<sup>†</sup></td><td>86.5</td><td>77.4</td><td>/</td><td>71.1</td><td>/</td><td>83.3</td><td>/</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
                   <td class="model-col">Pelican-7B</td>
-                  <td>31.83</td><td>33.71</td><td>25.12</td><td>59.95</td><td>20.37</td><td>82.4</td><td>79.35</td><td>73.08</td><td>57.83</td><td>52</td><td>53.24</td><td>82.18</td><td>/</td><td>69.28</td><td>2141.9</td><td>51.11</td>
+                  <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
+                  <td>31.8</td><td>33.7</td><td>25.1</td><td>60.0</td><td>20.4</td><td>/</td><td>79.4</td><td>73.1</td><td>57.8</td><td>52.0</td><td>53.2</td><td>82.2</td><td>/</td><td>69.3</td><td>2141.9</td><td>51.1</td>
                 </tr>
                 <tr>
                   <td class="model-col">Cosmos-R1-7B</td>
-                  <td>38.84</td><td>26.04</td><td>5.61</td><td>2.92</td><td>8.22</td><td>71.54</td><td>76.67</td><td>68.93</td><td>42.38</td><td class="score-best">82.67</td><td>25.37</td><td>82.41</td><td>/</td><td>67.58</td><td>2157.4</td><td>37.44</td>
+                  <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
+                  <td>38.8</td><td>26.0</td><td>5.6</td><td>2.9</td><td>8.2</td><td>/</td><td>76.7</td><td>68.9</td><td>42.4</td><td class="score-best">82.7</td><td>25.4</td><td>82.4</td><td>/</td><td>67.6</td><td>2157.4</td><td>37.4</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Cosmos3-Super</td>
+                  <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
+                  <td>/</td><td>/</td><td>57.0</td><td>71.0</td><td>/</td><td>90.3<sup>†</sup></td><td>88.0</td><td>/</td><td>70.0</td><td>/</td><td>60.9</td><td>/</td><td>51.2</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
                   <td class="model-col">Qwen3-VL-4B</td>
-                  <td>47.73</td><td>40.65</td><td>46.6</td><td>63.04</td><td>48.25</td><td>65.8</td><td>85.09</td><td>79.6</td><td>61.7</td><td>68.67</td><td>58.4</td><td>81.55</td><td>39.5</td><td>70.98</td><td>2325.2</td><td>57.78</td>
+                  <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
+                  <td>47.7</td><td>40.7</td><td>46.6</td><td>63.0</td><td>48.3</td><td>85.0<sup>†</sup></td><td>85.1</td><td>79.6</td><td>61.7</td><td>68.7</td><td>59.3</td><td>81.6</td><td>41.3</td><td class="score-best">71.0</td><td>2325.2</td><td>57.8</td>
                 </tr>
                 <tr>
                   <td class="model-col">Qwen3-VL-8B</td>
-                  <td>43.28</td><td>49.73</td><td>54.2</td><td>61.91</td><td>51.01</td><td>69.1</td><td>86.16</td><td>78.5</td><td>66.9</td><td>67.33</td><td>59.4</td><td>83.18</td><td>41.5</td><td>70.59</td><td class="score-best">2412.5</td><td class="score-best">62.33</td>
+                  <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
+                  <td>43.3</td><td>49.7</td><td>54.2</td><td>61.9</td><td>51.0</td><td>73.8<sup>†</sup></td><td>86.2</td><td>78.5</td><td>66.9</td><td>67.3</td><td>59.4</td><td>83.2</td><td>45.8</td><td>70.6</td><td class="score-best">2412.5</td><td class="score-best">62.3</td>
                 </tr>
                 <tr>
                   <td class="model-col">Embodied-R1</td>
-                  <td>51.8</td><td>26.5</td><td>39.7</td><td>69.5</td><td>49.4</td><td>76.6</td><td>82.7</td><td>67.4</td><td>47.43</td><td>76.3</td><td>26.56</td><td>/</td><td>35.24</td><td>/</td><td>/</td><td>/</td>
+                  <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
+                  <td>51.8</td><td>26.5</td><td>39.7</td><td>69.5</td><td>49.4</td><td>78.5<sup>†</sup></td><td>82.7</td><td>67.4</td><td>47.4</td><td>76.3</td><td>26.6</td><td>/</td><td>35.2</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
                   <td class="model-col">Embodied-R1.5</td>
-                  <td>60.98</td><td>53.82</td><td>54.15</td><td class="score-best">74</td><td>64.84</td><td>87.1</td><td>86.9</td><td>78.1</td><td>69.7</td><td>74.7</td><td>56.1</td><td>/</td><td>46</td><td>/</td><td>/</td><td>/</td>
+                  <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
+                  <td>61.0</td><td>53.8</td><td>54.2</td><td>74.0</td><td>64.8</td><td>83.0<sup>†</sup></td><td>86.9</td><td>78.1</td><td>69.7</td><td>74.7</td><td>56.1</td><td>/</td><td>46.0</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Molmo2-ER</td>
+                  <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
+                  <td>/</td><td>/</td><td>52.5</td><td>54.0</td><td>/</td><td>85.7<sup>†</sup></td><td>87.8</td><td>78.8</td><td>/</td><td>78.0</td><td class="score-best">74.5</td><td>/</td><td>46.8</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Hy-Embodied-VLM-1.0</td>
+                  <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
+                  <td>/</td><td>49.6</td><td>53.4</td><td>65.0</td><td>64.6</td><td>87.3<sup>†</sup></td><td>89.7</td><td>82.7</td><td>69.4</td><td>78.0</td><td>/</td><td>/</td><td class="score-best">60.8</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr class="group-start">
-                  <td class="model-col">Gemini-ER 1.5</td>
-                  <td>/</td><td>/</td><td>41.8</td><td>48.0</td><td>/</td><td>65.2</td><td>83.6</td><td>73.4</td><td>57.7</td><td>62.0</td><td>39.9</td><td>/</td><td>47.0</td><td>/</td><td>/</td><td>/</td>
+                  <td class="model-col">MiMo-Emb-7B</td>
+                  <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
+                  <td>36.6</td><td>33.1</td><td>29.5</td><td>56.1</td><td>22.4</td><td>81.3</td><td>88.1</td><td>78.2</td><td>52.0</td><td>78.0</td><td>44.5</td><td>79.0</td><td>/</td><td>66.3</td><td>2320.8</td><td>26.4</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Gemini 2.5 Pro</td>
-                  <td>/</td><td>/</td><td>33.6</td><td>37.0</td><td>/</td><td>69.2</td><td>85.9</td><td>78.0</td><td>71.3</td><td>74.7</td><td>51.1</td><td>/</td><td>56.0</td><td>/</td><td>/</td><td>/</td>
+                  <td class="model-col">Thinker-4B</td>
+                  <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
+                  <td class="score-best">62.7</td><td class="score-best">63.7</td><td>61.0</td><td>72.0</td><td>57.4</td><td>84.6</td><td>86.3</td><td>80.2</td><td>70.8</td><td>72.7</td><td>65.4</td><td>81.5</td><td>/</td><td class="score-best">71.9</td><td>2323.4</td><td>46.2</td>
                 </tr>
                 <tr>
-                  <td class="model-col">GPT-5.4</td>
-                  <td>31.8</td><td>44.1</td><td>15.7</td><td>34.7</td><td>27.5</td><td>87.9</td><td>76.7</td><td>73.2</td><td>53.1</td><td>74.7</td><td>52.6</td><td>/</td><td>50.5</td><td>/</td><td>/</td><td>/</td>
+                  <td class="model-col">GenieReasoner</td>
+                  <td data-i18n-source="No" data-i18n-zh="否">No</td>
+                  <td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>74.8</td><td>83.9</td><td>70.7</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Wall-OSS-0.5</td>
+                  <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
+                  <td>/</td><td>/</td><td>/</td><td>15.0</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>38.0</td><td>59.0</td><td>/</td><td>/</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Lumo-1-Stage1</td>
+                  <td data-i18n-source="No" data-i18n-zh="否">No</td>
+                  <td>/</td><td>/</td><td>51.0</td><td>69.1</td><td>/</td><td>82.4</td><td>86.4</td><td>75.6</td><td>62.6</td><td>74.7</td><td>/</td><td>/</td><td>38.0</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr class="group-start">
-                  <td class="model-col">GPT-5</td>
-                  <td>/</td><td>/</td><td>23.5</td><td>37.0</td><td>/</td><td>71.3</td><td>86.1</td><td>81.5</td><td>69.3</td><td>86.7</td><td>52.9</td><td>/</td><td>59.0</td><td>/</td><td>/</td><td>/</td>
+                  <td class="model-col">Gemini-ER 2<sup>‡</sup></td>
+                  <td data-i18n-source="No" data-i18n-zh="否">No</td>
+                  <td>/</td><td>/</td><td>35.4</td><td>/</td><td>/</td><td>90.6<sup>†</sup></td><td class="score-new">90.4</td><td>81.4</td><td>51.1</td><td>/</td><td>/</td><td>/</td><td class="score-new">71.0</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Gemini 2.5 Flash</td>
-                  <td>/</td><td>/</td><td>41.2</td><td>48.0</td><td>/</td><td>46.1</td><td>85.5</td><td>76.2</td><td>73.4</td><td>73.3</td><td>45.3</td><td>/</td><td>47.5</td><td>/</td><td>/</td><td>/</td>
+                  <td class="model-col">Gemini-ER 1.5<sup>‡</sup></td>
+                  <td data-i18n-source="No" data-i18n-zh="否">No</td>
+                  <td>/</td><td>/</td><td>41.8</td><td>48.0</td><td>/</td><td>/</td><td>83.6</td><td>73.4</td><td>57.7</td><td>62.0</td><td>39.9</td><td>/</td><td>47.0</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">GPT-5-mini</td>
-                  <td>/</td><td>/</td><td>23.0</td><td>33.5</td><td>/</td><td>66.4</td><td>85.9</td><td>78.8</td><td>70.7</td><td>81.3</td><td>46.2</td><td>/</td><td>57.3</td><td>/</td><td>/</td><td>/</td>
+                  <td class="model-col">Gemini 2.5 Pro<sup>‡</sup></td>
+                  <td data-i18n-source="No" data-i18n-zh="否">No</td>
+                  <td>/</td><td>/</td><td>33.6</td><td>37.0</td><td>/</td><td>88.6<sup>†</sup></td><td>85.9</td><td>78.0</td><td>71.3</td><td>74.7</td><td>51.1</td><td>/</td><td>56.0</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Gemini-ER 1.5 (T)</td>
-                  <td>/</td><td>/</td><td>48.5</td><td>59.0</td><td>/</td><td>57.8</td><td>84.3</td><td>78.4</td><td>79.3</td><td>76.7</td><td>45.8</td><td>/</td><td>54.8</td><td>/</td><td>/</td><td>/</td>
+                  <td class="model-col">Gemini 2.5 Flash<sup>‡</sup></td>
+                  <td data-i18n-source="No" data-i18n-zh="否">No</td>
+                  <td>/</td><td>/</td><td>41.2</td><td>48.0</td><td>/</td><td>80.3<sup>†</sup></td><td>85.5</td><td>76.2</td><td>73.4</td><td>73.3</td><td>45.3</td><td>/</td><td>47.5</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+                <tr>
+                  <td class="model-col">Gemini 3.1 Pro<sup>‡</sup></td>
+                  <td data-i18n-source="No" data-i18n-zh="否">No</td>
+                  <td>/</td><td>/</td><td>70.0</td><td>61.0</td><td>/</td><td>86.1<sup>†</sup></td><td>88.6</td><td>/</td><td>65.1</td><td>/</td><td>47.5</td><td>/</td><td>65.2</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+                <tr>
+                  <td class="model-col">GPT-5.6-sol<sup>‡</sup></td>
+                  <td data-i18n-source="No" data-i18n-zh="否">No</td>
+                  <td>/</td><td>/</td><td>58.3</td><td>51.1</td><td>/</td><td>85.6<sup>†</sup></td><td>85.2</td><td>80.7</td><td>66.8</td><td>21.3</td><td>/</td><td>/</td><td>64.8</td><td>/</td><td>/</td><td>/</td>
+                </tr>
+                <tr>
+                  <td class="model-col">GPT-6-Astra<sup>‡</sup></td>
+                  <td data-i18n-source="No" data-i18n-zh="否">No</td>
+                  <td>/</td><td>/</td><td class="score-new">79.6</td><td>69.0</td><td>/</td><td>90.4<sup>†</sup></td><td>87.3</td><td>83.3</td><td class="score-new">73.4</td><td>31.3</td><td>/</td><td>/</td><td>77.7</td><td>/</td><td>/</td><td>/</td>
                 </tr>
               </tbody>
             </table>
+          </div>
+          <div class="benchmark-notes">
+            <p data-i18n-source="† BLINK score averaged over only the Relative Depth and Spatial Relation subtasks." data-i18n-zh="† BLINK 分数仅取 Relative Depth 与 Spatial Relation 两个子任务的平均值。">† BLINK score averaged over only the Relative Depth and Spatial Relation subtasks.</p>
+            <p data-i18n-source="Some open-source model results are from deployment tests; other open-source model data comes from official project pages or papers; closed-source model data is drawn partly from official results and partly from API call tests." data-i18n-zh="部分开源模型为部署测试结果；其他开源模型数据来自官方主页或论文；闭源模型数据部分来自官方结果，部分来自 API Call 测试。">Some open-source model results are from deployment tests; other open-source model data comes from official project pages or papers; closed-source model data is drawn partly from official results and partly from API call tests.</p>
           </div>
               </div>
             </div>
@@ -986,8 +1055,8 @@
                         <b>Image encoder</b>
                         <div class="vla-input-previews" aria-hidden="true">
                           <img src="assets/dynamic_region_prediction/head_left_t0.png" alt="">
-                          <img src="assets/dynamic_region_prediction/head_left_t0.png" alt="">
-                          <img src="assets/dynamic_region_prediction/head_left_t0.png" alt="">
+                          <img src="assets/dynamic_region_prediction/wrist_cam_left.png" alt="">
+                          <img src="assets/dynamic_region_prediction/wrist_cam_right.png" alt="">
                         </div>
                       </div>
                       <div class="vla-input-card shift-right"><b>Prompt</b></div>
