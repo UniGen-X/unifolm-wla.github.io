@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="zh-CN" data-theme="dark" data-language="source">
+<html lang="en" data-theme="dark" data-language="source">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#080b0d" />
-  <meta name="description" content="UnifoLM-WLA-1.0 — 宇树科技新一代通用人形机器人基础模型。" />
+  <meta name="description" content="UnifoLM-WLA-1.0 — Unitree Robotics' next-generation general-purpose humanoid robot foundation model." />
   <title>UnifoLM-WLA-1.0</title>
   <link rel="stylesheet" href="discrete-action-learning-component/react/discrete-action-learning.css" />
   <link rel="stylesheet" href="dynamic-region-prediction-component/dynamic-region-prediction.css" />
@@ -109,6 +109,8 @@
     h1 strong { display: block; font: inherit; white-space: nowrap; }
     h1 .hero-prefix { display: inline-block; margin-right: .24em; color: #f96765; font-size: .42em; font-weight: 650; letter-spacing: .02em; vertical-align: .28em; }
     h1 span { display: block; margin-top: .14em; color: #f96765; font-size: .72em; line-height: 1.08; letter-spacing: -.04em; }
+    html[data-language="source"] h1 { font-size: clamp(48px, 6vw, 80px); }
+    html[data-language="source"] h1 span { font-size: .56em; }
     .resource-links { display: flex; justify-content: center; gap: 8px; margin: 22px auto 0; }
     .resource-links a { min-width: 168px; display: inline-flex; align-items: center; justify-content: flex-start; gap: 11px; padding: 9px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--text); text-decoration: none; transition: transform .2s ease, border-color .2s ease; }
     .resource-links a:hover { transform: translateY(-2px); border-color: var(--cyan); }
@@ -199,23 +201,26 @@
     .benchmark table { min-width: 1780px; }
     th, td { height: 42px; padding: 0 10px; border-bottom: 1px solid var(--line); text-align: center; white-space: nowrap; }
     th { color: var(--dim); font-size: 10px; font-weight: 550; text-transform: uppercase; letter-spacing: .06em; }
-    .benchmark thead tr:not(.group-head) th { color: #b8c1c2; font-size: 12px; font-weight: 700; }
+    .benchmark thead tr:not(.group-head) th { color: #b8c1c2; font-size: 23.4px; font-weight: 700; line-height: 1.12; overflow-wrap: anywhere; white-space: normal; }
     html[data-theme="light"] .benchmark thead tr:not(.group-head) th { color: #35423d; }
     td { color: #aeb8b9; font-size: 13px; }
+    .benchmark tbody td:nth-child(2) { font-size: 19.5px; }
+    .benchmark tbody td:nth-child(n+3) { font-size: 19.5px; }
     tr:last-child td { border-bottom: 0; }
     .benchmark .model-col { position: sticky; left: 0; z-index: 2; min-width: 160px; background: var(--panel); text-align: left; }
-    .benchmark tbody .model-col { font-weight: 700; }
+    .benchmark tbody .model-col { font-size: 23.4px; font-weight: 700; }
     .benchmark thead .model-col { z-index: 4; }
-    .benchmark .group-head th { height: 34px; color: var(--text); border-bottom: 1px solid var(--line); font-size: 12px; }
+    .benchmark .group-head th { height: 34px; color: var(--text); border-bottom: 1px solid var(--line); font-size: 23.4px; }
     .benchmark .group-start td { border-top: 2px solid var(--line); }
-    .benchmark .featured-row td:not(.score-best) { color: #17100f; background: #fba5a4; }
+    .benchmark .featured-row td:not(.score-best) { color: #17100f; background: #4e83c2; }
     .score-best { color: #fff9e8; font-weight: 800; background: linear-gradient(135deg, #d84e50 0%, #e1774d 52%, #d8a83d 100%); box-shadow: inset 0 0 0 1px rgba(255,220,132,.7); }
     html[data-theme="light"] .score-best { color: #24150d; background: linear-gradient(135deg, #f96765 0%, #f28b55 52%, #e8b84f 100%); }
     .benchmark .featured-row .score-best { color: #17100f; }
     .score-new { color: #f96765; font-weight: 700; }
     .benchmark sup { margin-left: 2px; font-size: .7em; vertical-align: super; }
-    .benchmark-notes { display: grid; gap: 4px; padding: 12px 16px 14px; border-top: 1px solid var(--line); color: var(--dim); font-size: 11px; line-height: 1.45; }
-    .benchmark-notes p { margin: 0; }
+    .benchmark-notes { display: grid; gap: 5px; padding: 14px 16px 16px; border-top: 1px solid var(--line); color: var(--dim); font-size: 16px; line-height: 1.4; }
+    .benchmark-notes p { position: relative; margin: 0; padding-left: 26px; }
+    .benchmark-notes p::before { content: attr(data-note-marker); position: absolute; left: 0; width: 20px; text-align: center; }
     .tbd { display: inline-flex; padding: 4px 8px; border: 1px solid #374246; border-radius: 999px; color: #657174; font-size: 8px; }
 
     .token-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 34px; }
@@ -324,6 +329,7 @@
       .hero-wrap { padding: 44px 0 52px; }
       .eyebrow { font-size: 17px; }
       h1 { font-size: clamp(40px, 12vw, 56px); line-height: .96; }
+      html[data-language="source"] h1 { font-size: clamp(36px, 9vw, 46px); }
       .resource-links { width: 100%; gap: 6px; margin-top: 24px; }
       .resource-links a { min-width: 0; flex: 1; gap: 7px; padding-inline: 9px; }
       .resource-logo { width: 20px; height: 20px; }
@@ -356,18 +362,18 @@
 </head>
 <body>
   <header class="site-header">
-    <nav class="shell" aria-label="主导航">
+    <nav class="shell" aria-label="Main navigation" data-i18n-aria-source="Main navigation" data-i18n-aria-zh="主导航">
       <div class="nav-links mono">
         <a href="#er" data-i18n-source="ER Model" data-i18n-zh="ER 模型">ER Model</a>
         <a href="#vla" data-i18n-source="VLA Model" data-i18n-zh="WLA 模型">WLA Model</a>
         <a href="#robot" data-i18n-source="Robot Tests" data-i18n-zh="真机测试">Robot Tests</a>
       </div>
       <div class="header-actions">
-        <button class="theme-toggle language-toggle mono" id="languageToggle" type="button" aria-label="切换到中文模式" aria-pressed="false">
+        <button class="theme-toggle language-toggle mono" id="languageToggle" type="button" aria-label="Switch to Chinese" aria-pressed="false">
           <span class="theme-toggle-icon" id="languageIcon" aria-hidden="true">文</span>
           <span id="languageText">中文</span>
         </button>
-        <button class="theme-toggle mono" id="themeToggle" type="button" aria-label="切换到亮色模式" aria-pressed="false">
+        <button class="theme-toggle mono" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
           <span class="theme-toggle-icon" id="themeIcon" aria-hidden="true">☼</span>
           <span id="themeText">Light</span>
         </button>
@@ -379,9 +385,9 @@
     <section class="hero-wrap" id="intro">
       <div class="shell hero">
         <div>
-          <div class="eyebrow mono">通用人形机器人基础模型</div>
-          <h1><strong><b class="hero-prefix">全开源</b>UnifoLM-WLA-1.0</strong><span>一模驱动，全身协同</span></h1>
-          <div class="resource-links mono" id="resources" aria-label="项目资源">
+          <div class="eyebrow mono" data-i18n-source="General-Purpose Humanoid Robot Foundation Model" data-i18n-zh="通用人形机器人基础模型">General-Purpose Humanoid Robot Foundation Model</div>
+          <h1><strong><b class="hero-prefix" data-i18n-source="Fully Open Source" data-i18n-zh="全开源">Fully Open Source</b>UnifoLM-WLA-1.0</strong><span data-i18n-source="One Model Drives All, Whole-Body Coordination" data-i18n-zh="一模驱动，全身协同">One Model Drives All, Whole-Body Coordination</span></h1>
+          <div class="resource-links mono" id="resources" aria-label="Project resources" data-i18n-aria-source="Project resources" data-i18n-aria-zh="项目资源">
             <a href="#resources">
               <span class="resource-logo resource-logo-github" aria-hidden="true"><img class="github-mark-black" src="assets/brand/github-mark-black.svg" alt="" /><img class="github-mark-white" src="assets/brand/github-mark-white.svg" alt="" /></span>
               <span class="resource-link-copy"><strong data-i18n-source="Code" data-i18n-zh="代码">Code</strong><small data-i18n-source="Coming soon" data-i18n-zh="即将开放">Coming soon</small></span>
@@ -395,15 +401,15 @@
               <span class="resource-link-copy"><strong data-i18n-source="Datasets" data-i18n-zh="数据集">Datasets</strong><small data-i18n-source="Coming soon" data-i18n-zh="即将开放">Coming soon</small></span>
             </a>
           </div>
-          <p class="intro">UnifoLM-WLA-1.0 是宇树科技全面升级的新一代通用人形机器人基础模型，拥有 6B 参数。模型依托大规模通用多模态感知与理解数据，融合以交互为中心的世界建模，全面提升空间感知与理解能力，在多项具身推理评测中达到业界领先。通过约 2,500 小时高质量真机数据训练，单模型统筹64个任务，覆盖桌面操作与全身移动操作，适配二指夹爪及多种五指灵巧手，具备跨任务、跨末端执行器的泛化能力。</p>
-          <div class="facts" aria-label="项目核心数据">
+          <p class="intro" data-i18n-source="UnifoLM-WLA-1.0 is Unitree Robotics' comprehensively upgraded, next-generation general-purpose humanoid robot foundation model with 6B parameters. Built on large-scale general multimodal perception and understanding data and interaction-centric world modeling, it substantially advances spatial perception and understanding, achieving industry-leading results across multiple embodied reasoning benchmarks. Trained on approximately 2,500 hours of high-quality real-robot data, a single model coordinates 64 tasks spanning desktop manipulation and whole-body mobile manipulation. It supports two-finger grippers and multiple five-finger dexterous hands, with strong generalization across tasks and end effectors." data-i18n-zh="UnifoLM-WLA-1.0 是宇树科技全面升级的新一代通用人形机器人基础模型，拥有 6B 参数。模型依托大规模通用多模态感知与理解数据，融合以交互为中心的世界建模，全面提升空间感知与理解能力，在多项具身推理评测中达到业界领先。通过约 2,500 小时高质量真机数据训练，单模型统筹64个任务，覆盖桌面操作与全身移动操作，适配二指夹爪及多种五指灵巧手，具备跨任务、跨末端执行器的泛化能力。">UnifoLM-WLA-1.0 is Unitree Robotics' comprehensively upgraded, next-generation general-purpose humanoid robot foundation model with 6B parameters. Built on large-scale general multimodal perception and understanding data and interaction-centric world modeling, it substantially advances spatial perception and understanding, achieving industry-leading results across multiple embodied reasoning benchmarks. Trained on approximately 2,500 hours of high-quality real-robot data, a single model coordinates 64 tasks spanning desktop manipulation and whole-body mobile manipulation. It supports two-finger grippers and multiple five-finger dexterous hands, with strong generalization across tasks and end effectors.</p>
+          <div class="facts" aria-label="Key project figures" data-i18n-aria-source="Key project figures" data-i18n-aria-zh="项目核心数据">
             <div class="fact"><strong>6B</strong><span class="mono" data-i18n-source="model parameters" data-i18n-zh="模型参数量">VLA parameters</span></div>
             <div class="fact"><strong>5M+</strong><span class="mono" data-i18n-source="ER samples" data-i18n-zh="ER 训练样本">ER samples</span></div>
             <div class="fact"><strong>≈2,500h</strong><span class="mono" data-i18n-source="Robot data" data-i18n-zh="真机数据">Robot data</span></div>
           </div>
         </div>
 
-        <aside class="hero-video" aria-label="项目快剪合集视频占位">
+        <aside class="hero-video" aria-label="Project highlight reel placeholder" data-i18n-aria-source="Project highlight reel placeholder" data-i18n-aria-zh="项目快剪合集视频占位">
           <div class="card-head mono"><span data-i18n-source="Project highlight reel" data-i18n-zh="项目快剪合集">Project highlight reel</span><strong data-i18n-source="Video placeholder" data-i18n-zh="视频占位">Video placeholder</strong></div>
           <div class="hero-video-stage">
             <div class="hero-play" aria-hidden="true">▶</div>
@@ -419,16 +425,16 @@
         <div class="section-title">
           <div>
             <div class="method-label mono" data-i18n-source="ER Model · Embodied Reasoner" data-i18n-zh="ER 模型 · 具身推理">ER Model · Embodied Reasoner</div>
-            <h2>理解世界，<br /><em style="color:var(--orange)">连接行动。</em></h2>
-            <p class="section-lead">在同一多模态模型中融合具身推理、未来动态区域预测与离散动作学习，协同提升空间感知、交互预测与动作生成能力，为后续 WLA 训练提供统一的视觉—语言—动作表征基础。</p>
+            <h2><span data-i18n-source="Understand the World," data-i18n-zh="理解世界，">Understand the World,</span><br /><em style="color:var(--orange)" data-i18n-source="Connect with Action." data-i18n-zh="连接行动。">Connect with Action.</em></h2>
+            <p class="section-lead" data-i18n-source="A unified multimodal model brings together embodied reasoning, future dynamic-region prediction, and discrete action learning to jointly strengthen spatial perception, interaction prediction, and action generation, providing a unified vision–language–action representation for subsequent WLA training." data-i18n-zh="在同一多模态模型中融合具身推理、未来动态区域预测与离散动作学习，协同提升空间感知、交互预测与动作生成能力，为后续 WLA 训练提供统一的多模态表征基础。">A unified multimodal model brings together embodied reasoning, future dynamic-region prediction, and discrete action learning to jointly strengthen spatial perception, interaction prediction, and action generation, providing a unified vision–language–action representation for subsequent WLA training.</p>
           </div>
         </div>
 
-        <section class="drp-root er-reasoning-module" aria-label="具身推理模块">
+        <section class="drp-root er-reasoning-module" aria-label="Embodied reasoning module" data-i18n-aria-source="Embodied reasoning module" data-i18n-aria-zh="具身推理模块">
           <article class="drp-card">
             <div class="drp-intro">
             <h3 data-i18n-source="Embodied Reasoning" data-i18n-zh="具身推理">Embodied Reasoning</h3>
-            <p>UnifoLM-ER-1 在 16 项多模态感知与理解评测中，相较业内开源模型取得8项领先，整体表现亦可比肩国外闭源大模型。UnifoLM-ER-1基于 Qwen3-VL-4B，采用超过 500 万条训练数据，覆盖图像点预测、目标检测、多图推理、2D 轨迹预测、3D 目标检测及多图空间问答等任务，并与通用图文数据混合训练，在保持通用视觉语言能力的同时，全面提升具身场景下的空间理解与推理能力。</p>
+            <p data-i18n-source="Across 16 multimodal perception and understanding benchmarks, UnifoLM-ER-1 leads open-source models on eight and delivers overall performance comparable to leading proprietary models. Built on Qwen3-VL-4B, UnifoLM-ER-1 is trained on more than 5 million samples spanning image point prediction, object detection, multi-image reasoning, 2D trajectory prediction, 3D object detection, and multi-image spatial question answering. These data are co-trained with general image–text data, preserving broad vision-language capabilities while substantially improving spatial understanding and reasoning in embodied environments." data-i18n-zh="UnifoLM-ER-1 在 16 项多模态感知与理解评测中，相较业内开源模型取得8项领先，整体表现亦可比肩国外闭源大模型。UnifoLM-ER-1基于 Qwen3-VL-4B，采用超过 500 万条训练数据，覆盖图像点预测、目标检测、多图推理、2D 轨迹预测、3D 目标检测及多图空间问答等任务，并与通用图文数据混合训练，在保持通用视觉语言能力的同时，全面提升具身场景下的空间理解与推理能力。">Across 16 multimodal perception and understanding benchmarks, UnifoLM-ER-1 leads open-source models on eight and delivers overall performance comparable to leading proprietary models. Built on Qwen3-VL-4B, UnifoLM-ER-1 is trained on more than 5 million samples spanning image point prediction, object detection, multi-image reasoning, 2D trajectory prediction, 3D object detection, and multi-image spatial question answering. These data are co-trained with general image–text data, preserving broad vision-language capabilities while substantially improving spatial understanding and reasoning in embodied environments.</p>
             </div>
 
             <div class="er-reasoning-content">
@@ -440,14 +446,14 @@
                 </div>
               </div> -->
 
-              <div class="benchmark" aria-label="具身推理 benchmark 结果表格">
+              <div class="benchmark" aria-label="Embodied reasoning benchmark results table" data-i18n-aria-source="Embodied reasoning benchmark results table" data-i18n-aria-zh="具身推理 benchmark 结果表格">
           <div class="benchmark-head"><h3 data-i18n-source="Benchmark results" data-i18n-zh="评测结果">Benchmark results</h3></div>
           <div class="table-wrap">
             <table>
               <thead>
                 <tr class="group-head">
                   <th class="model-col" rowspan="2" data-i18n-source="Model" data-i18n-zh="模型">Model</th>
-                  <th rowspan="2" data-i18n-source="Open" data-i18n-zh="开源">Open</th>
+                  <th rowspan="2" data-i18n-source="Open Source" data-i18n-zh="开源">Open Source</th>
                   <th colspan="13" data-i18n-source="Spatial Understanding" data-i18n-zh="空间理解">Spatial Understanding</th>
                   <th colspan="3" data-i18n-source="Multimodal Understanding" data-i18n-zh="多模态理解">Multimodal Understanding</th>
                 </tr>
@@ -462,117 +468,117 @@
                   <td>62.4</td><td>55.1</td><td class="score-best">61.7</td><td class="score-best">82.0</td><td class="score-best">73.8</td><td class="score-best">93.4<sup>†</sup></td><td class="score-best">88.6</td><td class="score-best">88.9</td><td class="score-best">73.1</td><td>76.0</td><td>54.2</td><td class="score-best">88.1</td><td>50.0</td><td>69.8</td><td>2223.3</td><td>54.7</td>
                 </tr>
                 <tr>
-                  <td class="model-col">RoboBrain2.0-7B</td>
+                  <td class="model-col">RoboBrain2.0-7B<sup>*</sup></td>
                   <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
                   <td>30.0</td><td>28.8</td><td>42.2</td><td>63.6</td><td>45.3</td><td>83.9<sup>†</sup></td><td>85.7</td><td>76.3</td><td>54.2</td><td>75.3</td><td>36.1</td><td>84.0</td><td>/</td><td>69.4</td><td>2057.4</td><td>44.4</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Robix-7B</td>
+                  <td class="model-col">Robix-7B<sup>*</sup></td>
                   <td data-i18n-source="No" data-i18n-zh="否">No</td>
                   <td>/</td><td>/</td><td>/</td><td>41.9</td><td>29.5</td><td>87.6<sup>†</sup></td><td>86.5</td><td>77.4</td><td>/</td><td>71.1</td><td>/</td><td>83.3</td><td>/</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Pelican-7B</td>
+                  <td class="model-col">Pelican-7B<sup>*</sup></td>
                   <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
                   <td>31.8</td><td>33.7</td><td>25.1</td><td>60.0</td><td>20.4</td><td>/</td><td>79.4</td><td>73.1</td><td>57.8</td><td>52.0</td><td>53.2</td><td>82.2</td><td>/</td><td>69.3</td><td>2141.9</td><td>51.1</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Cosmos-R1-7B</td>
+                  <td class="model-col">Cosmos-R1-7B<sup>*</sup></td>
                   <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
                   <td>38.8</td><td>26.0</td><td>5.6</td><td>2.9</td><td>8.2</td><td>/</td><td>76.7</td><td>68.9</td><td>42.4</td><td class="score-best">82.7</td><td>25.4</td><td>82.4</td><td>/</td><td>67.6</td><td>2157.4</td><td>37.4</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Cosmos3-Super</td>
+                  <td class="model-col">Cosmos3-Super<sup>*</sup></td>
                   <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
                   <td>/</td><td>/</td><td>57.0</td><td>71.0</td><td>/</td><td>90.3<sup>†</sup></td><td>88.0</td><td>/</td><td>70.0</td><td>/</td><td>60.9</td><td>/</td><td>51.2</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Qwen3-VL-4B</td>
+                  <td class="model-col">Qwen3-VL-4B<sup>*</sup></td>
                   <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
                   <td>47.7</td><td>40.7</td><td>46.6</td><td>63.0</td><td>48.3</td><td>85.0<sup>†</sup></td><td>85.1</td><td>79.6</td><td>61.7</td><td>68.7</td><td>59.3</td><td>81.6</td><td>41.3</td><td>71.0</td><td>2325.2</td><td>57.8</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Qwen3-VL-8B</td>
+                  <td class="model-col">Qwen3-VL-8B<sup>*</sup></td>
                   <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
                   <td>43.3</td><td>49.7</td><td>54.2</td><td>61.9</td><td>51.0</td><td>73.8<sup>†</sup></td><td>86.2</td><td>78.5</td><td>66.9</td><td>67.3</td><td>59.4</td><td>83.2</td><td>45.8</td><td>70.6</td><td class="score-best">2412.5</td><td class="score-best">62.3</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Embodied-R1</td>
+                  <td class="model-col">Embodied-R1<sup>*</sup></td>
                   <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
                   <td>51.8</td><td>26.5</td><td>39.7</td><td>69.5</td><td>49.4</td><td>78.5<sup>†</sup></td><td>82.7</td><td>67.4</td><td>47.4</td><td>76.3</td><td>26.6</td><td>/</td><td>35.2</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Embodied-R1.5</td>
+                  <td class="model-col">Embodied-R1.5<sup>*</sup></td>
                   <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
                   <td>61.0</td><td>53.8</td><td>54.2</td><td>74.0</td><td>64.8</td><td>83.0<sup>†</sup></td><td>86.9</td><td>78.1</td><td>69.7</td><td>74.7</td><td>56.1</td><td>/</td><td>46.0</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Molmo2-ER</td>
+                  <td class="model-col">Molmo2-ER<sup>*</sup></td>
                   <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
                   <td>/</td><td>/</td><td>52.5</td><td>54.0</td><td>/</td><td>85.7<sup>†</sup></td><td>87.8</td><td>78.8</td><td>/</td><td>78.0</td><td class="score-best">74.5</td><td>/</td><td>46.8</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Hy-Embodied-VLM-1.0</td>
+                  <td class="model-col">Hy-Embodied-VLM-1.0<sup>*</sup></td>
                   <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
                   <td>/</td><td>49.6</td><td>53.4</td><td>65.0</td><td>64.6</td><td>87.3<sup>†</sup></td><td>89.7</td><td>82.7</td><td>69.4</td><td>78.0</td><td>/</td><td>/</td><td class="score-best">60.8</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">MiMo-Emb-7B</td>
+                  <td class="model-col">MiMo-Emb-7B<sup>*</sup></td>
                   <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
                   <td>36.6</td><td>33.1</td><td>29.5</td><td>56.1</td><td>22.4</td><td>81.3</td><td>88.1</td><td>78.2</td><td>52.0</td><td>78.0</td><td>44.5</td><td>79.0</td><td>/</td><td>66.3</td><td>2320.8</td><td>26.4</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Thinker-4B</td>
+                  <td class="model-col">Thinker-4B<sup>*</sup></td>
                   <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
                   <td class="score-best">62.7</td><td class="score-best">63.7</td><td>61.0</td><td>72.0</td><td>57.4</td><td>84.6</td><td>86.3</td><td>80.2</td><td>70.8</td><td>72.7</td><td>65.4</td><td>81.5</td><td>/</td><td class="score-best">71.9</td><td>2323.4</td><td>46.2</td>
                 </tr>
-                <tr>
-                  <td class="model-col">GenieReasoner</td>
+                <!-- <tr>
+                  <td class="model-col">GenieReasoner<sup>*</sup></td>
                   <td data-i18n-source="No" data-i18n-zh="否">No</td>
                   <td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>74.8</td><td>83.9</td><td>70.7</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td>
-                </tr>
+                </tr> -->
                 <tr>
-                  <td class="model-col">Wall-OSS-0.5</td>
+                  <td class="model-col">Wall-OSS-0.5<sup>*</sup></td>
                   <td data-i18n-source="Yes" data-i18n-zh="是">Yes</td>
                   <td>/</td><td>/</td><td>/</td><td>15.0</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td><td>38.0</td><td>59.0</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Lumo-1-Stage1</td>
+                  <td class="model-col">Lumo-1-Stage1<sup>*</sup></td>
                   <td data-i18n-source="No" data-i18n-zh="否">No</td>
                   <td>/</td><td>/</td><td>51.0</td><td>69.1</td><td>/</td><td>82.4</td><td>86.4</td><td>75.6</td><td>62.6</td><td>74.7</td><td>/</td><td>/</td><td>38.0</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr class="group-start">
-                  <td class="model-col">Gemini-ER 2</td>
+                  <td class="model-col">Gemini-ER 2<sup>‡</sup></td>
                   <td data-i18n-source="No" data-i18n-zh="否">No</td>
                   <td>/</td><td>/</td><td>35.4</td><td>/</td><td>/</td><td>90.6<sup>†</sup></td><td class="score-new">90.4</td><td>81.4</td><td>51.1</td><td>/</td><td>/</td><td>/</td><td class="score-new">71.0</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Gemini-ER 1.5</td>
+                  <td class="model-col">Gemini-ER 1.5<sup>‡</sup></td>
                   <td data-i18n-source="No" data-i18n-zh="否">No</td>
                   <td>/</td><td>/</td><td>41.8</td><td>48.0</td><td>/</td><td>/</td><td>83.6</td><td>73.4</td><td>57.7</td><td>62.0</td><td>39.9</td><td>/</td><td>47.0</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Gemini 2.5 Pro</td>
+                  <td class="model-col">Gemini 2.5 Pro<sup>‡</sup></td>
                   <td data-i18n-source="No" data-i18n-zh="否">No</td>
                   <td>/</td><td>/</td><td>33.6</td><td>37.0</td><td>/</td><td>88.6<sup>†</sup></td><td>85.9</td><td>78.0</td><td>71.3</td><td>74.7</td><td>51.1</td><td>/</td><td>56.0</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Gemini 2.5 Flash</td>
+                  <td class="model-col">Gemini 2.5 Flash<sup>‡</sup></td>
                   <td data-i18n-source="No" data-i18n-zh="否">No</td>
                   <td>/</td><td>/</td><td>41.2</td><td>48.0</td><td>/</td><td>80.3<sup>†</sup></td><td>85.5</td><td>76.2</td><td>73.4</td><td>73.3</td><td>45.3</td><td>/</td><td>47.5</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">Gemini 3.1 Pro</td>
+                  <td class="model-col">Gemini 3.1 Pro<sup>‡</sup></td>
                   <td data-i18n-source="No" data-i18n-zh="否">No</td>
                   <td>/</td><td>/</td><td>70.0</td><td>61.0</td><td>/</td><td>86.1<sup>†</sup></td><td>88.6</td><td>/</td><td>65.1</td><td>/</td><td>47.5</td><td>/</td><td>65.2</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">GPT-5.6-sol</td>
+                  <td class="model-col">GPT-5.6-sol<sup>‡</sup></td>
                   <td data-i18n-source="No" data-i18n-zh="否">No</td>
                   <td>/</td><td>/</td><td>58.3</td><td>51.1</td><td>/</td><td>85.6<sup>†</sup></td><td>85.2</td><td>80.7</td><td>66.8</td><td>21.3</td><td>/</td><td>/</td><td>64.8</td><td>/</td><td>/</td><td>/</td>
                 </tr>
                 <tr>
-                  <td class="model-col">GPT-6-Astra</td>
+                  <td class="model-col">GPT-6-Astra<sup>‡</sup></td>
                   <td data-i18n-source="No" data-i18n-zh="否">No</td>
                   <td>/</td><td>/</td><td class="score-new">79.6</td><td>69.0</td><td>/</td><td>90.4<sup>†</sup></td><td>87.3</td><td>83.3</td><td class="score-new">73.4</td><td>31.3</td><td>/</td><td>/</td><td>77.7</td><td>/</td><td>/</td><td>/</td>
                 </tr>
@@ -580,8 +586,9 @@
             </table>
           </div>
           <div class="benchmark-notes">
-            <p data-i18n-source="† BLINK score averaged over only the Relative Depth and Spatial Relation subtasks." data-i18n-zh="† BLINK 分数仅取 Relative Depth 与 Spatial Relation 两个子任务的平均值。部分开源模型为部署测试结果。">† BLINK score averaged over only the Relative Depth and Spatial Relation subtasks.</p>
-            <p data-i18n-source="Some open-source model results are from deployment tests; other open-source model data comes from official project pages or papers; closed-source model data is drawn partly from official results and partly from API call tests." data-i18n-zh="部分开源模型为部署测试结果；其他开源模型数据来自官方主页或论文；闭源模型数据部分来自官方结果，部分来自 API Call 测试。">Some open-source model results are from deployment tests; other open-source model data comes from official project pages or papers; closed-source model data is drawn partly from official results and partly from API call tests.</p>
+            <p data-note-marker="*" data-i18n-source="Results are sourced from the models' official technical reports or publicly available papers." data-i18n-zh="模型结果来自其官方原始技术报告或公开论文。">Results are sourced from the models' official technical reports or publicly available papers.</p>
+            <p data-note-marker="‡" data-i18n-source="Results were obtained through tests using the models' official APIs." data-i18n-zh="模型结果来自其官方 API Call 测试。">Results were obtained through tests using the models' official APIs.</p>
+            <p data-note-marker="†" data-i18n-source="BLINK scores are averaged over the Relative Depth and Spatial Relation subtasks only; all reported results were obtained in our own testing." data-i18n-zh="BLINK 分数仅取 Relative Depth 与 Spatial Relation 两个子任务的平均值，结果均为本项目测试结果。">BLINK scores are averaged over the Relative Depth and Spatial Relation subtasks only; all reported results were obtained in our own testing.</p>
           </div>
               </div>
             </div>
@@ -589,15 +596,15 @@
           </article>
         </section>
 
-        <section class="drp-root" aria-label="动态区域预测动态示意图">
+        <section class="drp-root" aria-label="Dynamic region prediction animation" data-i18n-aria-source="Dynamic region prediction animation" data-i18n-aria-zh="动态区域预测动态示意图">
           <article class="drp-card">
             <div class="drp-intro">
               <h3 data-i18n-source="Dynamic Region Prediction" data-i18n-zh="动态区域预测">Dynamic Region Prediction</h3>
-              <p>我们利用光流提取表征未来场景变化的动态区域，并通过训练 VQ-VAE 将其编码为固定长度的离散 token 序列。以当前图像及任务描述或动作为条件，VLM 直接预测未来动态区域对应的掩码 token，聚焦交互主体及其引发的场景变化，实现以交互为中心的世界建模。</p>
+              <p data-i18n-source="We use optical flow to extract dynamic regions that capture future scene changes, then train a VQ-VAE to encode them into fixed-length sequences of discrete tokens. Conditioned on the current image and a task description or action, the VLM directly predicts mask tokens for future dynamic regions, focusing on interaction subjects and the scene changes they induce to enable interaction-centric world modeling." data-i18n-zh="我们利用光流提取表征未来场景变化的动态区域，并通过训练 VQ-VAE 将其编码为固定长度的离散 token 序列。以当前图像及任务描述或动作为条件，VLM 直接预测未来动态区域对应的掩码 token，聚焦交互主体及其引发的场景变化，实现以交互为中心的世界建模。">We use optical flow to extract dynamic regions that capture future scene changes, then train a VQ-VAE to encode them into fixed-length sequences of discrete tokens. Conditioned on the current image and a task description or action, the VLM directly predicts mask tokens for future dynamic regions, focusing on interaction subjects and the scene changes they induce to enable interaction-centric world modeling.</p>
             </div>
 
             <div class="drp-board">
-              <div class="drp-status" aria-label="动画正在循环播放"><i></i>LIVE PIPELINE</div>
+              <div class="drp-status" aria-label="Animation is looping" data-i18n-aria-source="Animation is looping" data-i18n-aria-zh="动画正在循环播放"><i></i>LIVE PIPELINE</div>
               <div class="drp-diagram">
                 <svg class="drp-shared-links" viewBox="0 0 1160 320" aria-hidden="true">
                   <defs>
@@ -612,30 +619,30 @@
 
                 <div class="drp-row-label">01 / OPTICAL-FLOW SUPERVISION</div>
 
-                <div class="drp-supervision" aria-label="从连续图像生成动态区域 mask token 的流程">
+                <div class="drp-supervision" aria-label="Pipeline for generating dynamic-region mask tokens from consecutive images" data-i18n-aria-source="Pipeline for generating dynamic-region mask tokens from consecutive images" data-i18n-aria-zh="从连续图像生成动态区域 mask token 的流程">
                   <div class="drp-pair">
-                    <div class="drp-frame"><img src="assets/dynamic_region_prediction/head_left_t0.png" alt="机器人视角图像 t0" /><span>IMAGE_t0</span></div>
-                    <div class="drp-frame"><img src="assets/dynamic_region_prediction/head_left_t1.png" alt="机器人视角图像 t1" /><span>IMAGE_t1</span></div>
+                    <div class="drp-frame"><img src="assets/dynamic_region_prediction/head_left_t0.png" alt="Robot-view image at t0" data-i18n-alt-source="Robot-view image at t0" data-i18n-alt-zh="机器人视角图像 t0" /><span>IMAGE_t0</span></div>
+                    <div class="drp-frame"><img src="assets/dynamic_region_prediction/head_left_t1.png" alt="Robot-view image at t1" data-i18n-alt-source="Robot-view image at t1" data-i18n-alt-zh="机器人视角图像 t1" /><span>IMAGE_t1</span></div>
                   </div>
                   <div class="drp-connector" aria-hidden="true"><span></span></div>
                   <div class="drp-node"><div><span>ESTIMATE</span><strong>Optical<br />Flow</strong></div></div>
                   <div class="drp-connector" aria-hidden="true"><span style="animation-delay:.35s"></span></div>
                   <figure class="drp-visual drp-flow-visual">
-                    <img src="assets/dynamic_region_prediction/optical_flow_t0_t1.png" alt="t0 到 t1 的光流结果" />
+                    <img src="assets/dynamic_region_prediction/optical_flow_t0_t1.png" alt="Optical flow from t0 to t1" data-i18n-alt-source="Optical flow from t0 to t1" data-i18n-alt-zh="t0 到 t1 的光流结果" />
                     <figcaption>OPTICAL FLOW</figcaption>
                   </figure>
                   <div class="drp-connector" aria-hidden="true"><span style="animation-delay:.7s"></span></div>
                   <figure class="drp-visual drp-mask-visual">
-                    <img class="drp-mask-base" src="assets/dynamic_region_prediction/head_left_t1.png" alt="图像 t1" />
-                    <img class="drp-mask-overlay" src="assets/dynamic_region_prediction/mask_overlay_head_left_t1.png" alt="动态区域 mask 叠加结果" />
-                    <img class="drp-mask-only" src="assets/dynamic_region_prediction/dynamic_mask_only.png" alt="从 RGB 图像中分离出的动态区域 mask" />
+                    <img class="drp-mask-base" src="assets/dynamic_region_prediction/head_left_t1.png" alt="Image at t1" data-i18n-alt-source="Image at t1" data-i18n-alt-zh="图像 t1" />
+                    <img class="drp-mask-overlay" src="assets/dynamic_region_prediction/mask_overlay_head_left_t1.png" alt="Dynamic-region mask overlay" data-i18n-alt-source="Dynamic-region mask overlay" data-i18n-alt-zh="动态区域 mask 叠加结果" />
+                    <img class="drp-mask-only" src="assets/dynamic_region_prediction/dynamic_mask_only.png" alt="Dynamic-region mask isolated from the RGB image" data-i18n-alt-source="Dynamic-region mask isolated from the RGB image" data-i18n-alt-zh="从 RGB 图像中分离出的动态区域 mask" />
                     <figcaption>DYNAMIC MASK</figcaption>
                   </figure>
                   <div class="drp-connector" aria-hidden="true"><span style="animation-delay:1.05s"></span></div>
                   <div class="drp-node drp-vq-node"><div><span>DISCRETIZE</span><strong>VQ-VAE</strong></div></div>
                 </div>
 
-                <div class="drp-prediction" aria-label="VLM 复用图像 t0 预测未来 mask tokens 的流程">
+                <div class="drp-prediction" aria-label="Pipeline in which the VLM reuses image t0 to predict future mask tokens" data-i18n-aria-source="Pipeline in which the VLM reuses image t0 to predict future mask tokens" data-i18n-aria-zh="VLM 复用图像 t0 预测未来 mask tokens 的流程">
                   <div class="drp-context drp-condition-only">
                     <div class="drp-context-options"><span>Task</span><em>OR</em><span>Action</span></div>
                   </div>
@@ -645,7 +652,7 @@
 
                 <div class="drp-row-label drp-prediction-label">02 / FUTURE CHANGE PREDICTION</div>
 
-                <div class="drp-token-bank drp-shared-token-bank" aria-label="VQ-VAE 生成且由 VLM 预测的未来 mask tokens">
+                <div class="drp-token-bank drp-shared-token-bank" aria-label="Future mask tokens generated by the VQ-VAE and predicted by the VLM" data-i18n-aria-source="Future mask tokens generated by the VQ-VAE and predicted by the VLM" data-i18n-aria-zh="VQ-VAE 生成且由 VLM 预测的未来 mask tokens">
                   <span>08</span><span>21</span><span>37</span><span>04</span>
                   <span>19</span><span>42</span><span>11</span><span>26</span>
                   <small class="drp-token-caption">FUTURE MASK TOKENS</small>
@@ -653,7 +660,7 @@
               </div>
             </div>
 
-            <div class="drp-video-strip" aria-label="Dynamic Region Prediction 视频演示">
+            <div class="drp-video-strip" aria-label="Dynamic Region Prediction video demonstrations" data-i18n-aria-source="Dynamic Region Prediction video demonstrations" data-i18n-aria-zh="Dynamic Region Prediction 视频演示">
               <article class="fullbody-video">
                 <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/flow-demo-web-2x/clean_table.mp4" type="video/mp4"></video>
                 <div class="fullbody-video-meta"><strong data-i18n-source="Clean table" data-i18n-zh="整理桌面">Clean table</strong><span class="mono">01</span></div>
@@ -674,15 +681,15 @@
           </article>
         </section>
 
-        <section class="dal-root homepage-action-demo" aria-label="离散动作学习动态示意图">
+        <section class="dal-root homepage-action-demo" aria-label="Discrete action learning animation" data-i18n-aria-source="Discrete action learning animation" data-i18n-aria-zh="离散动作学习动态示意图">
           <article class="dal-card">
             <header class="dal-intro">
               <h2 data-i18n-source="Discrete Action Learning" data-i18n-zh="离散动作学习">Discrete Action Learning</h2>
-              <p>我们将统一动作空间划分为末端执行器（EEF）位姿、末端执行器（EEF）关节量和下肢运动关节量三个部分，并针对各部分的动作轨迹分别训练残差矢量量化（RVQ）模型，实现动作序列的离散化。在 UnifoLM-ER-1 的基础上，引入离散动作 token 与未来动态区域的掩码 token，在同一 VLM 中对视觉、语言与动作表征进行联合对齐训练，得到UnifoLM-ER-Flow 模型。</p>
+              <p data-i18n-source="We partition the unified action space into three components: end-effector (EEF) poses, end-effector joint states, and lower-body joint states. A separate residual vector quantization (RVQ) model is trained for each component to discretize action sequences. Building on UnifoLM-ER-1, we introduce discrete action tokens and mask tokens for future dynamic regions, jointly aligning visual, language, and action representations within a single VLM to obtain the UnifoLM-ER-Flow model." data-i18n-zh="我们将统一动作空间划分为末端执行器（EEF）位姿、末端执行器（EEF）关节量和下肢运动关节量三个部分，并针对各部分的动作轨迹分别训练残差矢量量化（RVQ）模型，实现动作序列的离散化。在 UnifoLM-ER-1 的基础上，引入离散动作 token 与未来动态区域的掩码 token，在同一 VLM 中对视觉、语言与动作表征进行联合对齐训练，得到UnifoLM-ER-Flow 模型。">We partition the unified action space into three components: end-effector (EEF) poses, end-effector joint states, and lower-body joint states. A separate residual vector quantization (RVQ) model is trained for each component to discretize action sequences. Building on UnifoLM-ER-1, we introduce discrete action tokens and mask tokens for future dynamic regions, jointly aligning visual, language, and action representations within a single VLM to obtain the UnifoLM-ER-Flow model.</p>
             </header>
 
-            <section class="dal-pipeline" aria-label="离散动作学习流程图">
-              <div class="dal-live" aria-label="动画正在循环播放"><i></i>LIVE ENCODING</div>
+            <section class="dal-pipeline" aria-label="Discrete action learning pipeline" data-i18n-aria-source="Discrete action learning pipeline" data-i18n-aria-zh="离散动作学习流程图">
+              <div class="dal-live" aria-label="Animation is looping" data-i18n-aria-source="Animation is looping" data-i18n-aria-zh="动画正在循环播放"><i></i>LIVE ENCODING</div>
               <div class="dal-column-labels" aria-hidden="true">
                 <span>CONTINUOUS MOTION</span><span>VECTOR QUANTIZATION</span><span>DISCRETE TOKENS</span>
               </div>
@@ -691,7 +698,7 @@
                 <div class="dal-track dal-track-eef">
                   <div class="dal-source">
                     <div class="dal-motion-glyph"><svg viewBox="0 0 78 54" aria-hidden="true"><path d="M9 36c11-2 19-9 25-20 5 9 14 16 28 20"></path><circle cx="34" cy="16" r="4"></circle></svg></div>
-                    <div><small>末端轨迹</small></div>
+                    <div><small data-i18n-source="EEF trajectory" data-i18n-zh="末端轨迹">EEF trajectory</small></div>
                   </div>
                   <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3"></circle></svg>
                   <div class="dal-rvq-card"><span>RVQ</span><div class="dal-codebook" aria-hidden="true"><i></i><i></i><i></i></div></div>
@@ -702,7 +709,7 @@
                 <div class="dal-track dal-track-hand">
                   <div class="dal-source">
                     <div class="dal-motion-glyph"><svg viewBox="0 0 78 54" aria-hidden="true"><path d="M8 34c13 0 23-5 31-15 8 10 18 15 31 15"></path><path d="M24 38h30"></path></svg></div>
-                    <div><small>夹爪/灵巧手</small></div>
+                    <div><small data-i18n-source="Gripper / dexterous hand" data-i18n-zh="夹爪/灵巧手">Gripper / dexterous hand</small></div>
                   </div>
                   <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1" style="animation-delay:.45s"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3" style="animation-delay:.45s"></circle></svg>
                   <div class="dal-rvq-card"><span>RVQ</span><div class="dal-codebook" aria-hidden="true"><i></i><i></i><i></i></div></div>
@@ -713,7 +720,7 @@
                 <div class="dal-track dal-track-lower">
                   <div class="dal-source">
                     <div class="dal-motion-glyph"><svg viewBox="0 0 78 54" aria-hidden="true"><path d="M19 16h40l-5 24H24z"></path><path d="M28 40v7m22-7v7"></path></svg></div>
-                    <div><small>下肢动作</small></div>
+                    <div><small data-i18n-source="Lower-body motion" data-i18n-zh="下肢动作">Lower-body motion</small></div>
                   </div>
                   <svg class="dal-flow-arrow" viewBox="0 0 92 24" aria-hidden="true"><path class="dal-flow-line" d="M2 12h78" pathLength="1" style="animation-delay:.9s"></path><path class="dal-flow-head" d="m72 4 10 8-10 8"></path><circle class="dal-flow-dot" cx="2" cy="12" r="3" style="animation-delay:.9s"></circle></svg>
                   <div class="dal-rvq-card"><span>RVQ</span><div class="dal-codebook" aria-hidden="true"><i></i><i></i><i></i></div></div>
@@ -724,7 +731,7 @@
 
               <div class="dal-timeline">
                 <div class="dal-timeline-rule"><span></span></div>
-                <p><b>时间维度对齐</b><span>共享时间步 · 同步注入 VLM</span></p>
+                <p><b data-i18n-source="Temporal alignment" data-i18n-zh="时间维度对齐">Temporal alignment</b><span data-i18n-source="Shared timesteps · Synchronously fed into VLM" data-i18n-zh="共享时间步 · 同步注入 VLM">Shared timesteps · Synchronously fed into VLM</span></p>
               </div>
             </section>
 
@@ -737,27 +744,27 @@
       <div class="shell">
         <div class="section-title">
           <div>
-            <div class="method-label mono" style="color:var(--blue)" data-i18n-source="VLA Model · Shared Policy" data-i18n-zh="WLA 模型">VLA Model · Shared Policy</div>
-            <h2>多源数据，<br /><em style="color:var(--blue)">同一模型。</em></h2>
-            <p class="section-lead">UnifoLM-WLA-1.0，基于 UnifoLM-ER-Flow 多模态主干，结合 MMDiT 动作专家，利用约 2,500 小时高质量真机数据（如：<a href="https://huggingface.co/unitreerobotics/datasets" target="_blank" rel="noopener noreferrer">宇树开源数据</a>、<a href="https://bitrobot-foundation.github.io/humanoids-in-the-wild-500-hours/" target="_blank" rel="noopener noreferrer">BitRobot-HIW-500</a> 等）训练，覆盖多种机器人本体与作业场景。通过统一动作空间，构建跨本体先验迁移，实现感知理解、交互预测与动作生成协同建模，兼顾具身操作能力与通用多模态感知-推理能力。</p>
+            <div class="method-label mono" style="color:var(--blue)" data-i18n-source="WLA Model · Shared Policy" data-i18n-zh="WLA 模型">WLA Model · Shared Policy</div>
+            <h2><span data-i18n-source="Multi-Source Data," data-i18n-zh="多源数据，">Multi-Source Data,</span><br /><em style="color:var(--blue)" data-i18n-source="One Model." data-i18n-zh="同一模型。">One Model.</em></h2>
+            <p class="section-lead"><span data-i18n-source="UnifoLM-WLA-1.0 builds on the UnifoLM-ER-Flow multimodal backbone and incorporates an MMDiT action expert. It is trained on approximately 2,500 hours of high-quality real-robot data—including the " data-i18n-zh="UnifoLM-WLA-1.0，基于 UnifoLM-ER-Flow 多模态主干，结合 MMDiT 动作专家，利用约 2,500 小时高质量真机数据（如：">UnifoLM-WLA-1.0 builds on the UnifoLM-ER-Flow multimodal backbone and incorporates an MMDiT action expert. It is trained on approximately 2,500 hours of high-quality real-robot data—including the </span><a href="https://huggingface.co/unitreerobotics/datasets" target="_blank" rel="noopener noreferrer" data-i18n-source="Unitree Open Datasets" data-i18n-zh="宇树开源数据">Unitree Open Datasets</a><span data-i18n-source=" and " data-i18n-zh="、"> and </span><a href="https://bitrobot-foundation.github.io/humanoids-in-the-wild-500-hours/" target="_blank" rel="noopener noreferrer">BitRobot-HIW-500</a><span data-i18n-source="—covering diverse robot embodiments and operational scenarios. Through a unified action space, it enables cross-embodiment prior transfer and jointly models perception and understanding, interaction prediction, and action generation, balancing embodied manipulation capabilities with general multimodal perception and reasoning." data-i18n-zh=" 等）训练，覆盖多种机器人本体与作业场景。通过统一动作空间，构建跨本体先验迁移，实现感知理解、交互预测与动作生成协同建模，兼顾具身操作能力与通用多模态感知-推理能力。">—covering diverse robot embodiments and operational scenarios. Through a unified action space, it enables cross-embodiment prior transfer and jointly models perception and understanding, interaction prediction, and action generation, balancing embodied manipulation capabilities with general multimodal perception and reasoning.</span></p>
           </div>
         </div>
 
         <div class="vla-layout">
-          <section class="dal-root vla-architecture-demo" aria-label="VLA 模型结构动画">
+          <section class="dal-root vla-architecture-demo" aria-label="VLA model architecture animation" data-i18n-aria-source="VLA model architecture animation" data-i18n-aria-zh="VLA 模型结构动画">
             <article class="dal-card vla-arch-card">
               <header class="dal-intro">
                 <h2 data-i18n-source="Training Setup" data-i18n-zh="训练设置">Training Setup</h2>
                 <!-- <p>真机数据、具身推理数据与通用 VLM 数据共同构成训练配方。所有机器人、任务和末端执行器共享同一套模型参数。</p> -->
-                <div class="vla-training-strip" aria-label="VLA 训练设置">
+                <div class="vla-training-strip" aria-label="VLA training setup" data-i18n-aria-source="VLA training setup" data-i18n-aria-zh="VLA 训练设置">
                   <div class="vla-fact"><b>≈ 2,500h</b><span class="mono" data-i18n-source="Multi-embodiment robot data" data-i18n-zh="多本体真机数据">Multi-embodiment robot data</span></div>
                   <div class="vla-fact"><b data-i18n-source="Co-training" data-i18n-zh="联合训练">Co-training</b><span class="mono" data-i18n-source="Robot + general VLM data" data-i18n-zh="真机 + 通用 VLM 数据">Robot + general VLM data</span></div>
                   <div class="vla-fact"><b data-i18n-source="Fully shared" data-i18n-zh="完全共享">Fully shared</b><span class="mono" data-i18n-source="One set of model weights" data-i18n-zh="一套模型参数">One set of model weights</span></div>
                 </div>
               </header>
 
-              <section class="vla-arch-pipeline" aria-label="VLA 模型结构流程图">
-                <div class="dal-live" aria-label="动画正在循环播放"><i></i>LIVE GRAPH</div>
+              <section class="vla-arch-pipeline" aria-label="VLA model architecture pipeline" data-i18n-aria-source="VLA model architecture pipeline" data-i18n-aria-zh="VLA 模型结构流程图">
+                <div class="dal-live" aria-label="Animation is looping" data-i18n-aria-source="Animation is looping" data-i18n-aria-zh="动画正在循环播放"><i></i>LIVE GRAPH</div>
                 <div class="vla-arch-canvas">
                   <svg class="vla-dashed-callouts" viewBox="0 0 1280 720" aria-hidden="true">
                     <path d="M840 18 L806 260"></path>
@@ -794,7 +801,7 @@
                       </div>
                     </div>
 
-                    <div class="vla-gradient-link" aria-label="阻断 action expert 梯度回传">
+                    <div class="vla-gradient-link" aria-label="Stop gradient backpropagation through the action expert" data-i18n-aria-source="Stop gradient backpropagation through the action expert" data-i18n-aria-zh="阻断 action expert 梯度回传">
                       <svg class="dal-flow-arrow vla-flow-arrow" viewBox="0 0 88 116" aria-hidden="true">
                         <path class="dal-flow-line" d="M8 -10 H46 V72 H80" pathLength="1"></path>
                         <path class="dal-flow-head" d="m72 64 10 8-10 8"></path>
@@ -836,7 +843,7 @@
                       </div>
                     </div>
 
-                    <div class="vla-expert-detail" aria-label="Action expert 内部结构示意">
+                    <div class="vla-expert-detail" aria-label="Action expert internal architecture" data-i18n-aria-source="Action expert internal architecture" data-i18n-aria-zh="Action expert 内部结构示意">
                       <svg viewBox="0 0 360 616" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
                         <rect class="vla-detail-left-bg" x="14" y="-28" width="158" height="204" rx="8"></rect>
                         <rect class="vla-detail-right-bg" x="188" y="-28" width="158" height="204" rx="8"></rect>
@@ -1050,7 +1057,7 @@
                   </div>
 
                   <div class="vla-bottom-row">
-                    <div class="vla-inputs" aria-label="模型输入">
+                    <div class="vla-inputs" aria-label="Model inputs" data-i18n-aria-source="Model inputs" data-i18n-aria-zh="模型输入">
                       <div class="vla-input-card image-encoder">
                         <b>Image encoder</b>
                         <div class="vla-input-previews" aria-hidden="true">
@@ -1077,21 +1084,21 @@
         <div class="section-title">
           <div>
             <div class="method-label mono" style="color:var(--violet)" data-i18n-source="Real-robot tests · Unitree G1" data-i18n-zh="真机测试 · 宇树 G1">Real-robot tests · Unitree G1</div>
-            <h2>多任务，多末端执行器，<br /><em style="color:var(--violet)">单模型，真机实验。</em></h2>
-            <p class="section-lead">UnifoLM-WLA-1.0 以单一模型统一支持桌面操作、移动操作与全身协同任务，在多类任务的真机评测中展现出良好的任务执行能力。以下视频展示部分真机评测结果。</p>
+            <h2><span data-i18n-source="Multiple Tasks, Multiple End Effectors," data-i18n-zh="多任务，多末端执行器，">Multiple Tasks, Multiple End Effectors,</span><br /><em style="color:var(--violet)" data-i18n-source="One Model, Real-Robot Experiments." data-i18n-zh="单模型，真机实验。">One Model, Real-Robot Experiments.</em></h2>
+            <p class="section-lead" data-i18n-source="A single UnifoLM-WLA-1.0 model supports desktop manipulation, mobile manipulation, and whole-body coordination tasks. Across a diverse range of real-robot evaluations, it demonstrates robust task-execution capabilities. The videos below show selected real-robot evaluation results." data-i18n-zh="UnifoLM-WLA-1.0 统筹桌面操作、移动操作与全身协同任务，在多类任务的真机评测中展现出良好的任务执行能力。以下视频展示部分真机评测结果。">A single UnifoLM-WLA-1.0 model supports desktop manipulation, mobile manipulation, and whole-body coordination tasks. Across a diverse range of real-robot evaluations, it demonstrates robust task-execution capabilities. The videos below show selected real-robot evaluation results.</p>
           </div>
         </div>
 
-        <section class="fullbody-gallery" data-video-gallery aria-label="全身操作视频合集">
+        <section class="fullbody-gallery" data-video-gallery aria-label="Whole-body manipulation video gallery" data-i18n-aria-source="Whole-body manipulation video gallery" data-i18n-aria-zh="全身操作视频合集">
           <header class="fullbody-gallery-head">
             <div class="fullbody-gallery-title">
-              <strong data-i18n-source="Whole-Body Loco-Manipulation" data-i18n-zh="10项全身移动操作">10 Tasks Whole-Body Loco-Manipulation</strong>
+              <strong data-i18n-source="10 Whole-Body Loco-Manipulation Tasks" data-i18n-zh="10项全身移动操作">10 Whole-Body Loco-Manipulation Tasks</strong>
               <!-- <span class="mono" data-i18n-source="10 tasks" data-i18n-zh="10 项任务">10 tasks</span> -->
             </div>
             <div class="fullbody-gallery-actions">
               <span class="mono" data-i18n-source="Scroll to explore" data-i18n-zh="滑动查看更多">Scroll to explore</span>
-              <button class="gallery-arrow" data-gallery-prev type="button" aria-label="查看上一组视频">←</button>
-              <button class="gallery-arrow" data-gallery-next type="button" aria-label="查看下一组视频">→</button>
+              <button class="gallery-arrow" data-gallery-prev type="button" aria-label="View previous videos" data-i18n-aria-source="View previous videos" data-i18n-aria-zh="查看上一组视频">←</button>
+              <button class="gallery-arrow" data-gallery-next type="button" aria-label="View next videos" data-i18n-aria-source="View next videos" data-i18n-aria-zh="查看下一组视频">→</button>
             </div>
           </header>
 
@@ -1100,16 +1107,16 @@
           </div>
         </section>
 
-        <section class="fullbody-gallery" data-video-gallery aria-label="桌面操作视频合集">
+        <section class="fullbody-gallery" data-video-gallery aria-label="Desktop manipulation video gallery" data-i18n-aria-source="Desktop manipulation video gallery" data-i18n-aria-zh="桌面操作视频合集">
           <header class="fullbody-gallery-head">
             <div class="fullbody-gallery-title">
-              <strong data-i18n-source="Desktop Manipulation" data-i18n-zh="54 项桌面操作">54 Tasks Desktop Manipulation</strong>
+              <strong data-i18n-source="54 Desktop Manipulation Tasks" data-i18n-zh="54 项桌面操作">54 Desktop Manipulation Tasks</strong>
               <!-- <span class="mono" data-i18n-source="55 tasks" data-i18n-zh="54 项任务">54 tasks</span> -->
             </div>
             <div class="fullbody-gallery-actions">
               <span class="mono" data-i18n-source="Scroll to explore" data-i18n-zh="滑动查看更多">Scroll to explore</span>
-              <button class="gallery-arrow" data-gallery-prev type="button" aria-label="查看上一组桌面操作视频">←</button>
-              <button class="gallery-arrow" data-gallery-next type="button" aria-label="查看下一组桌面操作视频">→</button>
+              <button class="gallery-arrow" data-gallery-prev type="button" aria-label="View previous desktop manipulation videos" data-i18n-aria-source="View previous desktop manipulation videos" data-i18n-aria-zh="查看上一组桌面操作视频">←</button>
+              <button class="gallery-arrow" data-gallery-next type="button" aria-label="View next desktop manipulation videos" data-i18n-aria-source="View next desktop manipulation videos" data-i18n-aria-zh="查看下一组桌面操作视频">→</button>
             </div>
           </header>
 
@@ -1122,7 +1129,7 @@
   </main>
 
   <footer>
-    <div class="shell footer-row mono"><span><strong>UnifoLM-WLA-1.0</strong></span><span>通用人形机器人基础模型</span></div>
+    <div class="shell footer-row mono"><span><strong>UnifoLM-WLA-1.0</strong></span><span data-i18n-source="General-Purpose Humanoid Robot Foundation Model" data-i18n-zh="通用人形机器人基础模型">General-Purpose Humanoid Robot Foundation Model</span></div>
   </footer>
   <script>
     const root = document.documentElement;
@@ -1265,10 +1272,21 @@
     function applyLanguage(language) {
       const isChinese = language === 'zh';
       root.dataset.language = isChinese ? 'zh' : 'source';
-      root.lang = 'zh-CN';
+      root.lang = isChinese ? 'zh-CN' : 'en';
+      document.querySelector('meta[name="description"]').setAttribute('content', isChinese
+        ? 'UnifoLM-WLA-1.0 — 宇树科技新一代通用人形机器人基础模型。'
+        : "UnifoLM-WLA-1.0 — Unitree Robotics' next-generation general-purpose humanoid robot foundation model.");
 
       document.querySelectorAll('[data-i18n-source][data-i18n-zh]').forEach((element) => {
         element.textContent = isChinese ? element.dataset.i18nZh : element.dataset.i18nSource;
+      });
+
+      document.querySelectorAll('[data-i18n-aria-source][data-i18n-aria-zh]').forEach((element) => {
+        element.setAttribute('aria-label', isChinese ? element.dataset.i18nAriaZh : element.dataset.i18nAriaSource);
+      });
+
+      document.querySelectorAll('[data-i18n-alt-source][data-i18n-alt-zh]').forEach((element) => {
+        element.setAttribute('alt', isChinese ? element.dataset.i18nAltZh : element.dataset.i18nAltSource);
       });
 
       languageToggle.setAttribute('aria-pressed', String(isChinese));

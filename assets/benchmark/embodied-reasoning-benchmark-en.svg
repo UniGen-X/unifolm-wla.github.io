@@ -12,7 +12,7 @@
 </defs>
 <rect width="100%" height="100%" fill="#F4F5F0"/>
 <g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Noto Sans CJK SC,Arial,sans-serif">
-<text x="48" y="78" text-anchor="start" font-size="72" font-weight="700" fill="#101613">具身推理评测结果</text>
+<text x="48" y="78" text-anchor="start" font-size="72" font-weight="700" fill="#101613">Embodied Reasoning Benchmark Results</text>
 <text x="3228" y="56" text-anchor="end" font-size="14" font-weight="650" fill="#68746F">23 MODELS · 16 BENCHMARKS</text>
 <g filter="url(#shadow)">
 <rect x="48" y="104" width="3180" height="1338" rx="16" fill="#FFFFFF"/>
@@ -20,10 +20,11 @@
 <rect x="418" y="104" width="90" height="142" fill="#EEF1ED"/>
 <rect x="508" y="104" width="2210" height="46" fill="#EEF1ED"/>
 <rect x="2718" y="104" width="510" height="46" fill="#EEF1ED"/>
-<text x="64" y="181.0" text-anchor="start" font-size="28.8" font-weight="700" fill="#101613">模型</text>
-<text x="463.0" y="181.0" text-anchor="middle" font-size="28.8" font-weight="700" fill="#101613">开源</text>
-<text x="1613.0" y="134" text-anchor="middle" font-size="28.8" font-weight="700" fill="#101613">空间理解</text>
-<text x="2973.0" y="134" text-anchor="middle" font-size="28.8" font-weight="700" fill="#101613">多模态理解</text>
+<text x="64" y="181.0" text-anchor="start" font-size="28.8" font-weight="700" fill="#101613">MODEL</text>
+<text x="463.0" y="167.0" text-anchor="middle" font-size="22" font-weight="700" fill="#101613">OPEN</text>
+<text x="463.0" y="199.0" text-anchor="middle" font-size="22" font-weight="700" fill="#101613">SOURCE</text>
+<text x="1613.0" y="134" text-anchor="middle" font-size="28.8" font-weight="700" fill="#101613">SPATIAL UNDERSTANDING</text>
+<text x="2973.0" y="134" text-anchor="middle" font-size="28.8" font-weight="700" fill="#101613">MULTIMODAL UNDERSTANDING</text>
 <rect x="508" y="150" width="170" height="96" fill="#EEF1ED"/>
 <text x="593.0" y="208.0" text-anchor="middle" font-size="28.8" font-weight="700" fill="#35423D">ROBOVQA</text>
 <rect x="678" y="150" width="170" height="96" fill="#EEF1ED"/>
@@ -70,7 +71,7 @@
 <rect x="48" y="246" width="370" height="52" fill="#4E83C2" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="280" text-anchor="start" font-size="28.8" font-weight="800" fill="#17100F">UnifoLM-ER-1</text>
 <rect x="418" y="246" width="90" height="52" fill="#4E83C2" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="279" text-anchor="middle" font-size="24" font-weight="450" fill="#17100F">是</text>
+<text x="463.0" y="279" text-anchor="middle" font-size="24" font-weight="450" fill="#17100F">Yes</text>
 <rect x="508" y="246" width="170" height="52" fill="#4E83C2" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="279" text-anchor="middle" font-size="24" font-weight="450" fill="#17100F">62.4</text>
 <rect x="678" y="246" width="170" height="52" fill="#4E83C2" stroke="#CBD2CE" stroke-width="1"/>
@@ -106,7 +107,7 @@
 <rect x="48" y="298" width="370" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="332" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">RoboBrain2.0-7B<tspan dx="2" dy="-10" font-size="18">*</tspan></text>
 <rect x="418" y="298" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="331" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">是</text>
+<text x="463.0" y="331" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">Yes</text>
 <rect x="508" y="298" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="331" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">30.0</text>
 <rect x="678" y="298" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
@@ -142,7 +143,7 @@
 <rect x="48" y="350" width="370" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="384" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Robix-7B<tspan dx="2" dy="-10" font-size="18">*</tspan></text>
 <rect x="418" y="350" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="383" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">否</text>
+<text x="463.0" y="383" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">No</text>
 <rect x="508" y="350" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="383" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">/</text>
 <rect x="678" y="350" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
@@ -178,7 +179,7 @@
 <rect x="48" y="402" width="370" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="436" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Pelican-7B<tspan dx="2" dy="-10" font-size="18">*</tspan></text>
 <rect x="418" y="402" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="435" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">是</text>
+<text x="463.0" y="435" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">Yes</text>
 <rect x="508" y="402" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="435" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">31.8</text>
 <rect x="678" y="402" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
@@ -214,7 +215,7 @@
 <rect x="48" y="454" width="370" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="488" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Cosmos-R1-7B<tspan dx="2" dy="-10" font-size="18">*</tspan></text>
 <rect x="418" y="454" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="487" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">是</text>
+<text x="463.0" y="487" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">Yes</text>
 <rect x="508" y="454" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="487" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">38.8</text>
 <rect x="678" y="454" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
@@ -250,7 +251,7 @@
 <rect x="48" y="506" width="370" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="540" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Cosmos3-Super<tspan dx="2" dy="-10" font-size="18">*</tspan></text>
 <rect x="418" y="506" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="539" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">是</text>
+<text x="463.0" y="539" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">Yes</text>
 <rect x="508" y="506" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="539" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">/</text>
 <rect x="678" y="506" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
@@ -286,7 +287,7 @@
 <rect x="48" y="558" width="370" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="592" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Qwen3-VL-4B<tspan dx="2" dy="-10" font-size="18">*</tspan></text>
 <rect x="418" y="558" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="591" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">是</text>
+<text x="463.0" y="591" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">Yes</text>
 <rect x="508" y="558" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="591" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">47.7</text>
 <rect x="678" y="558" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
@@ -322,7 +323,7 @@
 <rect x="48" y="610" width="370" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="644" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Qwen3-VL-8B<tspan dx="2" dy="-10" font-size="18">*</tspan></text>
 <rect x="418" y="610" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="643" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">是</text>
+<text x="463.0" y="643" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">Yes</text>
 <rect x="508" y="610" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="643" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">43.3</text>
 <rect x="678" y="610" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
@@ -358,7 +359,7 @@
 <rect x="48" y="662" width="370" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="696" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Embodied-R1<tspan dx="2" dy="-10" font-size="18">*</tspan></text>
 <rect x="418" y="662" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="695" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">是</text>
+<text x="463.0" y="695" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">Yes</text>
 <rect x="508" y="662" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="695" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">51.8</text>
 <rect x="678" y="662" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
@@ -394,7 +395,7 @@
 <rect x="48" y="714" width="370" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="748" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Embodied-R1.5<tspan dx="2" dy="-10" font-size="18">*</tspan></text>
 <rect x="418" y="714" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="747" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">是</text>
+<text x="463.0" y="747" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">Yes</text>
 <rect x="508" y="714" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="747" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">61.0</text>
 <rect x="678" y="714" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
@@ -430,7 +431,7 @@
 <rect x="48" y="766" width="370" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="800" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Molmo2-ER<tspan dx="2" dy="-10" font-size="18">*</tspan></text>
 <rect x="418" y="766" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="799" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">是</text>
+<text x="463.0" y="799" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">Yes</text>
 <rect x="508" y="766" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="799" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">/</text>
 <rect x="678" y="766" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
@@ -466,7 +467,7 @@
 <rect x="48" y="818" width="370" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="852" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Hy-Embodied-VLM-1.0<tspan dx="2" dy="-10" font-size="18">*</tspan></text>
 <rect x="418" y="818" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="851" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">是</text>
+<text x="463.0" y="851" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">Yes</text>
 <rect x="508" y="818" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="851" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">/</text>
 <rect x="678" y="818" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
@@ -502,7 +503,7 @@
 <rect x="48" y="870" width="370" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="904" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">MiMo-Emb-7B<tspan dx="2" dy="-10" font-size="18">*</tspan></text>
 <rect x="418" y="870" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="903" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">是</text>
+<text x="463.0" y="903" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">Yes</text>
 <rect x="508" y="870" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="903" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">36.6</text>
 <rect x="678" y="870" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
@@ -538,7 +539,7 @@
 <rect x="48" y="922" width="370" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="956" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Thinker-4B<tspan dx="2" dy="-10" font-size="18">*</tspan></text>
 <rect x="418" y="922" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="955" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">是</text>
+<text x="463.0" y="955" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">Yes</text>
 <rect x="508" y="922" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
 <text x="593.0" y="955" text-anchor="middle" font-size="24" font-weight="800" fill="#17100F">62.7</text>
 <rect x="678" y="922" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
@@ -574,7 +575,7 @@
 <rect x="48" y="974" width="370" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="1008" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Wall-OSS-0.5<tspan dx="2" dy="-10" font-size="18">*</tspan></text>
 <rect x="418" y="974" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="1007" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">是</text>
+<text x="463.0" y="1007" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">Yes</text>
 <rect x="508" y="974" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="1007" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">/</text>
 <rect x="678" y="974" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
@@ -610,7 +611,7 @@
 <rect x="48" y="1026" width="370" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="1060" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Lumo-1-Stage1<tspan dx="2" dy="-10" font-size="18">*</tspan></text>
 <rect x="418" y="1026" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="1059" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">否</text>
+<text x="463.0" y="1059" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">No</text>
 <rect x="508" y="1026" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="1059" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">/</text>
 <rect x="678" y="1026" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
@@ -646,7 +647,7 @@
 <rect x="48" y="1078" width="370" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="1112" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Gemini-ER 2<tspan dx="2" dy="-10" font-size="18">‡</tspan></text>
 <rect x="418" y="1078" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="1111" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">否</text>
+<text x="463.0" y="1111" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">No</text>
 <rect x="508" y="1078" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="1111" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">/</text>
 <rect x="678" y="1078" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
@@ -683,7 +684,7 @@
 <rect x="48" y="1130" width="370" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="1164" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Gemini-ER 1.5<tspan dx="2" dy="-10" font-size="18">‡</tspan></text>
 <rect x="418" y="1130" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="1163" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">否</text>
+<text x="463.0" y="1163" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">No</text>
 <rect x="508" y="1130" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="1163" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">/</text>
 <rect x="678" y="1130" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
@@ -719,7 +720,7 @@
 <rect x="48" y="1182" width="370" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="1216" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Gemini 2.5 Pro<tspan dx="2" dy="-10" font-size="18">‡</tspan></text>
 <rect x="418" y="1182" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="1215" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">否</text>
+<text x="463.0" y="1215" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">No</text>
 <rect x="508" y="1182" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="1215" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">/</text>
 <rect x="678" y="1182" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
@@ -755,7 +756,7 @@
 <rect x="48" y="1234" width="370" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="1268" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Gemini 2.5 Flash<tspan dx="2" dy="-10" font-size="18">‡</tspan></text>
 <rect x="418" y="1234" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="1267" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">否</text>
+<text x="463.0" y="1267" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">No</text>
 <rect x="508" y="1234" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="1267" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">/</text>
 <rect x="678" y="1234" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
@@ -791,7 +792,7 @@
 <rect x="48" y="1286" width="370" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="1320" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">Gemini 3.1 Pro<tspan dx="2" dy="-10" font-size="18">‡</tspan></text>
 <rect x="418" y="1286" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="1319" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">否</text>
+<text x="463.0" y="1319" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">No</text>
 <rect x="508" y="1286" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="1319" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">/</text>
 <rect x="678" y="1286" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
@@ -827,7 +828,7 @@
 <rect x="48" y="1338" width="370" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="1372" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">GPT-5.6-sol<tspan dx="2" dy="-10" font-size="18">‡</tspan></text>
 <rect x="418" y="1338" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="1371" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">否</text>
+<text x="463.0" y="1371" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">No</text>
 <rect x="508" y="1338" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="1371" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">/</text>
 <rect x="678" y="1338" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
@@ -863,7 +864,7 @@
 <rect x="48" y="1390" width="370" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="62" y="1424" text-anchor="start" font-size="28.8" font-weight="800" fill="#35423D">GPT-6-Astra<tspan dx="2" dy="-10" font-size="18">‡</tspan></text>
 <rect x="418" y="1390" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
-<text x="463.0" y="1423" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">否</text>
+<text x="463.0" y="1423" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">No</text>
 <rect x="508" y="1390" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
 <text x="593.0" y="1423" text-anchor="middle" font-size="24" font-weight="450" fill="#35423D">/</text>
 <rect x="678" y="1390" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
@@ -899,10 +900,10 @@
 <rect x="48" y="104" width="3180" height="1338" rx="16" fill="none" stroke="#CBD2CE" stroke-width="1.5"/>
 </g>
 <text x="57.0" y="1466" text-anchor="middle" font-size="20" font-weight="450" fill="#68746F">*</text>
-<text x="74" y="1466" text-anchor="start" font-size="20" font-weight="450" fill="#68746F">模型结果来自其官方原始技术报告或公开论文。</text>
+<text x="74" y="1466" text-anchor="start" font-size="20" font-weight="450" fill="#68746F">Results are sourced from the models&#x27; official technical reports or publicly available papers.</text>
 <text x="57.0" y="1494" text-anchor="middle" font-size="20" font-weight="450" fill="#68746F">‡</text>
-<text x="74" y="1494" text-anchor="start" font-size="20" font-weight="450" fill="#68746F">模型结果来自其官方 API Call 测试。</text>
+<text x="74" y="1494" text-anchor="start" font-size="20" font-weight="450" fill="#68746F">Results were obtained through tests using the models&#x27; official APIs.</text>
 <text x="57.0" y="1522" text-anchor="middle" font-size="20" font-weight="450" fill="#68746F">†</text>
-<text x="74" y="1522" text-anchor="start" font-size="20" font-weight="450" fill="#68746F">BLINK 分数仅取 Relative Depth 与 Spatial Relation 两个子任务的平均值，结果均为本项目测试结果。</text>
+<text x="74" y="1522" text-anchor="start" font-size="20" font-weight="450" fill="#68746F">BLINK scores are averaged over the Relative Depth and Spatial Relation subtasks only; all reported results were obtained in our own testing.</text>
 </g>
 </svg>
