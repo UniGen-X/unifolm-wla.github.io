@@ -254,6 +254,10 @@
     .vla-fact span { color: var(--dim); font-size: 9px; text-transform: uppercase; }
 
     .fullbody-gallery { overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: var(--panel); box-shadow: 0 22px 70px rgba(0,0,0,.12); }
+    .drp-video-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 12px 20px 20px; }
+    .drp-video-strip .fullbody-video { border-radius: 12px; }
+    .drp-video-strip .fullbody-video video { aspect-ratio: 4 / 3; object-fit: contain; }
+    .drp-video-strip .fullbody-video-meta { padding: 8px 10px 9px; }
     .fullbody-gallery + .fullbody-gallery { margin-top: 18px; }
     .fullbody-gallery-head { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 22px; border-bottom: 1px solid var(--line); }
     .fullbody-gallery-title { display: flex; align-items: baseline; gap: 14px; }
@@ -334,6 +338,7 @@
       th, td { padding-inline: 9px; }
       .fullbody-gallery-head { align-items: flex-start; flex-direction: column; gap: 14px; }
       .fullbody-gallery-actions { width: 100%; justify-content: flex-end; }
+      .drp-video-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-inline: 12px; }
       .footer-row { flex-direction: column; }
       .er-reasoning-content { margin: 0 8px 12px; }
     }
@@ -499,6 +504,7 @@
           </div>
               </div>
             </div>
+
           </article>
         </section>
 
@@ -512,58 +518,78 @@
 
             <div class="drp-board">
               <div class="drp-status" aria-label="动画正在循环播放"><i></i>LIVE PIPELINE</div>
-              <div class="drp-row-label">01 / OPTICAL-FLOW SUPERVISION</div>
+              <div class="drp-diagram">
+                <svg class="drp-shared-links" viewBox="0 0 1160 320" aria-hidden="true">
+                  <defs>
+                    <marker id="drp-shared-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                      <path d="M0 0 L8 4 L0 8 Z"></path>
+                    </marker>
+                  </defs>
+                  <path d="M54 121 V208 H366" marker-end="url(#drp-shared-arrow)"></path>
+                  <path d="M954 80 H970 V145 H980" marker-end="url(#drp-shared-arrow)"></path>
+                  <path d="M950 236 H970 V186 H980" marker-end="url(#drp-shared-arrow)"></path>
+                </svg>
 
-              <div class="drp-supervision" aria-label="从连续图像生成动态区域 mask token 的流程">
-                <div class="drp-pair">
-                  <div class="drp-frame"><img src="assets/dynamic_region_prediction/head_left_t0.png" alt="机器人视角图像 t0" /><span>IMAGE_T0</span></div>
-                  <div class="drp-frame"><img src="assets/dynamic_region_prediction/head_left_t1.png" alt="机器人视角图像 t1" /><span>IMAGE_T1</span></div>
+                <div class="drp-row-label">01 / OPTICAL-FLOW SUPERVISION</div>
+
+                <div class="drp-supervision" aria-label="从连续图像生成动态区域 mask token 的流程">
+                  <div class="drp-pair">
+                    <div class="drp-frame"><img src="assets/dynamic_region_prediction/head_left_t0.png" alt="机器人视角图像 t0" /><span>IMAGE_t0</span></div>
+                    <div class="drp-frame"><img src="assets/dynamic_region_prediction/head_left_t1.png" alt="机器人视角图像 t1" /><span>IMAGE_t1</span></div>
+                  </div>
+                  <div class="drp-connector" aria-hidden="true"><span></span></div>
+                  <div class="drp-node"><div><span>ESTIMATE</span><strong>Optical<br />Flow</strong></div></div>
+                  <div class="drp-connector" aria-hidden="true"><span style="animation-delay:.35s"></span></div>
+                  <figure class="drp-visual drp-flow-visual">
+                    <img src="assets/dynamic_region_prediction/optical_flow_t0_t1.png" alt="t0 到 t1 的光流结果" />
+                    <figcaption>OPTICAL FLOW</figcaption>
+                  </figure>
+                  <div class="drp-connector" aria-hidden="true"><span style="animation-delay:.7s"></span></div>
+                  <figure class="drp-visual drp-mask-visual">
+                    <img class="drp-mask-base" src="assets/dynamic_region_prediction/head_left_t1.png" alt="图像 t1" />
+                    <img class="drp-mask-overlay" src="assets/dynamic_region_prediction/mask_overlay_head_left_t1.png" alt="动态区域 mask 叠加结果" />
+                    <img class="drp-mask-only" src="assets/dynamic_region_prediction/dynamic_mask_only.png" alt="从 RGB 图像中分离出的动态区域 mask" />
+                    <figcaption>DYNAMIC MASK</figcaption>
+                  </figure>
+                  <div class="drp-connector" aria-hidden="true"><span style="animation-delay:1.05s"></span></div>
+                  <div class="drp-node drp-vq-node"><div><span>DISCRETIZE</span><strong>VQ-VAE</strong></div></div>
                 </div>
-                <div class="drp-connector" aria-hidden="true"><span></span></div>
-                <div class="drp-node"><div><span>ESTIMATE</span><strong>Optical<br />Flow</strong></div></div>
-                <div class="drp-connector" aria-hidden="true"><span style="animation-delay:.35s"></span></div>
-                <figure class="drp-visual drp-flow-visual">
-                  <img src="assets/dynamic_region_prediction/optical_flow_t0_t1.png" alt="t0 到 t1 的光流结果" />
-                  <figcaption>OPTICAL FLOW</figcaption>
-                </figure>
-                <div class="drp-connector" aria-hidden="true"><span style="animation-delay:.7s"></span></div>
-                <figure class="drp-visual drp-mask-visual">
-                  <img class="drp-mask-base" src="assets/dynamic_region_prediction/head_left_t1.png" alt="图像 t1" />
-                  <img class="drp-mask-overlay" src="assets/dynamic_region_prediction/mask_overlay_head_left_t1.png" alt="动态区域 mask 叠加结果" />
-                  <img class="drp-mask-only" src="assets/dynamic_region_prediction/dynamic_mask_only.png" alt="从 RGB 图像中分离出的动态区域 mask" />
-                  <figcaption>DYNAMIC MASK</figcaption>
-                </figure>
-                <div class="drp-connector" aria-hidden="true"><span style="animation-delay:1.05s"></span></div>
-                <div class="drp-node drp-vq-node"><div><span>DISCRETIZE</span><strong>VQ-VAE</strong></div></div>
-                <div class="drp-connector" aria-hidden="true"><span style="animation-delay:1.4s"></span></div>
-                <div class="drp-token-bank" aria-label="离散 mask tokens">
+
+                <div class="drp-prediction" aria-label="VLM 复用图像 t0 预测未来 mask tokens 的流程">
+                  <div class="drp-context drp-condition-only">
+                    <div class="drp-context-options"><span>Task</span><em>OR</em><span>Action</span></div>
+                  </div>
+                  <div class="drp-connector" aria-hidden="true"><span></span></div>
+                  <div class="drp-vlm"><span>IMAGE_t0 + CONDITION</span><strong>VLM</strong></div>
+                </div>
+
+                <div class="drp-row-label drp-prediction-label">02 / FUTURE CHANGE PREDICTION</div>
+
+                <div class="drp-token-bank drp-shared-token-bank" aria-label="VQ-VAE 生成且由 VLM 预测的未来 mask tokens">
                   <span>08</span><span>21</span><span>37</span><span>04</span>
                   <span>19</span><span>42</span><span>11</span><span>26</span>
-                  <small class="drp-token-caption">MASK TOKENS</small>
-                </div>
-              </div>
-
-              <div class="drp-divider"></div>
-              <div class="drp-row-label">02 / FUTURE CHANGE PREDICTION</div>
-
-              <div class="drp-prediction" aria-label="VLM 预测未来 mask tokens 的流程">
-                <div class="drp-context">
-                  <img src="assets/dynamic_region_prediction/head_left_t0.png" alt="当前机器人视角图像" />
-                  <div class="drp-context-options"><span>Task</span><em>OR</em><span>Action</span></div>
-                </div>
-                <div class="drp-connector" aria-hidden="true"><span></span></div>
-                <div class="drp-vlm"><span>IMAGE + CONDITION</span><strong>VLM</strong></div>
-                <div class="drp-connector" aria-hidden="true"><span style="animation-delay:.55s"></span></div>
-                <div class="drp-output" aria-label="预测得到的未来 mask tokens">
-                  <span>08</span><span>21</span><span>37</span><span>04</span><span>19</span><span>42</span>
-                  <small>FUTURE MASK TOKENS</small>
+                  <small class="drp-token-caption">FUTURE MASK TOKENS</small>
                 </div>
               </div>
             </div>
 
-            <div class="drp-legend">
-              <span><strong>Supervision</strong> · optical flow → binary mask → VQ-VAE</span>
-              <span><strong>Prediction</strong> · image + task/action → future mask tokens</span>
+            <div class="drp-video-strip" aria-label="Dynamic Region Prediction 视频演示">
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/flow-demo-web-2x/clean_table.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Clean table</strong><span class="mono">01</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/flow-demo-web-2x/fold_towel.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Fold towel</strong><span class="mono">02</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/flow-demo-web-2x/install_phone.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Install phone</strong><span class="mono">03</span></div>
+              </article>
+              <article class="fullbody-video">
+                <video autoplay controls muted loop playsinline preload="metadata"><source src="assets/videos/flow-demo-web-2x/place_plates.mp4" type="video/mp4"></video>
+                <div class="fullbody-video-meta"><strong>Place plates</strong><span class="mono">04</span></div>
+              </article>
             </div>
           </article>
         </section>
