@@ -2,6 +2,7 @@
   --drp-primary: var(--cyan, #147b6d);
   --drp-secondary: var(--violet, #7056be);
   --drp-accent: var(--orange, #cf5c26);
+  --drp-vlm-accent: var(--blue, #3560bf);
   width: 100%;
   color: var(--text, #17211f);
   font-family: var(--font-text, "SF Pro SC", "SF Pro Text", "PingFang SC", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif);
@@ -328,22 +329,22 @@
   display: grid;
   place-items: center;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--drp-primary) 42%, transparent);
+  border: 1px solid color-mix(in srgb, var(--drp-vlm-accent) 42%, transparent);
   border-radius: 18px;
   color: var(--text, #17211f);
-  background: color-mix(in srgb, var(--drp-primary) 12%, var(--panel, #fff));
+  background: color-mix(in srgb, var(--drp-vlm-accent) 12%, var(--panel, #fff));
 }
 
 .drp-vlm::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--drp-primary) 18%, transparent), transparent);
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--drp-vlm-accent) 18%, transparent), transparent);
   transform: translateX(-100%);
   animation: drp-vlm-scan 3.6s ease-in-out infinite;
 }
 
-.drp-vlm span { position: relative; z-index: 1; color: var(--drp-primary); font: 700 9px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; }
+.drp-vlm span { position: relative; z-index: 1; color: var(--drp-vlm-accent); font: 700 9px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; }
 .drp-vlm strong { position: relative; z-index: 1; margin-top: -22px; font-size: 20px; }
 
 @keyframes drp-live {

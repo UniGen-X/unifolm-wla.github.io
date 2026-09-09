@@ -223,7 +223,7 @@
       --dal-background: var(--bg);
       --dal-foreground: var(--text);
       --dal-primary: var(--cyan);
-      --dal-eef: #54d9b8;
+      --dal-eef: var(--blue);
       --dal-hand: #76a7ff;
       --dal-lower: #ff8b51;
     }
@@ -246,7 +246,7 @@
     .vla-training-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 18px; }
     .vla-facts { display: grid; gap: 8px; margin-top: 24px; }
     .vla-fact { padding: 17px 18px; border: 1px solid var(--line); border-radius: 11px; }
-    .vla-fact b { display: block; color: var(--cyan); font-size: 18px; letter-spacing: -.03em; }
+    .vla-fact b { display: block; color: var(--text); font-size: 18px; letter-spacing: -.03em; }
     .vla-fact span { color: var(--dim); font-size: 9px; text-transform: uppercase; }
 
     .fullbody-gallery { overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: var(--panel); box-shadow: 0 22px 70px rgba(0,0,0,.12); }
@@ -394,7 +394,7 @@
         <div class="section-title">
           <div>
             <div class="method-label mono">ER Model · Embodied Reasoner</div>
-            <h2>理解世界，<br /><em>连接行动。</em></h2>
+            <h2>理解世界，<br /><em style="color:var(--orange)">连接行动。</em></h2>
             <p class="section-lead">在同一多模态模型中融合具身推理、未来动态区域预测与离散动作学习，协同提升空间感知、交互预测与动作生成能力，为后续 VLA 训练提供统一的视觉—语言—动作表征基础。</p>
           </div>
         </div>

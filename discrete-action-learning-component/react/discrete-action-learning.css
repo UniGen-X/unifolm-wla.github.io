@@ -2,7 +2,7 @@
   --dal-background: #f1f1ec;
   --dal-foreground: #17211f;
   --dal-primary: #147b6d;
-  --dal-eef: #13806f;
+  --dal-eef: var(--blue, #3560bf);
   --dal-hand: #3560bf;
   --dal-lower: #b7652a;
   width: 100%;

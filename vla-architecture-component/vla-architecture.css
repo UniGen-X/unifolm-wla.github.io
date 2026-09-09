@@ -235,7 +235,7 @@
     }
     .vla-objective-arrows .down::before {
       top: 0;
-      background: repeating-linear-gradient(to bottom, #78a05b 0 5px, transparent 5px 8px);
+      background: repeating-linear-gradient(to bottom, #6c9eba 0 5px, transparent 5px 8px);
       background-size: 2px 16px;
       animation: vla-down-flow 1.35s linear infinite;
     }
@@ -246,7 +246,7 @@
       bottom: 0;
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
-      border-top: 8px solid #78a05b;
+      border-top: 8px solid #6c9eba;
     }
     .vla-continuous-card {
       grid-column: 5;
@@ -429,17 +429,17 @@
       position: relative;
       min-height: 218px;
       transform: translateY(8px);
-      border: 1px solid #a9c184;
+      border: 1px solid #9fc3d9;
       border-radius: 18px;
-      background: #faf9f1;
+      background: #f7fbfe;
       overflow: hidden;
     }
     .vla-expert-field {
       position: absolute;
       inset: 30px 10px;
-      border: 1px solid #adc98c;
+      border: 1px solid #abc9dc;
       border-radius: 14px;
-      background: #eef4e7;
+      background: #eaf4fa;
     }
     .vla-expert-row {
       position: absolute;
@@ -459,9 +459,9 @@
     }
     .vla-expert-row i {
       height: 28px;
-      border: 1px solid #bfd3a7;
+      border: 1px solid #b9d3e3;
       border-radius: 7px;
-      background: #deeddc;
+      background: #dbeaf4;
     }
     .vla-expert-loops {
       position: absolute;
@@ -501,7 +501,7 @@
       justify-content: center;
       gap: 5px;
       transform: translateY(-50%);
-      border-block: 1px solid #adc98c;
+      border-block: 1px solid #abc9dc;
       color: var(--text);
       background: #ece9df;
       text-align: center;
@@ -544,8 +544,8 @@
       stroke: #b9dcd8;
     }
     .vla-detail-right-bg {
-      fill: #eef6e8;
-      stroke: #d0e1c2;
+      fill: #e7f1f8;
+      stroke: #b9d2e3;
     }
     .vla-detail-block {
       fill: #f4eee8;
@@ -556,9 +556,11 @@
       stroke: #79b9b4;
     }
     .vla-detail-chip-violet {
-      fill: #b8d6a4;
-      stroke: #91b573;
+      fill: #b9d8ea;
+      stroke: #7eacc7;
     }
+    .vla-expert-detail svg [stroke="#7aa05c"] { stroke: #6c9eba; }
+    .vla-expert-detail svg [fill="#7aa05c"] { fill: #6c9eba; }
     .vla-detail-label {
       fill: #1b2320;
       font: 400 11px/1.05 Georgia, "Times New Roman", serif;
@@ -656,7 +658,7 @@
       background: #141815;
     }
     .vla-legend-dot-backbone { color: var(--blue); }
-    .vla-legend-dot-expert { color: var(--lime); }
+    .vla-legend-dot-expert { color: #6c9eba; }
     .vla-legend-dot-stop { color: var(--orange); }
 
     @keyframes vla-chip-pulse {
