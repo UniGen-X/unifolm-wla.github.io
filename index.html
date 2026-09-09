@@ -107,6 +107,7 @@
     .eyebrow::before { content: ""; width: 30px; height: 1px; background: currentColor; }
     h1 { margin: 0; font-family: var(--font-display); font-size: clamp(52px, 7.4vw, 104px); line-height: .94; letter-spacing: -.045em; font-weight: 600; }
     h1 strong { display: block; font: inherit; white-space: nowrap; }
+    h1 .hero-prefix { display: inline-block; margin-right: .24em; color: #f96765; font-size: .42em; font-weight: 650; letter-spacing: .02em; vertical-align: .28em; }
     h1 span { display: block; margin-top: .14em; color: #f96765; font-size: .72em; line-height: 1.08; letter-spacing: -.04em; }
     .resource-links { display: flex; justify-content: center; gap: 8px; margin: 22px auto 0; }
     .resource-links a { min-width: 168px; display: inline-flex; align-items: center; justify-content: flex-start; gap: 11px; padding: 9px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--text); text-decoration: none; transition: transform .2s ease, border-color .2s ease; }
@@ -379,7 +380,7 @@
       <div class="shell hero">
         <div>
           <div class="eyebrow mono">通用人形机器人基础模型</div>
-          <h1><strong>UnifoLM-WLA-1.0</strong><span>一模驱动，全身协同</span></h1>
+          <h1><strong><b class="hero-prefix">全开源</b>UnifoLM-WLA-1.0</strong><span>一模驱动，全身协同</span></h1>
           <div class="resource-links mono" id="resources" aria-label="项目资源">
             <a href="#resources">
               <span class="resource-logo resource-logo-github" aria-hidden="true"><img class="github-mark-black" src="assets/brand/github-mark-black.svg" alt="" /><img class="github-mark-white" src="assets/brand/github-mark-white.svg" alt="" /></span>
@@ -396,7 +397,7 @@
           </div>
           <p class="intro">UnifoLM-WLA-1.0 是宇树科技全面升级的新一代通用人形机器人基础模型，拥有 6B 参数。模型依托大规模通用多模态感知与理解数据，融合以交互为中心的世界建模，全面提升空间感知与理解能力，在多项具身推理评测中达到业界领先。通过约 2,500 小时高质量真机数据训练，单模型统筹64个任务，覆盖桌面操作与全身移动操作，适配二指夹爪及多种五指灵巧手，具备跨任务、跨末端执行器的泛化能力。</p>
           <div class="facts" aria-label="项目核心数据">
-            <div class="fact"><strong>6B</strong><span class="mono" data-i18n-source="VLA parameters" data-i18n-zh="VLA 参数量">VLA parameters</span></div>
+            <div class="fact"><strong>6B</strong><span class="mono" data-i18n-source="model parameters" data-i18n-zh="模型参数量">VLA parameters</span></div>
             <div class="fact"><strong>5M+</strong><span class="mono" data-i18n-source="ER samples" data-i18n-zh="ER 训练样本">ER samples</span></div>
             <div class="fact"><strong>≈2,500h</strong><span class="mono" data-i18n-source="Robot data" data-i18n-zh="真机数据">Robot data</span></div>
           </div>
