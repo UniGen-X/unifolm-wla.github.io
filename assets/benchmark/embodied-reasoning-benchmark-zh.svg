@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="3216" height="1604" viewBox="0 0 3216 1604">
+<defs>
+<linearGradient id="sota" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#F96765"/>
+<stop offset="52%" stop-color="#F28B55"/>
+<stop offset="100%" stop-color="#E8B84F"/>
+</linearGradient>
+<filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+<feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#17221d" flood-opacity=".10"/>
+</filter>
+</defs>
+<rect width="100%" height="100%" fill="#F4F5F0"/>
+<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Noto Sans CJK SC,Arial,sans-serif">
+<text x="48" y="58" text-anchor="start" font-size="32" font-weight="700" fill="#101613">具身推理评测结果</text>
+<text x="3168" y="56" text-anchor="end" font-size="14" font-weight="650" fill="#68746F">24 MODELS · 16 BENCHMARKS</text>
+<g filter="url(#shadow)">
+<rect x="48" y="104" width="3120" height="1362" rx="16" fill="#FFFFFF"/>
+<rect x="48" y="104" width="310" height="114" fill="#EEF1ED"/>
+<rect x="358" y="104" width="90" height="114" fill="#EEF1ED"/>
+<rect x="448" y="104" width="2210" height="46" fill="#EEF1ED"/>
+<rect x="2658" y="104" width="510" height="46" fill="#EEF1ED"/>
+<text x="64" y="167.0" text-anchor="start" font-size="18" font-weight="700" fill="#101613">模型</text>
+<text x="403.0" y="167.0" text-anchor="middle" font-size="18" font-weight="700" fill="#101613">开源</text>
+<text x="1553.0" y="134" text-anchor="middle" font-size="18" font-weight="700" fill="#101613">空间理解</text>
+<text x="2913.0" y="134" text-anchor="middle" font-size="18" font-weight="700" fill="#101613">多模态理解</text>
+<rect x="448" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="533.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">ROBOVQA</text>
+<rect x="618" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="703.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">EGO-PLAN2</text>
+<rect x="788" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="873.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">REFSPATIAL-BENCH</text>
+<rect x="958" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="1043.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">WHERE2PLACE</text>
+<rect x="1128" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="1213.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">PIXMO-POINT</text>
+<rect x="1298" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="1383.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">BLINK</text>
+<rect x="1468" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="1553.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">CV-BENCH</text>
+<rect x="1638" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="1723.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">EMBSPATIAL</text>
+<rect x="1808" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="1893.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">ROBOSPATIAL</text>
+<rect x="1978" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="2063.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">SAT</text>
+<rect x="2148" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="2233.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">VSI-BENCH</text>
+<rect x="2318" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="2403.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">VSR</text>
+<rect x="2488" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="2573.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">ERQA</text>
+<rect x="2658" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="2743.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">REALWORLDQA</text>
+<rect x="2828" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="2913.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">MME</text>
+<rect x="2998" y="150" width="170" height="68" fill="#EEF1ED"/>
+<text x="3083.0" y="191" text-anchor="middle" font-size="13" font-weight="700" fill="#35423D">MMMU_VAL</text>
+<rect x="48" y="218" width="310" height="52" fill="#FBA5A4" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="251" text-anchor="start" font-size="16" font-weight="800" fill="#17100F">UnifoLM-ER-1</text>
+<rect x="358" y="218" width="90" height="52" fill="#FBA5A4" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="251" text-anchor="middle" font-size="16" font-weight="450" fill="#17100F">是</text>
+<rect x="448" y="218" width="170" height="52" fill="#FBA5A4" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="251" text-anchor="middle" font-size="16" font-weight="450" fill="#17100F">62.4</text>
+<rect x="618" y="218" width="170" height="52" fill="#FBA5A4" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="251" text-anchor="middle" font-size="16" font-weight="450" fill="#17100F">55.1</text>
+<rect x="788" y="218" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="873.0" y="251" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">61.7</text>
+<rect x="958" y="218" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="1043.0" y="251" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">82.0</text>
+<rect x="1128" y="218" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="1213.0" y="251" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">73.8</text>
+<rect x="1298" y="218" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="1383.0" y="251" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">93.4†</text>
+<rect x="1468" y="218" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="1553.0" y="251" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">88.6</text>
+<rect x="1638" y="218" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="1723.0" y="251" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">88.9</text>
+<rect x="1808" y="218" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="1893.0" y="251" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">73.1</text>
+<rect x="1978" y="218" width="170" height="52" fill="#FBA5A4" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="251" text-anchor="middle" font-size="16" font-weight="450" fill="#17100F">76.0</text>
+<rect x="2148" y="218" width="170" height="52" fill="#FBA5A4" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="251" text-anchor="middle" font-size="16" font-weight="450" fill="#17100F">54.2</text>
+<rect x="2318" y="218" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="2403.0" y="251" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">88.1</text>
+<rect x="2488" y="218" width="170" height="52" fill="#FBA5A4" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="251" text-anchor="middle" font-size="16" font-weight="450" fill="#17100F">50.0</text>
+<rect x="2658" y="218" width="170" height="52" fill="#FBA5A4" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="251" text-anchor="middle" font-size="16" font-weight="450" fill="#17100F">69.8</text>
+<rect x="2828" y="218" width="170" height="52" fill="#FBA5A4" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="251" text-anchor="middle" font-size="16" font-weight="450" fill="#17100F">2223.3</text>
+<rect x="2998" y="218" width="170" height="52" fill="#FBA5A4" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="251" text-anchor="middle" font-size="16" font-weight="450" fill="#17100F">54.7</text>
+<rect x="48" y="270" width="310" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="303" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">RoboBrain2.0-7B</text>
+<rect x="358" y="270" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">是</text>
+<rect x="448" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">30.0</text>
+<rect x="618" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">28.8</text>
+<rect x="788" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">42.2</text>
+<rect x="958" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">63.6</text>
+<rect x="1128" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">45.3</text>
+<rect x="1298" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">83.9†</text>
+<rect x="1468" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">85.7</text>
+<rect x="1638" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">76.3</text>
+<rect x="1808" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">54.2</text>
+<rect x="1978" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">75.3</text>
+<rect x="2148" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">36.1</text>
+<rect x="2318" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">84.0</text>
+<rect x="2488" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2658" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">69.4</text>
+<rect x="2828" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">2057.4</text>
+<rect x="2998" y="270" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="303" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">44.4</text>
+<rect x="48" y="322" width="310" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="355" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Robix-7B</text>
+<rect x="358" y="322" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">否</text>
+<rect x="448" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="618" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="788" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="958" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">41.9</text>
+<rect x="1128" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">29.5</text>
+<rect x="1298" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">87.6†</text>
+<rect x="1468" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">86.5</text>
+<rect x="1638" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">77.4</text>
+<rect x="1808" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1978" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">71.1</text>
+<rect x="2148" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2318" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">83.3</text>
+<rect x="2488" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2658" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2828" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="322" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="355" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="48" y="374" width="310" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="407" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Pelican-7B</text>
+<rect x="358" y="374" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">是</text>
+<rect x="448" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">31.8</text>
+<rect x="618" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">33.7</text>
+<rect x="788" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">25.1</text>
+<rect x="958" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">60.0</text>
+<rect x="1128" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">20.4</text>
+<rect x="1298" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1468" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">79.4</text>
+<rect x="1638" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">73.1</text>
+<rect x="1808" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">57.8</text>
+<rect x="1978" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">52.0</text>
+<rect x="2148" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">53.2</text>
+<rect x="2318" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">82.2</text>
+<rect x="2488" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2658" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">69.3</text>
+<rect x="2828" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">2141.9</text>
+<rect x="2998" y="374" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="407" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">51.1</text>
+<rect x="48" y="426" width="310" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="459" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Cosmos-R1-7B</text>
+<rect x="358" y="426" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">是</text>
+<rect x="448" y="426" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">38.8</text>
+<rect x="618" y="426" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">26.0</text>
+<rect x="788" y="426" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">5.6</text>
+<rect x="958" y="426" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">2.9</text>
+<rect x="1128" y="426" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">8.2</text>
+<rect x="1298" y="426" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1468" y="426" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">76.7</text>
+<rect x="1638" y="426" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">68.9</text>
+<rect x="1808" y="426" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">42.4</text>
+<rect x="1978" y="426" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="2063.0" y="459" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">82.7</text>
+<rect x="2148" y="426" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">25.4</text>
+<rect x="2318" y="426" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">82.4</text>
+<rect x="2488" y="426" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2658" y="426" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">67.6</text>
+<rect x="2828" y="426" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">2157.4</text>
+<rect x="2998" y="426" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="459" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">37.4</text>
+<rect x="48" y="478" width="310" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="511" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Cosmos3-Super</text>
+<rect x="358" y="478" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">是</text>
+<rect x="448" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="618" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="788" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">57.0</text>
+<rect x="958" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">71.0</text>
+<rect x="1128" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1298" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">90.3†</text>
+<rect x="1468" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">88.0</text>
+<rect x="1638" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1808" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">70.0</text>
+<rect x="1978" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2148" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">60.9</text>
+<rect x="2318" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2488" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">51.2</text>
+<rect x="2658" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2828" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="478" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="511" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="48" y="530" width="310" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="563" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Qwen3-VL-4B</text>
+<rect x="358" y="530" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">是</text>
+<rect x="448" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">47.7</text>
+<rect x="618" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">40.7</text>
+<rect x="788" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">46.6</text>
+<rect x="958" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">63.0</text>
+<rect x="1128" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">48.3</text>
+<rect x="1298" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">85.0†</text>
+<rect x="1468" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">85.1</text>
+<rect x="1638" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">79.6</text>
+<rect x="1808" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">61.7</text>
+<rect x="1978" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">68.7</text>
+<rect x="2148" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">59.3</text>
+<rect x="2318" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">81.6</text>
+<rect x="2488" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">41.3</text>
+<rect x="2658" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">71.0</text>
+<rect x="2828" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">2325.2</text>
+<rect x="2998" y="530" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="563" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">57.8</text>
+<rect x="48" y="582" width="310" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="615" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Qwen3-VL-8B</text>
+<rect x="358" y="582" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="615" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">是</text>
+<rect x="448" y="582" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="615" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">43.3</text>
+<rect x="618" y="582" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="615" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">49.7</text>
+<rect x="788" y="582" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="615" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">54.2</text>
+<rect x="958" y="582" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="615" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">61.9</text>
+<rect x="1128" y="582" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="615" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">51.0</text>
+<rect x="1298" y="582" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="615" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">73.8†</text>
+<rect x="1468" y="582" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="615" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">86.2</text>
+<rect x="1638" y="582" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="615" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">78.5</text>
+<rect x="1808" y="582" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="615" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">66.9</text>
+<rect x="1978" y="582" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="615" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">67.3</text>
+<rect x="2148" y="582" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="615" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">59.4</text>
+<rect x="2318" y="582" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="615" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">83.2</text>
+<rect x="2488" y="582" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="615" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">45.8</text>
+<rect x="2658" y="582" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="615" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">70.6</text>
+<rect x="2828" y="582" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="2913.0" y="615" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">2412.5</text>
+<rect x="2998" y="582" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="3083.0" y="615" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">62.3</text>
+<rect x="48" y="634" width="310" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="667" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Embodied-R1</text>
+<rect x="358" y="634" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">是</text>
+<rect x="448" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">51.8</text>
+<rect x="618" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">26.5</text>
+<rect x="788" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">39.7</text>
+<rect x="958" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">69.5</text>
+<rect x="1128" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">49.4</text>
+<rect x="1298" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">78.5†</text>
+<rect x="1468" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">82.7</text>
+<rect x="1638" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">67.4</text>
+<rect x="1808" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">47.4</text>
+<rect x="1978" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">76.3</text>
+<rect x="2148" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">26.6</text>
+<rect x="2318" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2488" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">35.2</text>
+<rect x="2658" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2828" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="634" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="667" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="48" y="686" width="310" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="719" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Embodied-R1.5</text>
+<rect x="358" y="686" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">是</text>
+<rect x="448" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">61.0</text>
+<rect x="618" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">53.8</text>
+<rect x="788" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">54.2</text>
+<rect x="958" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">74.0</text>
+<rect x="1128" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">64.8</text>
+<rect x="1298" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">83.0†</text>
+<rect x="1468" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">86.9</text>
+<rect x="1638" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">78.1</text>
+<rect x="1808" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">69.7</text>
+<rect x="1978" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">74.7</text>
+<rect x="2148" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">56.1</text>
+<rect x="2318" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2488" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">46.0</text>
+<rect x="2658" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2828" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="686" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="719" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="48" y="738" width="310" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="771" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Molmo2-ER</text>
+<rect x="358" y="738" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">是</text>
+<rect x="448" y="738" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="618" y="738" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="788" y="738" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">52.5</text>
+<rect x="958" y="738" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">54.0</text>
+<rect x="1128" y="738" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1298" y="738" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">85.7†</text>
+<rect x="1468" y="738" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">87.8</text>
+<rect x="1638" y="738" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">78.8</text>
+<rect x="1808" y="738" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1978" y="738" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">78.0</text>
+<rect x="2148" y="738" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="2233.0" y="771" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">74.5</text>
+<rect x="2318" y="738" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2488" y="738" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">46.8</text>
+<rect x="2658" y="738" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2828" y="738" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="738" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="771" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="48" y="790" width="310" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="823" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Hy-Embodied-VLM-1.0</text>
+<rect x="358" y="790" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">是</text>
+<rect x="448" y="790" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="618" y="790" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">49.6</text>
+<rect x="788" y="790" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">53.4</text>
+<rect x="958" y="790" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">65.0</text>
+<rect x="1128" y="790" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">64.6</text>
+<rect x="1298" y="790" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">87.3†</text>
+<rect x="1468" y="790" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">89.7</text>
+<rect x="1638" y="790" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">82.7</text>
+<rect x="1808" y="790" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">69.4</text>
+<rect x="1978" y="790" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">78.0</text>
+<rect x="2148" y="790" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2318" y="790" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2488" y="790" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="2573.0" y="823" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">60.8</text>
+<rect x="2658" y="790" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2828" y="790" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="790" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="823" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="48" y="842" width="310" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="875" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">MiMo-Emb-7B</text>
+<rect x="358" y="842" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">是</text>
+<rect x="448" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">36.6</text>
+<rect x="618" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">33.1</text>
+<rect x="788" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">29.5</text>
+<rect x="958" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">56.1</text>
+<rect x="1128" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">22.4</text>
+<rect x="1298" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">81.3</text>
+<rect x="1468" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">88.1</text>
+<rect x="1638" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">78.2</text>
+<rect x="1808" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">52.0</text>
+<rect x="1978" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">78.0</text>
+<rect x="2148" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">44.5</text>
+<rect x="2318" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">79.0</text>
+<rect x="2488" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2658" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">66.3</text>
+<rect x="2828" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">2320.8</text>
+<rect x="2998" y="842" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="875" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">26.4</text>
+<rect x="48" y="894" width="310" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="927" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Thinker-4B</text>
+<rect x="358" y="894" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="927" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">是</text>
+<rect x="448" y="894" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="533.0" y="927" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">62.7</text>
+<rect x="618" y="894" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="703.0" y="927" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">63.7</text>
+<rect x="788" y="894" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="927" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">61.0</text>
+<rect x="958" y="894" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="927" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">72.0</text>
+<rect x="1128" y="894" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="927" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">57.4</text>
+<rect x="1298" y="894" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="927" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">84.6</text>
+<rect x="1468" y="894" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="927" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">86.3</text>
+<rect x="1638" y="894" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="927" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">80.2</text>
+<rect x="1808" y="894" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="927" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">70.8</text>
+<rect x="1978" y="894" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="927" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">72.7</text>
+<rect x="2148" y="894" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="927" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">65.4</text>
+<rect x="2318" y="894" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="927" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">81.5</text>
+<rect x="2488" y="894" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="927" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2658" y="894" width="170" height="52" fill="url(#sota)" stroke="#D7A940" stroke-width="1.5"/>
+<text x="2743.0" y="927" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">71.9</text>
+<rect x="2828" y="894" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="927" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">2323.4</text>
+<rect x="2998" y="894" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="927" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">46.2</text>
+<rect x="48" y="946" width="310" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="979" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">GenieReasoner</text>
+<rect x="358" y="946" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">否</text>
+<rect x="448" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="618" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="788" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="958" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1128" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1298" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">74.8</text>
+<rect x="1468" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">83.9</text>
+<rect x="1638" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">70.7</text>
+<rect x="1808" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1978" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2148" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2318" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2488" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2658" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2828" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="946" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="979" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="48" y="998" width="310" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="1031" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Wall-OSS-0.5</text>
+<rect x="358" y="998" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">是</text>
+<rect x="448" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="618" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="788" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="958" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">15.0</text>
+<rect x="1128" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1298" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1468" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1638" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1808" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1978" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2148" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2318" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2488" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">38.0</text>
+<rect x="2658" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">59.0</text>
+<rect x="2828" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="998" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="1031" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="48" y="1050" width="310" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="1083" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Lumo-1-Stage1</text>
+<rect x="358" y="1050" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">否</text>
+<rect x="448" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="618" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="788" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">51.0</text>
+<rect x="958" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">69.1</text>
+<rect x="1128" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1298" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">82.4</text>
+<rect x="1468" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">86.4</text>
+<rect x="1638" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">75.6</text>
+<rect x="1808" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">62.6</text>
+<rect x="1978" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">74.7</text>
+<rect x="2148" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2318" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2488" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">38.0</text>
+<rect x="2658" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2828" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="1050" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="1083" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="48" y="1102" width="310" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="1135" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Gemini-ER 2</text>
+<rect x="358" y="1102" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="1135" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">否</text>
+<rect x="448" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="1135" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="618" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="1135" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="788" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="1135" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">35.4</text>
+<rect x="958" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="1135" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1128" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="1135" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1298" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="1135" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">90.6†</text>
+<rect x="1468" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="1135" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">90.4</text>
+<rect x="1638" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="1135" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">81.4</text>
+<rect x="1808" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="1135" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">51.1</text>
+<rect x="1978" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="1135" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2148" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="1135" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2318" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="1135" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2488" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="1135" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">71.0</text>
+<rect x="2658" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="1135" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2828" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="1135" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="1102" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="1135" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<line x1="48" y1="1102" x2="3168" y2="1102" stroke="#87938E" stroke-width="2"/>
+<rect x="48" y="1154" width="310" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="1187" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Gemini-ER 1.5</text>
+<rect x="358" y="1154" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">否</text>
+<rect x="448" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="618" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="788" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">41.8</text>
+<rect x="958" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">48.0</text>
+<rect x="1128" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1298" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1468" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">83.6</text>
+<rect x="1638" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">73.4</text>
+<rect x="1808" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">57.7</text>
+<rect x="1978" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">62.0</text>
+<rect x="2148" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">39.9</text>
+<rect x="2318" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2488" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">47.0</text>
+<rect x="2658" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2828" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="1154" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="1187" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="48" y="1206" width="310" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="1239" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Gemini 2.5 Pro</text>
+<rect x="358" y="1206" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">否</text>
+<rect x="448" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="618" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="788" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">33.6</text>
+<rect x="958" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">37.0</text>
+<rect x="1128" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1298" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">88.6†</text>
+<rect x="1468" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">85.9</text>
+<rect x="1638" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">78.0</text>
+<rect x="1808" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">71.3</text>
+<rect x="1978" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">74.7</text>
+<rect x="2148" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">51.1</text>
+<rect x="2318" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2488" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">56.0</text>
+<rect x="2658" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2828" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="1206" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="1239" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="48" y="1258" width="310" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="1291" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Gemini 2.5 Flash</text>
+<rect x="358" y="1258" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">否</text>
+<rect x="448" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="618" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="788" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">41.2</text>
+<rect x="958" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">48.0</text>
+<rect x="1128" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1298" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">80.3†</text>
+<rect x="1468" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">85.5</text>
+<rect x="1638" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">76.2</text>
+<rect x="1808" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">73.4</text>
+<rect x="1978" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">73.3</text>
+<rect x="2148" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">45.3</text>
+<rect x="2318" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2488" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">47.5</text>
+<rect x="2658" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2828" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="1258" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="1291" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="48" y="1310" width="310" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="1343" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">Gemini 3.1 Pro</text>
+<rect x="358" y="1310" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">否</text>
+<rect x="448" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="618" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="788" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">70.0</text>
+<rect x="958" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">61.0</text>
+<rect x="1128" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1298" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">86.1†</text>
+<rect x="1468" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">88.6</text>
+<rect x="1638" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1808" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">65.1</text>
+<rect x="1978" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2148" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">47.5</text>
+<rect x="2318" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2488" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">65.2</text>
+<rect x="2658" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2828" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="1310" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="1343" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="48" y="1362" width="310" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="1395" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">GPT-5.6-sol</text>
+<rect x="358" y="1362" width="90" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">否</text>
+<rect x="448" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="618" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="788" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">58.3</text>
+<rect x="958" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">51.1</text>
+<rect x="1128" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1298" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">85.6†</text>
+<rect x="1468" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">85.2</text>
+<rect x="1638" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">80.7</text>
+<rect x="1808" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">66.8</text>
+<rect x="1978" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">21.3</text>
+<rect x="2148" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2318" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2488" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">64.8</text>
+<rect x="2658" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2828" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="1362" width="170" height="52" fill="#FFFFFF" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="1395" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="48" y="1414" width="310" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="62" y="1447" text-anchor="start" font-size="16" font-weight="800" fill="#35423D">GPT-6-Astra</text>
+<rect x="358" y="1414" width="90" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="403.0" y="1447" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">否</text>
+<rect x="448" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="533.0" y="1447" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="618" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="703.0" y="1447" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="788" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="873.0" y="1447" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">79.6</text>
+<rect x="958" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1043.0" y="1447" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">69.0</text>
+<rect x="1128" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1213.0" y="1447" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="1298" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1383.0" y="1447" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">90.4†</text>
+<rect x="1468" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1553.0" y="1447" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">87.3</text>
+<rect x="1638" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1723.0" y="1447" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">83.3</text>
+<rect x="1808" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="1893.0" y="1447" text-anchor="middle" font-size="16" font-weight="800" fill="#17100F">73.4</text>
+<rect x="1978" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2063.0" y="1447" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">31.3</text>
+<rect x="2148" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2233.0" y="1447" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2318" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2403.0" y="1447" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2488" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2573.0" y="1447" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">77.7</text>
+<rect x="2658" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2743.0" y="1447" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2828" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="2913.0" y="1447" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="2998" y="1414" width="170" height="52" fill="#FBFCFA" stroke="#CBD2CE" stroke-width="1"/>
+<text x="3083.0" y="1447" text-anchor="middle" font-size="16" font-weight="450" fill="#35423D">/</text>
+<rect x="48" y="104" width="3120" height="1362" rx="16" fill="none" stroke="#CBD2CE" stroke-width="1.5"/>
+</g>
+<text x="48" y="1500" text-anchor="start" font-size="14" font-weight="450" fill="#68746F">† BLINK 分数仅取 Relative Depth 与 Spatial Relation 两个子任务的平均值。部分开源模型为部署测试结果。</text>
+<text x="48" y="1528" text-anchor="start" font-size="14" font-weight="450" fill="#68746F">部分开源模型为部署测试结果；其他开源模型数据来自官方主页或论文；闭源模型数据部分来自官方结果，部分来自 API Call 测试。</text>
+</g>
+</svg>
