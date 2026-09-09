@@ -49,6 +49,7 @@
 
 .drp-kicker span { width: 22px; height: 2px; background: currentColor; }
 .drp-intro h3 { margin: 16px 0 12px; color: var(--text, #17211f); font-family: var(--font-display, "SF Pro SC", "SF Pro Display", "PingFang SC", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif); font-size: clamp(32px, 3.6vw, 48px); font-weight: 600; line-height: 1.08; letter-spacing: -.025em; }
+.drp-intro > h3:first-child { margin-top: 0; }
 .drp-intro p { max-width: 900px; margin: 0; color: var(--muted, #5b6663); font-size: 17px; font-weight: 400; line-height: 1.62; }
 
 .drp-board {
