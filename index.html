@@ -92,7 +92,7 @@
     html[data-theme="light"] .site-header { background: rgba(244,245,240,.9); }
     nav { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 34px; }
     .nav-links { display: flex; align-items: center; gap: 28px; margin-left: auto; }
-    .nav-links a { color: #7e898b; font-size: 11px; text-decoration: none; text-transform: uppercase; transition: color .2s ease; }
+    .nav-links a { color: #7e898b; font-size: 17px; text-decoration: none; text-transform: uppercase; transition: color .2s ease; }
     .nav-links a:hover { color: var(--text); }
     .header-actions { display: flex; align-items: center; gap: 14px; }
     .theme-toggle { min-height: 34px; display: inline-flex; align-items: center; gap: 8px; padding: 0 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--text); cursor: pointer; font-size: 9px; text-transform: uppercase; letter-spacing: .08em; transition: border-color .2s ease, background .2s ease; }
@@ -117,8 +117,8 @@
     html[data-theme="light"] .resource-logo-github .github-mark-black { display: block; }
     html[data-theme="light"] .resource-logo-github .github-mark-white { display: none; }
     .resource-link-copy { min-width: 0; display: grid; gap: 3px; text-align: left; }
-    .resource-link-copy strong { color: var(--text); font-size: 10px; font-weight: 700; line-height: 1; text-transform: uppercase; }
-    .resource-link-copy small { color: var(--dim); font-size: 7px; font-weight: 650; line-height: 1; text-transform: uppercase; letter-spacing: .09em; white-space: nowrap; }
+    .resource-link-copy strong { color: var(--text); font-size: 13px; font-weight: 700; line-height: 1; text-transform: uppercase; }
+    .resource-link-copy small { color: var(--dim); font-size: 9px; font-weight: 650; line-height: 1; text-transform: uppercase; letter-spacing: .09em; white-space: nowrap; }
     .intro { max-width: 900px; margin: 28px auto 0; color: #bec6c6; font-size: 18px; font-weight: 400; line-height: 1.62; text-align: left; }
     .resource-links + .intro { margin-top: 20px; }
     html[data-theme="light"] .intro { color: #4f5d58; }
@@ -145,7 +145,7 @@
     h2 { margin: 0; font-family: var(--font-display); font-size: clamp(42px, 4.5vw, 58px); font-weight: 600; line-height: 1.07; letter-spacing: -.025em; }
     h2 em { color: var(--cyan); font-style: normal; }
     .section-lead { max-width: 900px; margin: 18px 0 0; color: var(--muted); font-size: 18px; font-weight: 400; line-height: 1.62; }
-    .method-label { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 20px; color: var(--orange); font-size: 10px; text-transform: uppercase; letter-spacing: .13em; }
+    .method-label { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 20px; color: var(--orange); font-size: 17px; text-transform: uppercase; letter-spacing: .13em; }
     .method-label::before { content: ""; width: 7px; height: 7px; background: currentColor; border-radius: 2px; }
 
     .training-mix { display: grid; grid-template-columns: 150px 1fr; gap: 24px; align-items: start; margin-bottom: 46px; padding: 16px 0; border-block: 1px solid var(--line); }
@@ -197,14 +197,14 @@
     table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 660px; }
     .benchmark table { min-width: 1720px; }
     th, td { height: 42px; padding: 0 10px; border-bottom: 1px solid var(--line); text-align: center; white-space: nowrap; }
-    th { color: var(--dim); font-size: 8px; font-weight: 550; text-transform: uppercase; letter-spacing: .06em; }
-    .benchmark thead tr:not(.group-head) th { color: #b8c1c2; font-size: 10px; font-weight: 700; }
+    th { color: var(--dim); font-size: 10px; font-weight: 550; text-transform: uppercase; letter-spacing: .06em; }
+    .benchmark thead tr:not(.group-head) th { color: #b8c1c2; font-size: 12px; font-weight: 700; }
     html[data-theme="light"] .benchmark thead tr:not(.group-head) th { color: #35423d; }
-    td { color: #aeb8b9; font-size: 11px; }
+    td { color: #aeb8b9; font-size: 13px; }
     tr:last-child td { border-bottom: 0; }
     .benchmark .model-col { position: sticky; left: 0; z-index: 2; min-width: 160px; background: var(--panel); text-align: left; }
     .benchmark thead .model-col { z-index: 4; }
-    .benchmark .group-head th { height: 34px; color: var(--text); border-bottom: 1px solid var(--line); font-size: 9px; }
+    .benchmark .group-head th { height: 34px; color: var(--text); border-bottom: 1px solid var(--line); font-size: 12px; }
     .benchmark .group-start td { border-top: 2px solid var(--line); }
     .score-best { color: var(--text); font-weight: 800; background: rgba(119,244,208,.08); }
     html[data-theme="light"] .score-best { background: rgba(8,126,100,.09); }
@@ -249,8 +249,8 @@
     .vla-training-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 18px; }
     .vla-facts { display: grid; gap: 8px; margin-top: 24px; }
     .vla-fact { padding: 17px 18px; border: 1px solid var(--line); border-radius: 11px; }
-    .vla-fact b { display: block; color: var(--text); font-size: 18px; letter-spacing: -.03em; }
-    .vla-fact span { color: var(--dim); font-size: 11px; text-transform: uppercase; }
+    .vla-fact b { display: block; color: var(--text); font-size: 21px; letter-spacing: -.03em; }
+    .vla-fact span { color: var(--dim); font-size: 14px; text-transform: uppercase; }
 
     .fullbody-gallery { overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: var(--panel); box-shadow: 0 22px 70px rgba(0,0,0,.12); }
     .drp-video-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 12px 20px 20px; }
@@ -263,7 +263,7 @@
     .fullbody-gallery-title strong { font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -.02em; }
     .fullbody-gallery-title span { color: var(--violet); font-size: 9px; text-transform: uppercase; }
     .fullbody-gallery-actions { display: flex; align-items: center; gap: 8px; }
-    .fullbody-gallery-actions span { margin-right: 6px; color: var(--dim); font-size: 9px; text-transform: uppercase; }
+    .fullbody-gallery-actions span { margin-right: 6px; color: var(--dim); font-size: 14px; text-transform: uppercase; }
     .gallery-arrow { width: 36px; height: 36px; display: grid; place-items: center; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--panel-2); color: var(--text); cursor: pointer; font-size: 17px; transition: border-color .2s ease, color .2s ease, opacity .2s ease; }
     .gallery-arrow:hover:not(:disabled) { border-color: var(--violet); color: var(--violet); }
     .gallery-arrow:disabled { opacity: .28; cursor: default; }
@@ -319,7 +319,7 @@
       .resource-links { width: 100%; gap: 6px; margin-top: 24px; }
       .resource-links a { min-width: 0; flex: 1; gap: 7px; padding-inline: 9px; }
       .resource-logo { width: 20px; height: 20px; }
-      .resource-link-copy small { font-size: 6px; letter-spacing: .04em; }
+      .resource-link-copy small { font-size: 8px; letter-spacing: .04em; }
       .intro { margin-top: 22px; font-size: 17px; line-height: 1.58; }
       .facts { grid-template-columns: repeat(2, 1fr); }
       .fact { padding: 18px 12px; }
@@ -351,7 +351,7 @@
     <nav class="shell" aria-label="主导航">
       <div class="nav-links mono">
         <a href="#er" data-i18n-source="ER Model" data-i18n-zh="ER 模型">ER Model</a>
-        <a href="#vla" data-i18n-source="VLA Model" data-i18n-zh="VLA 模型">VLA Model</a>
+        <a href="#vla" data-i18n-source="VLA Model" data-i18n-zh="WLA 模型">WLA Model</a>
         <a href="#robot" data-i18n-source="Robot Tests" data-i18n-zh="真机测试">Robot Tests</a>
       </div>
       <div class="header-actions">
@@ -391,7 +391,7 @@
           <div class="facts" aria-label="项目核心数据">
             <div class="fact"><strong>6B</strong><span class="mono" data-i18n-source="VLA parameters" data-i18n-zh="VLA 参数量">VLA parameters</span></div>
             <div class="fact"><strong>5M+</strong><span class="mono" data-i18n-source="ER samples" data-i18n-zh="ER 训练样本">ER samples</span></div>
-            <div class="fact"><strong>2,500h</strong><span class="mono" data-i18n-source="Robot data" data-i18n-zh="真机数据">Robot data</span></div>
+            <div class="fact"><strong>≈2,500h</strong><span class="mono" data-i18n-source="Robot data" data-i18n-zh="真机数据">Robot data</span></div>
           </div>
         </div>
 
@@ -412,7 +412,7 @@
           <div>
             <div class="method-label mono" data-i18n-source="ER Model · Embodied Reasoner" data-i18n-zh="ER 模型 · 具身推理">ER Model · Embodied Reasoner</div>
             <h2>理解世界，<br /><em style="color:var(--orange)">连接行动。</em></h2>
-            <p class="section-lead">在同一多模态模型中融合具身推理、未来动态区域预测与离散动作学习，协同提升空间感知、交互预测与动作生成能力，为后续 VLA 训练提供统一的视觉—语言—动作表征基础。</p>
+            <p class="section-lead">在同一多模态模型中融合具身推理、未来动态区域预测与离散动作学习，协同提升空间感知、交互预测与动作生成能力，为后续 WLA 训练提供统一的视觉—语言—动作表征基础。</p>
           </div>
         </div>
 
@@ -668,9 +668,9 @@
       <div class="shell">
         <div class="section-title">
           <div>
-            <div class="method-label mono" style="color:var(--blue)" data-i18n-source="VLA Model · Shared Policy" data-i18n-zh="VLA 模型 · 共享策略">VLA Model · Shared Policy</div>
+            <div class="method-label mono" style="color:var(--blue)" data-i18n-source="VLA Model · Shared Policy" data-i18n-zh="WLA 模型">VLA Model · Shared Policy</div>
             <h2>多源数据，<br /><em style="color:var(--blue)">同一模型。</em></h2>
-            <p class="section-lead">UnifoLM-WLA-1.0，基于 UnifoLM-ER-Flow 多模态主干，结合 MMDiT 动作专家， 利用约 2,500 小时高质量真机数据训练，覆盖多种机器人本体与作业场景。通过统一动作空间，构建跨本体先验迁移，实现感知理解、交互预测与动作生成协同建模，兼顾具身操作能力与通用多模态感知-推理能力。</p>
+            <p class="section-lead">UnifoLM-WLA-1.0，基于 UnifoLM-ER-Flow 多模态主干，结合 MMDiT 动作专家，利用约 2,500 小时高质量真机数据（如：<a href="https://huggingface.co/unitreerobotics/datasets" target="_blank" rel="noopener noreferrer">宇树开源数据</a>、<a href="https://bitrobot-foundation.github.io/humanoids-in-the-wild-500-hours/" target="_blank" rel="noopener noreferrer">BitRobot-HIW-500</a> 等）训练，覆盖多种机器人本体与作业场景。通过统一动作空间，构建跨本体先验迁移，实现感知理解、交互预测与动作生成协同建模，兼顾具身操作能力与通用多模态感知-推理能力。</p>
           </div>
         </div>
 
@@ -1016,8 +1016,8 @@
         <section class="fullbody-gallery" data-video-gallery aria-label="全身操作视频合集">
           <header class="fullbody-gallery-head">
             <div class="fullbody-gallery-title">
-              <strong data-i18n-source="Whole-Body Loco-Manipulation" data-i18n-zh="全身移动操作">Whole-Body Loco-Manipulation</strong>
-              <span class="mono" data-i18n-source="10 tasks" data-i18n-zh="10 项任务">10 tasks</span>
+              <strong data-i18n-source="Whole-Body Loco-Manipulation" data-i18n-zh="10项全身移动操作">10 Tasks Whole-Body Loco-Manipulation</strong>
+              <!-- <span class="mono" data-i18n-source="10 tasks" data-i18n-zh="10 项任务">10 tasks</span> -->
             </div>
             <div class="fullbody-gallery-actions">
               <span class="mono" data-i18n-source="Scroll to explore" data-i18n-zh="滑动查看更多">Scroll to explore</span>
@@ -1075,8 +1075,8 @@
         <section class="fullbody-gallery" data-video-gallery aria-label="桌面操作视频合集">
           <header class="fullbody-gallery-head">
             <div class="fullbody-gallery-title">
-              <strong data-i18n-source="Desktop Manipulation" data-i18n-zh="桌面操作">Desktop Manipulation</strong>
-              <span class="mono" data-i18n-source="55 tasks" data-i18n-zh="55 项任务">55 tasks</span>
+              <strong data-i18n-source="Desktop Manipulation" data-i18n-zh="54 项桌面操作">54 Tasks Desktop Manipulation</strong>
+              <!-- <span class="mono" data-i18n-source="55 tasks" data-i18n-zh="54 项任务">54 tasks</span> -->
             </div>
             <div class="fullbody-gallery-actions">
               <span class="mono" data-i18n-source="Scroll to explore" data-i18n-zh="滑动查看更多">Scroll to explore</span>
