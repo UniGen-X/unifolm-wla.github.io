@@ -136,7 +136,7 @@
     .card-head strong { color: var(--cyan); font-weight: 650; }
     .hero-video-stage { position: relative; aspect-ratio: 16 / 9; display: grid; place-items: center; background-color: #0a0f11; background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px); background-size: 34px 34px; }
     .hero-video-stage video { width: 100%; height: 100%; display: block; object-fit: cover; }
-    .hero-video-stage::before, .hero-video-stage::after { content: ""; position: absolute; width: 70px; height: 70px; }
+    .hero-video-stage::before, .hero-video-stage::after { content: ""; position: absolute; width: 70px; height: 70px; pointer-events: none; }
     .hero-video-stage::before { left: 22px; top: 22px; border-left: 1px solid #465356; border-top: 1px solid #465356; }
     .hero-video-stage::after { right: 22px; bottom: 22px; border-right: 1px solid #465356; border-bottom: 1px solid #465356; }
     .hero-play { position: relative; z-index: 1; width: 78px; height: 78px; display: grid; place-items: center; border: 1px solid #526164; border-radius: 50%; color: var(--cyan); font-size: 20px; box-shadow: 0 0 0 14px rgba(119,244,208,.035); }
