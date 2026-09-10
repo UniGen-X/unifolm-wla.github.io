@@ -135,6 +135,7 @@
     .card-head { height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; border-bottom: 1px solid var(--line); color: #7b8789; font-size: 10px; text-transform: uppercase; }
     .card-head strong { color: var(--cyan); font-weight: 650; }
     .hero-video-stage { position: relative; aspect-ratio: 16 / 9; display: grid; place-items: center; background-color: #0a0f11; background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px); background-size: 34px 34px; }
+    .hero-video-stage video { width: 100%; height: 100%; display: block; object-fit: cover; }
     .hero-video-stage::before, .hero-video-stage::after { content: ""; position: absolute; width: 70px; height: 70px; }
     .hero-video-stage::before { left: 22px; top: 22px; border-left: 1px solid #465356; border-top: 1px solid #465356; }
     .hero-video-stage::after { right: 22px; bottom: 22px; border-right: 1px solid #465356; border-bottom: 1px solid #465356; }
@@ -418,13 +419,21 @@
           </div>
         </div>
 
-        <aside class="hero-video" aria-label="Project highlight reel placeholder" data-i18n-aria-source="Project highlight reel placeholder" data-i18n-aria-zh="项目快剪合集视频占位">
-          <div class="card-head mono"><span data-i18n-source="Project highlight reel" data-i18n-zh="项目快剪合集">Project highlight reel</span><strong data-i18n-source="Video placeholder" data-i18n-zh="视频占位">Video placeholder</strong></div>
+        <aside class="hero-video" aria-label="UnifoLM-WLA-1.0 demo video" data-i18n-aria-source="UnifoLM-WLA-1.0 demo video" data-i18n-aria-zh="UnifoLM-WLA-1.0 演示视频">
           <div class="hero-video-stage">
-            <div class="hero-play" aria-hidden="true">▶</div>
-            <span class="hero-video-label mono" data-i18n-source="Replace with highlight video · 16:9" data-i18n-zh="替换为快剪视频 · 16:9">Replace with highlight video · 16:9</span>
+            <video
+              id="heroHighlightVideo"
+              src="assets/videos/UnifoLM-WLA-1.0-Demo-web/UnifoLM-WLA-1.0-英文-1080p.mp4"
+              data-video-source="assets/videos/UnifoLM-WLA-1.0-Demo-web/UnifoLM-WLA-1.0-英文-1080p.mp4"
+              data-video-zh="assets/videos/UnifoLM-WLA-1.0-Demo-web/UnifoLM-WLA-1.0-中文-1080p.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              preload="metadata"
+            ></video>
           </div>
-          <div class="hero-video-meta mono"><strong data-i18n-source="Desktop · Mobile · Whole-body" data-i18n-zh="桌面操作 · 移动操作 · 全身运动">Desktop · Mobile · Whole-body</strong><span data-i18n-source="Hero film / 01" data-i18n-zh="首屏视频 / 01">Hero film / 01</span></div>
         </aside>
       </div>
     </section>
@@ -1149,6 +1158,7 @@
     const languageToggle = document.getElementById('languageToggle');
     const languageIcon = document.getElementById('languageIcon');
     const languageText = document.getElementById('languageText');
+    const heroHighlightVideo = document.getElementById('heroHighlightVideo');
 
     // 调整下面条目的先后顺序即可改变全身操作视频的展示顺序，序号会自动更新。
     const wholeBodyVideos = [
@@ -1297,6 +1307,17 @@
       document.querySelectorAll('[data-i18n-alt-source][data-i18n-alt-zh]').forEach((element) => {
         element.setAttribute('alt', isChinese ? element.dataset.i18nAltZh : element.dataset.i18nAltSource);
       });
+
+      if (heroHighlightVideo) {
+        const nextVideoSource = isChinese
+          ? heroHighlightVideo.dataset.videoZh
+          : heroHighlightVideo.dataset.videoSource;
+        if (heroHighlightVideo.getAttribute('src') !== nextVideoSource) {
+          heroHighlightVideo.src = nextVideoSource;
+          heroHighlightVideo.load();
+          heroHighlightVideo.play().catch(() => {});
+        }
+      }
 
       languageToggle.setAttribute('aria-pressed', String(isChinese));
       languageToggle.setAttribute('aria-label', isChinese ? '切换到当前版本' : '切换到中文模式');
