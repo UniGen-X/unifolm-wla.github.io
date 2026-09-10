@@ -298,6 +298,16 @@
     .fullbody-video-meta strong { overflow: hidden; color: var(--text); font-size: 12px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
     .fullbody-video-meta span { flex: none; color: var(--dim); font-size: 9px; text-transform: uppercase; }
 
+    .table-wrap,
+    .drp-board,
+    .homepage-action-demo .dal-pipeline,
+    .vla-arch-pipeline,
+    .fullbody-viewport {
+      max-width: 100%;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-inline: contain;
+    }
+
     footer { padding: 34px 0; }
     .footer-row { display: flex; justify-content: space-between; gap: 30px; color: var(--dim); font-size: 12px; text-transform: uppercase; }
     .footer-row strong { color: #bbc4c5; }
@@ -330,19 +340,29 @@
 
     @media (max-width: 980px) {
       .nav-links { display: none; }
+      .header-actions { margin-left: auto; }
       .hero-video { max-width: 100%; }
       .content-grid, .vla-layout { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
-      .shell { width: min(calc(100% - 28px), var(--max)); }
+      .shell { width: min(calc(100% - 24px), var(--max)); }
       .site-header { height: 66px; }
-      .hero-wrap { padding: 44px 0 52px; }
-      .eyebrow { font-size: 17px; }
-      h1 { font-size: clamp(40px, 12vw, 56px); line-height: .96; }
-      html[data-language="source"] h1 { font-size: clamp(36px, 9vw, 46px); }
+      nav { gap: 10px; }
+      .header-actions { gap: 8px; }
+      .theme-toggle { min-height: 36px; padding-inline: 10px; }
+      .hero-wrap { padding: 38px 0 48px; }
+      .hero > div { max-width: 100%; }
+      .eyebrow { max-width: 100%; margin-bottom: 16px; font-size: clamp(11px, 3.2vw, 14px); line-height: 1.45; letter-spacing: .11em; text-wrap: balance; }
+      .eyebrow::before { width: 20px; flex: none; }
+      h1 { font-size: clamp(34px, 10vw, 44px); line-height: .98; }
+      h1 strong { white-space: normal; overflow-wrap: anywhere; }
+      h1 .hero-prefix { display: block; margin: 0 0 .3em; font-size: .48em; line-height: 1.15; vertical-align: 0; }
+      h1 .hero-prefix:empty { display: none; }
+      html[data-language="source"] h1 { font-size: clamp(32px, 9vw, 42px); }
       .resource-links { width: 100%; gap: 6px; margin-top: 24px; }
       .resource-links a { min-width: 0; flex: 1; gap: 7px; padding-inline: 9px; }
       .resource-logo { width: 20px; height: 20px; }
+      .resource-link-copy strong { font-size: 11px; }
       .resource-link-copy small { font-size: 8px; letter-spacing: .04em; }
       .intro { margin-top: 22px; font-size: 17px; line-height: 1.58; }
       .facts { grid-template-columns: repeat(2, 1fr); }
@@ -352,7 +372,8 @@
       .hero-video { margin-top: 36px; border-radius: 19px; }
       .hero-video-meta { align-items: flex-start; flex-direction: column; gap: 6px; }
       .section { padding: 58px 0; }
-      h2 { font-size: 38px; line-height: 1.1; }
+      .section-title { margin-bottom: 30px; }
+      h2 { font-size: clamp(32px, 9.5vw, 38px); line-height: 1.1; }
       .section-lead { font-size: 16px; line-height: 1.62; }
       .training-mix { grid-template-columns: 1fr; gap: 12px; }
       .training-items { gap: 8px 18px; }
@@ -362,11 +383,32 @@
       .token-grid { grid-template-columns: 1fr; }
       .benchmark-head { align-items: flex-start; flex-direction: column; }
       th, td { padding-inline: 9px; }
+      .benchmark .model-col { min-width: 150px; }
       .fullbody-gallery-head { align-items: flex-start; flex-direction: column; gap: 14px; }
       .fullbody-gallery-actions { width: 100%; justify-content: flex-end; }
+      .fullbody-viewport { padding: 10px; }
+      .fullbody-track { grid-auto-columns: calc(100% - 18px); gap: 10px; }
+      .fullbody-video-meta { align-items: flex-start; }
+      .fullbody-video-meta strong { overflow: visible; line-height: 1.35; text-overflow: clip; white-space: normal; }
       .drp-video-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-inline: 12px; }
+      .drp-board,
+      .homepage-action-demo .dal-pipeline,
+      .vla-arch-pipeline { scrollbar-width: auto; }
+      .vla-architecture-demo .dal-intro { padding: 30px 22px 22px; }
+      .vla-architecture-demo .dal-intro h2 { font-size: 32px; }
+      .vla-arch-pipeline { margin: 0 8px 12px; padding: 18px 12px 30px; overflow-x: auto; overflow-y: hidden; }
       .footer-row { flex-direction: column; }
       .er-reasoning-content { margin: 0 8px 12px; }
+    }
+    @media (max-width: 420px) {
+      .resource-links { display: grid; grid-template-columns: 1fr; width: min(100%, 270px); }
+      .resource-links a { width: 100%; padding-inline: 16px; }
+      .facts { grid-template-columns: 1fr; }
+      .fact { border-left: 0; border-top: 1px solid var(--line); }
+      .fact:first-child { border-top: 0; }
+      .drp-video-strip { grid-template-columns: 1fr; }
+      .fullbody-gallery-title strong { font-size: 21px; }
+      .fullbody-gallery-actions span { margin-right: auto; font-size: 12px; }
     }
   </style>
 </head>
@@ -1355,10 +1397,15 @@
       const pipelineStyle = getComputedStyle(architecturePipeline);
       const horizontalPadding = Number.parseFloat(pipelineStyle.paddingLeft) + Number.parseFloat(pipelineStyle.paddingRight);
       const availableWidth = architecturePipeline.clientWidth - horizontalPadding;
-      const scale = Math.min(1, availableWidth / 1280);
+      const canvasWidth = 1280;
+      const useScrollableMobileCanvas = window.matchMedia('(max-width: 640px)').matches;
+      const scale = useScrollableMobileCanvas ? 0.65 : Math.min(1, availableWidth / canvasWidth);
       const canvasHeight = architectureCanvas.offsetHeight;
 
       architectureCanvas.style.transform = `scale(${scale})`;
+      architectureCanvas.style.marginRight = useScrollableMobileCanvas
+        ? `${-canvasWidth * (1 - scale)}px`
+        : '0px';
       architectureCanvas.style.marginBottom = `${-canvasHeight * (1 - scale)}px`;
     }
 
@@ -1384,16 +1431,14 @@
 
       function getStops() {
         const totalColumns = Math.ceil(cards.length / 2);
-        const maxStartColumn = Math.max(0, totalColumns - 2);
+        const visibleColumns = window.matchMedia('(max-width: 640px)').matches ? 1 : 2;
+        const maxStartColumn = Math.max(0, totalColumns - visibleColumns);
         const stops = [0];
-        let currentColumn = 0;
 
-        while (currentColumn < maxStartColumn) {
-          const remainingVideos = cards.length - (currentColumn + 2) * 2;
-          const advance = remainingVideos >= 4 ? 2 : 1;
-          currentColumn = Math.min(maxStartColumn, currentColumn + advance);
-          if (stops.at(-1) !== currentColumn) stops.push(currentColumn);
+        for (let column = visibleColumns; column < maxStartColumn; column += visibleColumns) {
+          stops.push(column);
         }
+        if (stops.at(-1) !== maxStartColumn) stops.push(maxStartColumn);
 
         return { stops, maxStartColumn };
       }
