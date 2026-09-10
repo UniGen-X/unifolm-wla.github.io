@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en" data-theme="dark" data-language="source">
+<html lang="en" data-theme="light" data-language="source">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#080b0d" />
+  <meta name="theme-color" content="#f4f5f0" />
   <meta name="description" content="UnifoLM-WLA-1.0 — Unitree Robotics' next-generation general-purpose humanoid robot foundation model." />
   <title>UnifoLM-WLA-1.0</title>
   <link rel="stylesheet" href="discrete-action-learning-component/react/discrete-action-learning.css" />
@@ -298,7 +298,7 @@
     .fullbody-video-meta span { flex: none; color: var(--dim); font-size: 9px; text-transform: uppercase; }
 
     footer { padding: 34px 0; }
-    .footer-row { display: flex; justify-content: space-between; gap: 30px; color: var(--dim); font-size: 10px; text-transform: uppercase; }
+    .footer-row { display: flex; justify-content: space-between; gap: 30px; color: var(--dim); font-size: 12px; text-transform: uppercase; }
     .footer-row strong { color: #bbc4c5; }
 
     html[data-theme="light"] .nav-links a,
@@ -382,9 +382,9 @@
           <span class="theme-toggle-icon" id="languageIcon" aria-hidden="true">文</span>
           <span id="languageText">中文</span>
         </button>
-        <button class="theme-toggle mono" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
-          <span class="theme-toggle-icon" id="themeIcon" aria-hidden="true">☼</span>
-          <span id="themeText">Light</span>
+        <button class="theme-toggle mono" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="true">
+          <span class="theme-toggle-icon" id="themeIcon" aria-hidden="true">☾</span>
+          <span id="themeText">Dark</span>
         </button>
       </div>
     </nav>
@@ -763,13 +763,13 @@
           <section class="dal-root vla-architecture-demo" aria-label="VLA model architecture animation" data-i18n-aria-source="VLA model architecture animation" data-i18n-aria-zh="VLA 模型结构动画">
             <article class="dal-card vla-arch-card">
               <header class="dal-intro">
-                <h2 data-i18n-source="Training Setup" data-i18n-zh="训练设置">Training Setup</h2>
+                <h2 data-i18n-source="Model Architecture" data-i18n-zh="模型架构">Training Setup</h2>
                 <!-- <p>真机数据、具身推理数据与通用 VLM 数据共同构成训练配方。所有机器人、任务和末端执行器共享同一套模型参数。</p> -->
-                <div class="vla-training-strip" aria-label="VLA training setup" data-i18n-aria-source="VLA training setup" data-i18n-aria-zh="VLA 训练设置">
-                  <div class="vla-fact"><b>≈ 2,500h</b><span class="mono" data-i18n-source="Multi-embodiment robot data" data-i18n-zh="多本体真机数据">Multi-embodiment robot data</span></div>
+                <!-- <div class="vla-training-strip" aria-label="VLA training setup" data-i18n-aria-source="VLA training setup" data-i18n-aria-zh="VLA 模型架构"> -->
+                  <!-- <div class="vla-fact"><b>≈ 2,500h</b><span class="mono" data-i18n-source="Multi-embodiment robot data" data-i18n-zh="多本体真机数据">Multi-embodiment robot data</span></div>
                   <div class="vla-fact"><b data-i18n-source="Co-training" data-i18n-zh="联合训练">Co-training</b><span class="mono" data-i18n-source="Robot + general VLM data" data-i18n-zh="真机 + 通用 VLM 数据">Robot + general VLM data</span></div>
-                  <div class="vla-fact"><b data-i18n-source="Fully shared" data-i18n-zh="完全共享">Fully shared</b><span class="mono" data-i18n-source="One set of model weights" data-i18n-zh="一套模型参数">One set of model weights</span></div>
-                </div>
+                  <div class="vla-fact"><b data-i18n-source="Fully shared" data-i18n-zh="完全共享">Fully shared</b><span class="mono" data-i18n-source="One set of model weights" data-i18n-zh="一套模型参数">One set of model weights</span></div> -->
+                <!-- </div> -->
               </header>
 
               <section class="vla-arch-pipeline" aria-label="VLA model architecture pipeline" data-i18n-aria-source="VLA model architecture pipeline" data-i18n-aria-zh="VLA 模型结构流程图">
@@ -1302,11 +1302,12 @@
       languageToggle.setAttribute('aria-label', isChinese ? '切换到当前版本' : '切换到中文模式');
       languageIcon.textContent = isChinese ? 'A' : '文';
       languageText.textContent = isChinese ? 'EN' : '中文';
-      applyTheme(root.dataset.theme || 'dark');
+      applyTheme(root.dataset.theme || 'light');
     }
 
-    let savedTheme = 'dark';
-    try { savedTheme = localStorage.getItem('omem-theme') || 'dark'; } catch (_) {}
+    const themeStorageKey = 'unifolm-theme';
+    let savedTheme = 'light';
+    try { savedTheme = localStorage.getItem(themeStorageKey) || 'light'; } catch (_) {}
     const languageStorageKey = 'unifolm-language';
     let savedLanguage = 'source';
     try { savedLanguage = localStorage.getItem(languageStorageKey) || 'source'; } catch (_) {}
@@ -1316,7 +1317,7 @@
     toggle.addEventListener('click', () => {
       const nextTheme = root.dataset.theme === 'light' ? 'dark' : 'light';
       applyTheme(nextTheme);
-      try { localStorage.setItem('omem-theme', nextTheme); } catch (_) {}
+      try { localStorage.setItem(themeStorageKey, nextTheme); } catch (_) {}
     });
 
     languageToggle.addEventListener('click', () => {
